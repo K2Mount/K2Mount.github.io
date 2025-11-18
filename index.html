@@ -5,18 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K2Mount | Home</title>
 
-  <!-- Modern UI using minimalist Tailwind-like styling without external imports -->
+  <!-- ========== 样式 ========== -->
   <style>
+    /* ===== 全局 ===== */
     body {
       font-family: Inter, Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f7fa;
-      color: #333;
+      background: #f5f7fa; /* 背景颜色，可改 */
+      color: #333; /* 文字颜色，可改 */
+      line-height: 1.6;
     }
 
+    a {
+      color: #0077ff; /* 链接颜色，可改 */
+      text-decoration: none;
+      font-weight: 600; /* 链接粗细，可改 */
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 50px auto;
+      padding: 0 25px;
+    }
+
+    /* ===== Header ===== */
     header {
-      background: #ffffffcc;
+      background: #ffffffcc; /* 背景颜色，可改 */
       backdrop-filter: blur(12px);
       padding: 18px 60px;
       border-bottom: 1px solid #e5e5e5;
@@ -30,53 +49,68 @@
 
     header nav a {
       margin-left: 28px;
-      text-decoration: none;
-      color: #444;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-    header nav a:hover { color: #0077ff; }
-
-    .container {
-      max-width: 1150px;
-      margin: 45px auto;
-      padding: 0 25px;
     }
 
-    /* Modern card */
+    header nav a:hover {
+      color: #0077ff; /* hover 颜色，可改 */
+    }
+
+    /* ===== 卡片样式 ===== */
     .card {
-      background: white;
+      background: white; /* 卡片背景颜色，可改 */
       padding: 32px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      margin-bottom: 30px;
+      border-radius: 14px; /* 圆角，可改 */
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06); /* 阴影，可改 */
+      margin-bottom: 40px;
     }
 
+    /* ===== About / Profile ===== */
     .intro {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
     }
 
-    .intro h1 { font-size: 40px; margin-bottom: 10px; }
-    .intro p { opacity: 0.85; line-height: 1.6; }
+    .intro-text {
+      flex: 1;
+    }
+
+    .intro-text h1 {
+      font-size: 40px; /* 姓名字体大小，可改 */
+      margin-bottom: 10px;
+    }
+
+    .intro-text p {
+      font-size: 16px; /* 正文字体大小，可改 */
+      opacity: 0.85;
+    }
+
+    .profile-photo {
+      width: 180px; /* 头像大小，可改 */
+      height: 180px; /* 头像大小，可改 */
+      border-radius: 50%; /* 圆形 */
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* 阴影，可改 */
+      flex-shrink: 0;
+    }
 
     .profile-photo img {
-      width: 230px;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
+    /* ===== Section 标题 ===== */
     .section-title {
-      font-size: 26px;
-      font-weight: bold;
+      font-size: 26px; /* 标题字体大小，可改 */
+      font-weight: bold; /* 标题粗细，可改 */
       margin: 50px 0 20px;
-      border-left: 6px solid #007aff;
+      border-left: 6px solid #007aff; /* 左边条颜色，可改 */
       padding-left: 12px;
     }
 
-    /* Publication item with image */
+    /* ===== Publications ===== */
     .pub-item {
       display: flex;
       gap: 20px;
@@ -89,7 +123,7 @@
     }
 
     .pub-item img {
-      width: 130px;
+      width: 130px; /* 缩略图大小，可改 */
       border-radius: 10px;
       object-fit: cover;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -99,148 +133,78 @@
       flex: 1;
     }
 
-    .pub-title { font-size: 18px; font-weight: 600; }
+    .pub-title {
+      font-size: 18px; /* 论文标题大小，可改 */
+      font-weight: 600; /* 粗细，可改 */
+    }
+
     .pub-links a {
       margin-right: 10px;
-      text-decoration: none;
-      color: #0077ff;
-      font-weight: 600;
     }
-    .pub-links a:hover { text-decoration: underline; }
 
+    /* ===== Footer ===== */
     footer {
       text-align: center;
       margin-top: 80px;
       padding: 30px;
-      background: #eef0f3;
-      color: #555;
+      background: #eef0f3; /* 背景颜色，可改 */
+      color: #555; /* 文字颜色，可改 */
     }
   </style>
 </head>
+
 <body>
+  <!-- ===== Header ===== -->
+  <header>
+    <div style="font-size: 22px; font-weight: bold;">K2Mount</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <div style="font-size: 22px; font-weight: bold;">K2Mount</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div class="container">
 
-<div class="container">
-
-  <!-- ============= ABOUT ============= -->
-  <section id="about" class="card intro">
-    <div>
-      <h1><!-- EDIT: Your Name -->杨翥成 YANG, Zhucheng</h1>
-      <p>
-        <!-- EDIT: Short Bio -->
-        Dr. YANG, Zhucheng received his B.S. degree in Chemistry from the University of Chinese Academy of Sciences (2020). He obtained his Ph.D. from the National University of Singapore (2025) under the supervision of Prof. Jianping Xie, where he is currently continuing as a Research Fellow. His research has been published in Advanced Materials, ACS Nano, CCS Chemistry, Chemical Science, and other journals. His current interests focus on smart synthesis and ligand programming for functional nanomaterials, with an emphasis on understanding atomic-level synthetic chemistry and structure–property relationships.
-      </p>
-      <p>
-        <!-- EDIT: External Links -->
-        <a href="https://github.com/K2Mount" target="_blank">GitHub</a> ·
-        <a href="#" target="_blank">Google Scholar</a> ·
-        <a href="#" target="_blank">CV</a>
-      </p>
-    </div>
-
-   <!-- Profile Section -->
-<section id="profile">
-  <div class="profile-photo">
-    <img src="DSC02566.jpg" alt="Profile Photo">
-  </div>
-  <h1>Your Name</h1>
-  <p>Short bio or tagline goes here.</p>
-</section>
-
-<!-- CSS -->
-<style>
-  #profile {
-    text-align: center;
-    margin-top: 50px;
-  }
-
-  .profile-photo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    border-radius: 50%; /* 圆形 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 阴影效果 */
-  }
-
-  .profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持比例填满 */
-  }
-
-  #profile h1 {
-    margin: 0;
-    font-size: 2em;
-  }
-
-  #profile p {
-    color: #555;
-    font-size: 1em;
-  }
-</style>
-
-
-
-  <!-- ============= EDUCATION ============= -->
-  <h2 id="education" class="section-title">Education</h2>
-
-  <div class="card">
-    <!-- EDIT: Education entries -->
-    <p><strong>National University of Singapore</strong><br>
-    <em>Ph.D. in Chemical Engineering, 2021–2025</em></p>
-
-    <p><strong>University of Chinese Academy of Sciences</strong><br>
-    <em>B.S. in Chemistry, 2016–2020</em></p>
-  </div>
-
-
-  <!-- ============= PUBLICATIONS ============= -->
-  <h2 id="publications" class="section-title">Selected Publications</h2>
-
-  <!-- ===== EXAMPLE PUBLICATION BLOCK (duplicate to add more) ===== -->
-  <div class="pub-item">
-    <!-- EDIT: Thumbnail image (optional) -->
-    <img src="paper1.jpg" alt="Paper thumbnail" />
-
-    <div class="pub-content">
-      <div class="pub-title"><!-- EDIT: Title -->Paper Title Example</div>
-      <div><!-- EDIT: Authors -->Author1, Author2, You*</div>
-      <div><!-- EDIT: Venue -->Journal / Conference, 202X</div>
-
-      <div class="pub-links">
-        <!-- EDIT: Links -->
-        <a href="#" target="_blank">PDF</a>
-        <a href="#" target="_blank">Code</a>
-        <a href="#" target="_blank">Project</a>
+    <!-- ===== About / Profile ===== -->
+    <section id="about" class="card intro">
+      <div class="intro-text">
+        <h1>杨翥成 YANG, Zhucheng</h1> <!-- 姓名，可改 -->
+        <p>
+          Dr. YANG, Zhucheng received his B.S. degree in Chemistry from the University of Chinese Academy of Sciences (2020). He obtained his Ph.D. from the National University of Singapore (2025) under the supervision of Prof. Jianping Xie, where he is currently continuing as a Research Fellow. His research has been published in Advanced Materials, ACS Nano, CCS Chemistry, Chemical Science, and other journals. His current interests focus on smart synthesis and ligand programming for functional nanomaterials, with an emphasis on understanding atomic-level synthetic chemistry and structure–property relationships.
+        </p> <!-- 简介，可改 -->
+        <p>
+          <a href="https://github.com/K2Mount" target="_blank">GitHub</a> ·
+          <a href="#" target="_blank">Google Scholar</a> ·
+          <a href="#" target="_blank">CV</a>
+        </p> <!-- 外部链接，可改 -->
       </div>
+
+      <div class="profile-photo">
+        <img src="DSC02566.jpg" alt="Profile Photo"> <!-- 头像图片路径，可改 -->
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <h2 id="education" class="section-title">Education</h2>
+    <div class="card">
+      <p><strong>National University of Singapore</strong><br>
+      <em>Ph.D. in Chemical Engineering, 2021–2025</em></p>
+
+      <p><strong>University of Chinese Academy of Sciences</strong><br>
+      <em>B.S. in Chemistry, 2016–2020</em></p>
     </div>
-  </div>
 
-  <!-- Add more publications by copying the block above -->
-
-
-  <!-- ============= CONTACT ============= -->
-  <h2 id="contact" class="section-title">Contact</h2>
-  <div class="card">
-    <p>Email: <strong><!-- EDIT: Email -->zc_yang@nus.edu.sg</strong></p>
-    <p><!-- EDIT: Additional contact -->You may also include WeChat / Twitter / Institutional Page.</p>
-  </div>
-
-</div>
-
-<footer>
-  © <!-- EDIT: Year -->2025 Your Name — Built on GitHub Pages
-</footer>
-
-</body>
-</html>
+    <!-- ===== Publications ===== -->
+    <h2 id="publications" class="section-title">Selected Publications</h2>
+    <div class="pub-item">
+      <img src="paper1.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Paper Title Example</div> <!-- 论文标题，可改 -->
+        <div>Author1, Author2, You*</div> <!-- 作者，可改 -->
+        <div>Journal / Conference, 202X</div> <!-- 期刊/年份，可改 -->
+        <div class="pub-links">
+          <a href="#" target="_blank">PDF</a>
+          <a href="#" target="_blank">Code</a>
+          <a href="#" target="_blank">Project</a>
