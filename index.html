@@ -73,7 +73,18 @@
       border-left: 6px solid #007aff;
       padding-left: 12px;
     }
+    
+    /* ===== Gallery ===== */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .gallery-item { overflow: hidden; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); transition: transform 0.3s; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .gallery-item:hover img { transform: scale(1.05); }
 
+    /* ===== News ===== */
+    .news-item { border-left: 4px solid #007aff; padding-left: 12px; margin-bottom: 15px; }
+    .news-item-date { font-weight: 600; margin-bottom: 4px; }
+
+    
     /* ===== Publications ===== */
     .pub-item {
       display: flex;
@@ -97,15 +108,6 @@
     .pub-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; }
     .pub-links a { margin-right: 10px; }
 
-    /* ===== Gallery ===== */
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-    .gallery-item { overflow: hidden; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); transition: transform 0.3s; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .gallery-item:hover img { transform: scale(1.05); }
-
-    /* ===== News ===== */
-    .news-item { border-left: 4px solid #007aff; padding-left: 12px; margin-bottom: 15px; }
-    .news-item-date { font-weight: 600; margin-bottom: 4px; }
 
     /* ===== Footer ===== */
     footer {
@@ -174,9 +176,9 @@
     <h2 id="gallery" class="section-title">Photography Gallery</h2>
     <div class="card">
       <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/gallery/photo1.jpg" alt="Photo 1"></div>
-        <div class="gallery-item"><img src="images/gallery/photo2.jpg" alt="Photo 2"></div>
-        <div class="gallery-item"><img src="images/gallery/photo3.jpg" alt="Photo 3"></div>
+        <div class="gallery-item"><img src="gallery/photo1.jpg" alt="Photo 1"></div>
+        <div class="gallery-item"><img src="gallery/photo2.jpg" alt="Photo 2"></div>
+        <div class="gallery-item"><img src="gallery/photo3.jpg" alt="Photo 3"></div>
         <!-- 可复制 gallery-item 增加更多图片 -->
       </div>
     </div>
@@ -206,7 +208,7 @@
     <!-- ===== Publications ===== -->
     <h2 id="publications" class="section-title">Selected Publications</h2>
     <div class="pub-item">
-      <img src="paper12.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper12.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design</div> <!-- 论文标题，可改 -->
         <div><em><u>Zhucheng Yang</u></em>, Yifan Wang, Ruixuan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -218,7 +220,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper11.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper11.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Photoluminescence Modulation of Cation-Induced Gold(I)-Thiolate Aggregates</div> <!-- 论文标题，可改 -->
         <div>Ruixuan Zhang, <em><u>Zhucheng Yang</u></em>, Bihan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -230,7 +232,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper10.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper10.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Topology-Driven Search for Molecular Links in Nanoclusters: Structure Prediction for Au<sub>16</sub>(SR)<sub>14</sub></div> <!-- 论文标题，可改 -->
         <div>Jing Qian, Jingkuan Lyu, <em><u>Zhucheng Yang</u></em>, Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -243,7 +245,7 @@
     <!-- 可复制 pub-item 增加更多文章 No1-3-->
 
     <div class="pub-item">
-      <img src="paper9.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper9.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Integrating Sulfido Ligands into Thiolate-Gold (I) Clusters via Competing Bonding</div> <!-- 论文标题，可改 -->
         <div><em><u>Zhucheng Yang</u></em>, Ziyi Chen, Bo Li, Ruixuan Zhang, Yitao Cao, De-en Jiang, Qiaofeng Yao, Huiting Shan, Tiankai Chen,<sup>*</sup> Peng Zhang,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -255,7 +257,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper8.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper8.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Molecule-like Synthesis of Ligand-protected Metal Nanoclusters</div> <!-- 论文标题，可改 -->
         <div>Qiaofeng Yao, Moshuqi Zhu, <em><u>Zhucheng Yang</u></em>, Xiaorong Song, Xun Yuan, Zhipu Zhang, Wenping Hu,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -267,7 +269,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper7.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper7.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Unraveling a Ligand-initiated Oxidative Etching Pathway in Gold Nanoclusters</div> <!-- 论文标题，可改 -->
         <div>Guanyu Ma, Ao Yang, Ruixuan Zhang, <em><u>Zhucheng Yang</u></em>, Yuhan Yi, Tiankai Chen<sup>*</sup></div> <!-- 作者，可改 -->
@@ -280,7 +282,7 @@
     <!-- 可复制 pub-item 增加更多文章 No 4-6-->
 
     <div class="pub-item">
-      <img src="paper6.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper6.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Synthesis Planning for Atomically Precise Metal Nanoclusters</div> <!-- 论文标题，可改 -->
         <div>Jingkuan Lyu, Jing Qian, <em><u>Zhucheng Yang</u></em>, Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -292,7 +294,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper5.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper5.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Glutathione: a Naturally Occurring Tripeptide for Functional Metal Nanomaterials</div> <!-- 论文标题，可改 -->
         <div><em><u>Zhucheng Yang</u></em>, Jingkuan Lyu, Jing Qian, Yifan Wang, Zhenghan Liu, Qiaofeng Yao, Tiankai Chen,<sup>*</sup> Yitao Cao,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -304,7 +306,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper4.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper4.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">When Metal Nanoclusters Meet Smart Synthesis</div> <!-- 论文标题，可改 -->
         <div><em><u>Zhucheng Yang</u></em>, Anye Shi, Ruixuan Zhang, Zuowei Ji, Jiali Li, Jingkuan Lyu, Jing Qian, Tiankai Chen,<sup>*</sup> Xiaonan Wang,<sup>*</sup> Fengqi You,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -317,7 +319,7 @@
     <!-- 可复制 pub-item 增加更多文章 No 7-9-->
 
     <div class="pub-item">
-      <img src="paper3.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper3.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Molecular Interactions in Atomically Precise Metal Nanoclusters</div> <!-- 论文标题，可改 -->
         <div>Jing Qian, <em><u>Zhucheng Yang</u></em>, Jingkuan Lyu, Qiaofeng Yao,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -329,7 +331,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper2.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper2.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Golden Insights from a Silver Superatom</div> <!-- 论文标题，可改 -->
         <div><em><u>Zhucheng Yang</u></em>, Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
@@ -341,7 +343,7 @@
     </div>
 
     <div class="pub-item">
-      <img src="paper1.jpg" alt="Paper thumbnail">
+      <img src="Paper Pic/Paper1.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Modulating Catalytic Activity and Stability of Atomically Precise Gold Nanoclusters as Peroxidase Mimics via Ligand Engineering</div> <!-- 论文标题，可改 -->
         <div>Huiting Shan, Jiafu Shi,<sup>*</sup> Tiankai Chen, Yitao Cao, Qiaofeng Yao, Hua An, <em><u>Zhucheng Yang</u></em>, Zhenhua Wu, Zhongyi Jiang,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
