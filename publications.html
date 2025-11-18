@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K2Mount | Selected Publications</title>
+  <style>
+    :root{
+      --accent: #7b1620;
+      --muted: #6b6b6b;
+      --card-bg: #fff;
+      --page-bg: #f2f3f4;
+    }
+    body {
+      font-family: 'Khmer MN', Inter, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--page-bg);
+      color: #222;
+    }
+    .container { max-width: 1000px; margin: 36px auto; padding: 0 20px; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+    header a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .section-title { font-size:26px; margin:14px 0 18px; border-left:6px solid var(--accent); padding-left:12px; }
+    /* Metrics card */
+    .metrics {
+      display:flex;
+      gap:18px;
+      align-items:center;
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .metric {
+      min-width:120px;
+      padding: 8px 12px;
+      border-radius:8px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+      text-align:center;
+    }
+    .metric .label { color: var(--muted); font-size:13px; margin-bottom:6px; }
+    .metric .value { font-size:20px; font-weight:800; color:var(--accent); }
+    .metric .sub { font-size:12px; color:var(--muted); margin-top:6px; }
+    .pub-item { display:flex; gap:18px; background:var(--card-bg); padding:18px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-bottom:16px; align-items:flex-start; }
+    .pub-item img { width:120px; height:160px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .pub-title { font-size:16px; font-weight:700; margin-bottom:6px; color:#222; }
+    .pub-links a { color:var(--accent); text-decoration:none; }
+    .status { color:var(--muted); font-size:13px; margin-left:auto; }
+    footer { text-align:center; margin:36px 0; color:#666; }
+    @media(max-width:720px){
+      .metrics { flex-direction:column; align-items:stretch; }
+      .metric { width:100%; }
+      .pub-item { flex-direction:column; align-items:center; }
+      .pub-item img{ width:100%; height:auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html">&larr; Back to Home</a>
+      <div style="font-weight:700; color:var(--accent)">Selected Publications</div>
+      <div></div>
+    </header>
+
+    <h1 class="section-title">Selected Publications</h1>
+
+    <!-- Metrics (Citation & H-index) -->
+    <div id="gs-metrics" class="metrics" aria-live="polite">
+      <div class="metric">
+        <div class="label">Citations (All)</div>
+        <div id="gs-citations" class="value">—</div>
+        <div class="sub" id="gs-citations-note">Loading...</div>
+      </div>
+      <div class="metric">
+        <div class="label">H‑index (All)</div>
+        <div id="gs-hindex" class="value">—</div>
+        <div class="sub" id="gs-hindex-note">Loading...</div>
+      </div>
+      <div style="margin-left:auto; text-align:right;">
+        <div class="label" style="font-weight:700;color:var(--muted);">Updated</div>
+        <div id="gs-updated" class="sub">—</div>
+        <div id="gs-source" class="sub" style="margin-top:6px;color:var(--muted);font-size:12px;"></div>
+      </div>
+    </div>
+
+    <!-- Publications list (keep same items as before) -->
+    <!-- Replace following blocks with your persisted list of pub items -->
+    <div class="pub-item">
+      <img src="Paper Pic/Paper12.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design</div>
+        <div><strong><em><u>Zhucheng Yang</u></em></strong>, Yifan Wang, Ruixuan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div><em>Advanced Materials</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adma.202508578" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <!-- ...（其余条目同此前 publications.html 内容）... -->
+
+    <footer>
+      © 2025 Yang Zhucheng — Built on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    // 尝试从 repository 的 data/citation.json 拉取指标并展示
+    // 若你部署在 GitHub Pages，data/citation.json 可通过相对路径访问
+    (async function loadGSMetrics(){
+      const citationsEl = document.getElementById('gs-citations');
+      const hindexEl = document.getElementById('gs-hindex');
+      const updatedEl = document.getElementById('gs-updated');
+      const citationsNote = document.getElementById('gs-citations-note');
+      const hindexNote = document.getElementById('gs-hindex-note');
+      const sourceEl = document.getElementById('gs-source');
+
+      // 默认路径：相对仓库的 data/citation.json
+      const localPath = '/data/citation.json';
+      const rawFallback = 'https://raw.githubusercontent.com/K2Mount/K2Mount.github.io/main/data/citation.json';
+
+      async function fetchJson(url){
+        const resp = await fetch(url, { cache: 'no-cache' });
+        if(!resp.ok) throw new Error('Fetch failed: ' + resp.status);
+        return await resp.json();
+      }
+
+      try {
+        let data;
+        try {
+          data = await fetchJson(localPath);
+        } catch(e) {
+          // fallback to raw.githubusercontent (useful when not served by GH Pages)
+          data = await fetchJson(rawFallback);
+        }
+
+        // render
+        const cit = data.citation_all ?? '—';
+        const h = data.h_index_all ?? '—';
+        citationsEl.textContent = cit;
+        hindexEl.textContent = h;
+        updatedEl.textContent = data.fetched_at ? new Date(data.fetched_at).toLocaleString() : '—';
+        sourceEl.textContent = data.source ? 'Source: Google Scholar' : '';
+        citationsNote.textContent = '';
+        hindexNote.textContent = '';
+      } catch(err){
+        citationsEl.textContent = '—';
+        hindexEl.textContent = '—';
+        updatedEl.textContent = 'Unavailable';
+        citationsNote.textContent = 'Unable to load metrics';
+        hindexNote.textContent = 'Will update weekly';
+        sourceEl.textContent = '';
+        console.warn('Could not load citation metrics:', err);
+      }
+    })();
+  </script>
+</body>
+</html>
