@@ -11,15 +11,15 @@
       font-family: Inter, Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f7fa; /* 背景颜色，可改 */
-      color: #333; /* 文字颜色，可改 */
+      background: #f5f7fa;
+      color: #333;
       line-height: 1.6;
     }
 
     a {
-      color: #0077ff; /* 链接颜色，可改 */
+      color: #0077ff;
       text-decoration: none;
-      font-weight: 600; /* 链接粗细，可改 */
+      font-weight: 600;
     }
 
     a:hover { text-decoration: underline; }
@@ -39,24 +39,23 @@
       top: 0;
       z-index: 200;
     }
-
     header nav a { margin-left: 28px; }
     header nav a:hover { color: #0077ff; }
 
     /* ===== 卡片样式 ===== */
     .card {
-      background: white; /* 卡片背景颜色，可改 */
+      background: white;
       padding: 32px;
-      border-radius: 14px; /* 圆角，可改 */
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06); /* 阴影，可改 */
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       margin-bottom: 40px;
     }
 
     /* ===== About / Profile ===== */
     .intro { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; }
     .intro-text { flex: 1; }
-    .intro-text h1 { font-size: 40px; margin-bottom: 10px; } /* 姓名字体大小，可改 */
-    .intro-text p { font-size: 16px; opacity: 0.85; } /* 简介字体大小，可改 */
+    .intro-text h1 { font-size: 40px; margin-bottom: 10px; }
+    .intro-text p { font-size: 16px; opacity: 0.85; }
 
     .profile-photo { 
       width: 180px; height: 180px; 
@@ -66,6 +65,9 @@
     }
     .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
 
+    /* ===== 中文姓名楷体 ===== */
+    .chinese-name { font-family: 'KaiTi', '楷体', serif; font-style: normal; }
+
     /* ===== Section 标题 ===== */
     .section-title {
       font-size: 26px; font-weight: bold;
@@ -73,76 +75,48 @@
       border-left: 6px solid #007aff;
       padding-left: 12px;
     }
-    
-<!-- ===== Gallery / 影廊 ===== -->
-<h2 id="gallery" class="section-title">Photography Gallery</h2>
-<div class="card">
-  <div class="gallery-masonry">
-    <div class="gallery-item"><img src="gallery/photo1.jpg" alt="Photo 1"></div>
-    <div class="gallery-item"><img src="gallery/photo2.jpg" alt="Photo 2"></div>
-    <div class="gallery-item"><img src="gallery/photo3.jpg" alt="Photo 3"></div>
-    <div class="gallery-item"><img src="gallery/photo4.jpg" alt="Photo 4"></div>
-    <div class="gallery-item"><img src="gallery/photo5.jpg" alt="Photo 5"></div>
-    <div class="gallery-item"><img src="gallery/photo6.jpg" alt="Photo 6"></div>
-    <div class="gallery-item"><img src="gallery/photo7.jpg" alt="Photo 7"></div>
-    <div class="gallery-item"><img src="gallery/photo8.jpg" alt="Photo 8"></div>
-    <div class="gallery-item"><img src="gallery/photo9.jpg" alt="Photo 9"></div>
-    <div class="gallery-item"><img src="gallery/photo10.jpg" alt="Photo 10"></div>
-    <!-- 可复制 gallery-item 增加更多图片 -->
-  </div>
-</div>
 
-<!-- ===== CSS ===== -->
-<style>
-  .gallery-masonry {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* 自动填充列 */
-    gap: 15px;
-    grid-auto-rows: 180px; /* 基础高度，可通过图片调整跨行 */
-  }
-
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s;
-  }
-
-  .gallery-item:hover {
-    transform: scale(1.05);
-    z-index: 10;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-  }
-
-  /* 可以给特定图片跨行/跨列，打造更自由布局 */
-  .gallery-item:nth-child(3) { grid-row: span 2; } 
-  .gallery-item:nth-child(7) { grid-column: span 2; grid-row: span 2; } 
-  .gallery-item:nth-child(10) { grid-column: span 2; }
-
-  /* 响应式调整 */
-  @media(max-width: 768px) {
-    .gallery-masonry { grid-auto-rows: 150px; }
-    .gallery-item:nth-child(3), .gallery-item:nth-child(7), .gallery-item:nth-child(10) {
-      grid-column: span 1;
-      grid-row: span 1;
+    /* ===== Gallery / 影廊 ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
     }
-  }
-</style>
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      z-index: 10;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+
+    /* 响应式调整 */
+    @media(max-width:768px){
+      .intro { flex-direction: column; text-align: center; }
+      .profile-photo { margin: 0 auto; }
+      .pub-item { flex-direction: column; align-items: center; }
+      .pub-item img { width: 100%; height: auto; }
+    }
 
     /* ===== News ===== */
     .news-item { border-left: 4px solid #007aff; padding-left: 12px; margin-bottom: 15px; }
     .news-item-date { font-weight: 600; margin-bottom: 4px; }
 
-    
     /* ===== Publications ===== */
     .pub-item {
       display: flex;
@@ -154,18 +128,15 @@
       margin-bottom: 20px;
       align-items: flex-start;
     }
-
     .pub-item img {
-      width: 140px; height: 200px; /* 左侧竖版封面图大小，可改 */
+      width: 140px; height: 200px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
     .pub-content { flex: 1; }
     .pub-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; }
     .pub-links a { margin-right: 10px; }
-
 
     /* ===== Footer ===== */
     footer {
@@ -174,14 +145,6 @@
       padding: 30px;
       background: #eef0f3;
       color: #555;
-    }
-
-    /* ===== 响应式 ===== */
-    @media(max-width:768px){
-      .intro { flex-direction: column; text-align: center; }
-      .profile-photo { margin: 0 auto; }
-      .pub-item { flex-direction: column; align-items: center; }
-      .pub-item img { width: 100%; height: auto; }
     }
   </style>
 </head>
@@ -200,33 +163,25 @@
   </header>
 
   <div class="container">
-
     <!-- ===== About / Profile ===== -->
     <section id="about" class="card intro">
       <div class="intro-text">
         <h1>
-  YANG, Zhucheng 
-  <span class="chinese-name">（杨翥成）</span>
-</h1>
-
-<style>
-  .chinese-name {
-    font-family: 'KaiTi', '楷体', serif;
-    font-style: normal; /* 防止斜体影响 */
-  }
-</style>
+          YANG, Zhucheng 
+          <span class="chinese-name">（杨翥成）</span>
+        </h1>
         <p>
           Hi, I’m Zhucheng, born in Changzhou, Jiangsu (江苏常州), and spent my university years in Beijing. Beyond the lab, I’m a photography and travel enthusiast, always chasing new sights and capturing moments. I love basketball and am a devoted aviation fan—planes are my favorite subjects to shoot! I am a dog person and at home, I’m accompanied by my “cool” corgi, Lucky (杨来福儿), whose attitude is as sharp as it is adorable. 
-        </p> <!-- 简介，可改 -->
+        </p>
         <p>
           <a href="https://github.com/K2Mount" target="_blank">GitHub</a> ·
           <a href="https://scholar.google.com/citations?user=mU3KsEEAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> ·
           <a href="https://blog.nus.edu.sg/xiegroupnus/" target="_blank">Lab Link</a>
-        </p> <!-- 外部链接，可改 -->
+        </p>
       </div>
 
       <div class="profile-photo">
-        <img src="DSC02566.jpg" alt="Profile Photo"> <!-- 头像图片路径，可改 -->
+        <img src="DSC02566.jpg" alt="Profile Photo">
       </div>
     </section>
 
@@ -238,7 +193,6 @@
       <p><strong>University of Chinese Academy of Sciences</strong><br>
       <em>B.S. in Chemistry, 2016–2020</em></p>
     </div>
-
 
     <!-- ===== Gallery / 影廊 ===== -->
     <h2 id="gallery" class="section-title">Photography Gallery</h2>
@@ -254,7 +208,6 @@
         <div class="gallery-item"><img src="gallery/photo8.jpg" alt="Photo 8"></div>
         <div class="gallery-item"><img src="gallery/photo9.jpg" alt="Photo 9"></div>
         <div class="gallery-item"><img src="gallery/photo10.jpg" alt="Photo 10"></div>
-        <!-- 可复制 gallery-item 增加更多图片 -->
       </div>
     </div>
 
@@ -275,173 +228,17 @@
       </div>
       <div class="news-item">
         <div class="news-item-date">13-AUG-2025</div>
-        <div>Our latest Perspective accepeted in Advanced Materials!</div>
+        <div>Our latest Perspective accepted in Advanced Materials!</div>
       </div>
-      <!-- 可复制 news-item 增加更多消息 -->
     </div>
-    
+
     <!-- ===== Publications ===== -->
     <h2 id="publications" class="section-title">Selected Publications</h2>
-    <div class="pub-item">
-      <img src="Paper Pic/Paper12.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design</div> <!-- 论文标题，可改 -->
-        <div><em><u>Zhucheng Yang</u></em>, Yifan Wang, Ruixuan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Advanced Materials, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adma.202508578" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper11.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Photoluminescence Modulation of Cation-Induced Gold(I)-Thiolate Aggregates</div> <!-- 论文标题，可改 -->
-        <div>Ruixuan Zhang, <em><u>Zhucheng Yang</u></em>, Bihan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Chemistry of Materials, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.5c01639" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper10.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Topology-Driven Search for Molecular Links in Nanoclusters: Structure Prediction for Au<sub>16</sub>(SR)<sub>14</sub></div> <!-- 论文标题，可改 -->
-        <div>Jing Qian, Jingkuan Lyu, <em><u>Zhucheng Yang</u></em>, Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>The Journal of Physical Chemistry Letters, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.5c01668" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-    <!-- 可复制 pub-item 增加更多文章 No1-3-->
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper9.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Integrating Sulfido Ligands into Thiolate-Gold (I) Clusters via Competing Bonding</div> <!-- 论文标题，可改 -->
-        <div><em><u>Zhucheng Yang</u></em>, Ziyi Chen, Bo Li, Ruixuan Zhang, Yitao Cao, De-en Jiang, Qiaofeng Yao, Huiting Shan, Tiankai Chen,<sup>*</sup> Peng Zhang,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>CCS Chemistry, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://www.chinesechemsoc.org/doi/full/10.31635/ccschem.024.202404942" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper8.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Molecule-like Synthesis of Ligand-protected Metal Nanoclusters</div> <!-- 论文标题，可改 -->
-        <div>Qiaofeng Yao, Moshuqi Zhu, <em><u>Zhucheng Yang</u></em>, Xiaorong Song, Xun Yuan, Zhipu Zhang, Wenping Hu,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Nature Reviews Materials, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://www.nature.com/articles/s41578-024-00741-7" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper7.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Unraveling a Ligand-initiated Oxidative Etching Pathway in Gold Nanoclusters</div> <!-- 论文标题，可改 -->
-        <div>Guanyu Ma, Ao Yang, Ruixuan Zhang, <em><u>Zhucheng Yang</u></em>, Yuhan Yi, Tiankai Chen<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Nanoscale, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.rsc.org/en/content/articlelanding/2025/nr/d5nr02268a/unauth" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-    <!-- 可复制 pub-item 增加更多文章 No 4-6-->
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper6.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Synthesis Planning for Atomically Precise Metal Nanoclusters</div> <!-- 论文标题，可改 -->
-        <div>Jingkuan Lyu, Jing Qian, <em><u>Zhucheng Yang</u></em>, Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Nanoscale Horizons, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.rsc.org/en/content/articlehtml/2025/nh/d5nh00353a" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper5.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Glutathione: a Naturally Occurring Tripeptide for Functional Metal Nanomaterials</div> <!-- 论文标题，可改 -->
-        <div><em><u>Zhucheng Yang</u></em>, Jingkuan Lyu, Jing Qian, Yifan Wang, Zhenghan Liu, Qiaofeng Yao, Tiankai Chen,<sup>*</sup> Yitao Cao,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Chemical Science, 2025</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.rsc.org/en/content/articlehtml/2025/sc/d4sc08599j" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper4.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">When Metal Nanoclusters Meet Smart Synthesis</div> <!-- 论文标题，可改 -->
-        <div><em><u>Zhucheng Yang</u></em>, Anye Shi, Ruixuan Zhang, Zuowei Ji, Jiali Li, Jingkuan Lyu, Jing Qian, Tiankai Chen,<sup>*</sup> Xiaonan Wang,<sup>*</sup> Fengqi You,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>ACS Nano, 2024</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.acs.org/doi/abs/10.1021/acsnano.4c09597" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-    <!-- 可复制 pub-item 增加更多文章 No 7-9-->
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper3.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Molecular Interactions in Atomically Precise Metal Nanoclusters</div> <!-- 论文标题，可改 -->
-        <div>Jing Qian, <em><u>Zhucheng Yang</u></em>, Jingkuan Lyu, Qiaofeng Yao,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>Precision Chemistry, 2024</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.acs.org/doi/full/10.1021/prechem.4c00044" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper2.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Golden Insights from a Silver Superatom</div> <!-- 论文标题，可改 -->
-        <div><em><u>Zhucheng Yang</u></em>, Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>National Science Review, 2024</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://academic.oup.com/nsr/article/11/8/nwae267/7724395" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="Paper Pic/Paper1.jpg" alt="Paper thumbnail">
-      <div class="pub-content">
-        <div class="pub-title">Modulating Catalytic Activity and Stability of Atomically Precise Gold Nanoclusters as Peroxidase Mimics via Ligand Engineering</div> <!-- 论文标题，可改 -->
-        <div>Huiting Shan, Jiafu Shi,<sup>*</sup> Tiankai Chen, Yitao Cao, Qiaofeng Yao, Hua An, <em><u>Zhucheng Yang</u></em>, Zhenhua Wu, Zhongyi Jiang,<sup>*</sup> Jianping Xie<sup>*</sup></div> <!-- 作者，可改 -->
-        <div>ACS Nano, 2023</div> <!-- 期刊/年份，可改 -->
-        <div class="pub-links">
-          <a href="https://pubs.acs.org/doi/abs/10.1021/acsnano.2c09238" target="_blank">View Article</a>
-        </div>
-      </div>
-    </div>
-    <!-- 可复制 pub-item 增加更多文章 No 10-12 -->
-
-
-    <!-- ===== Contact ===== -->
-    <h2 id="contact" class="section-title">Contact</h2>
-    <div class="card">
-      <p>Email: <strong>zc_yang@nus.edu.sg</strong></p> <!-- 邮箱，可改 -->
-      <p>Office Location: E5-L4, NUS</p> <!-- 其他联系方式，可改 -->
-    </div>
-
+    <!-- 这里可以复制 pub-item 添加更多文章 -->
   </div>
 
   <footer>
-    © 2025 Yang Zhucheng — Built on GitHub Pages <!-- Footer，可改 -->
+    © 2025 Yang Zhucheng — Built on GitHub Pages
   </footer>
 </body>
 </html>
