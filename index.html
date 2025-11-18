@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K2Mount | Home</title>
 
-  <!-- ========== 样式 ========== -->
   <style>
     /* ===== 全局 ===== */
     body {
@@ -23,19 +22,13 @@
       font-weight: 600; /* 链接粗细，可改 */
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
-    .container {
-      max-width: 1150px;
-      margin: 50px auto;
-      padding: 0 25px;
-    }
+    .container { max-width: 1150px; margin: 50px auto; padding: 0 25px; }
 
     /* ===== Header ===== */
     header {
-      background: #ffffffcc; /* 背景颜色，可改 */
+      background: #ffffffcc;
       backdrop-filter: blur(12px);
       padding: 18px 60px;
       border-bottom: 1px solid #e5e5e5;
@@ -47,13 +40,8 @@
       z-index: 200;
     }
 
-    header nav a {
-      margin-left: 28px;
-    }
-
-    header nav a:hover {
-      color: #0077ff; /* hover 颜色，可改 */
-    }
+    header nav a { margin-left: 28px; }
+    header nav a:hover { color: #0077ff; }
 
     /* ===== 卡片样式 ===== */
     .card {
@@ -65,48 +53,24 @@
     }
 
     /* ===== About / Profile ===== */
-    .intro {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 30px;
-    }
+    .intro { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; }
+    .intro-text { flex: 1; }
+    .intro-text h1 { font-size: 40px; margin-bottom: 10px; } /* 姓名字体大小，可改 */
+    .intro-text p { font-size: 16px; opacity: 0.85; } /* 简介字体大小，可改 */
 
-    .intro-text {
-      flex: 1;
+    .profile-photo { 
+      width: 180px; height: 180px; 
+      border-radius: 50%; overflow: hidden; 
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12); 
+      flex-shrink: 0; 
     }
-
-    .intro-text h1 {
-      font-size: 40px; /* 姓名字体大小，可改 */
-      margin-bottom: 10px;
-    }
-
-    .intro-text p {
-      font-size: 16px; /* 正文字体大小，可改 */
-      opacity: 0.85;
-    }
-
-    .profile-photo {
-      width: 180px; /* 头像大小，可改 */
-      height: 180px; /* 头像大小，可改 */
-      border-radius: 50%; /* 圆形 */
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* 阴影，可改 */
-      flex-shrink: 0;
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ===== Section 标题 ===== */
     .section-title {
-      font-size: 26px; /* 标题字体大小，可改 */
-      font-weight: bold; /* 标题粗细，可改 */
+      font-size: 26px; font-weight: bold;
       margin: 50px 0 20px;
-      border-left: 6px solid #007aff; /* 左边条颜色，可改 */
+      border-left: 6px solid #007aff;
       padding-left: 12px;
     }
 
@@ -123,36 +87,44 @@
     }
 
     .pub-item img {
-      width: 130px; /* 缩略图大小，可改 */
-      border-radius: 10px;
+      width: 140px; height: 200px; /* 左侧竖版封面图大小，可改 */
       object-fit: cover;
+      border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    .pub-content {
-      flex: 1;
-    }
+    .pub-content { flex: 1; }
+    .pub-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; }
+    .pub-links a { margin-right: 10px; }
 
-    .pub-title {
-      font-size: 18px; /* 论文标题大小，可改 */
-      font-weight: 600; /* 粗细，可改 */
-    }
+    /* ===== Gallery ===== */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .gallery-item { overflow: hidden; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); transition: transform 0.3s; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .gallery-item:hover img { transform: scale(1.05); }
 
-    .pub-links a {
-      margin-right: 10px;
-    }
+    /* ===== News ===== */
+    .news-item { border-left: 4px solid #007aff; padding-left: 12px; margin-bottom: 15px; }
+    .news-item-date { font-weight: 600; margin-bottom: 4px; }
 
     /* ===== Footer ===== */
     footer {
       text-align: center;
       margin-top: 80px;
       padding: 30px;
-      background: #eef0f3; /* 背景颜色，可改 */
-      color: #555; /* 文字颜色，可改 */
+      background: #eef0f3;
+      color: #555;
+    }
+
+    /* ===== 响应式 ===== */
+    @media(max-width:768px){
+      .intro { flex-direction: column; text-align: center; }
+      .profile-photo { margin: 0 auto; }
+      .pub-item { flex-direction: column; align-items: center; }
+      .pub-item img { width: 100%; height: auto; }
     }
   </style>
 </head>
-
 <body>
   <!-- ===== Header ===== -->
   <header>
@@ -161,6 +133,8 @@
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#publications">Publications</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#news">News</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -172,12 +146,12 @@
       <div class="intro-text">
         <h1>杨翥成 YANG, Zhucheng</h1> <!-- 姓名，可改 -->
         <p>
-          Dr. YANG, Zhucheng received his B.S. degree in Chemistry from the University of Chinese Academy of Sciences (2020). He obtained his Ph.D. from the National University of Singapore (2025) under the supervision of Prof. Jianping Xie, where he is currently continuing as a Research Fellow. His research has been published in Advanced Materials, ACS Nano, CCS Chemistry, Chemical Science, and other journals. His current interests focus on smart synthesis and ligand programming for functional nanomaterials, with an emphasis on understanding atomic-level synthetic chemistry and structure–property relationships.
+          Hi, I’m Zhucheng, born in Changzhou, Jiangsu, and spent my university years in Beijing. Beyond the lab, I’m a photography and travel enthusiast, always chasing new sights and capturing moments. I love basketball and am a devoted aviation fan—planes are my favorite subjects to shoot! I am a dog person and at home, I’m accompanied by my “cool” corgi, Lucky (杨来福儿), whose attitude is as sharp as it is adorable. 
         </p> <!-- 简介，可改 -->
         <p>
           <a href="https://github.com/K2Mount" target="_blank">GitHub</a> ·
-          <a href="https://scholar.google.com/citations?user=mU3KsEEAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a> ·
-          <a href="https://blog.nus.edu.sg/xiegroupnus/" target="_blank">Lab Link</a>
+          <a href="#" target="_blank">Google Scholar</a> ·
+          <a href="#" target="_blank">CV</a>
         </p> <!-- 外部链接，可改 -->
       </div>
 
@@ -191,7 +165,6 @@
     <div class="card">
       <p><strong>National University of Singapore</strong><br>
       <em>Ph.D. in Chemical Engineering, 2021–2025</em></p>
-
       <p><strong>University of Chinese Academy of Sciences</strong><br>
       <em>B.S. in Chemistry, 2016–2020</em></p>
     </div>
@@ -201,8 +174,54 @@
     <div class="pub-item">
       <img src="paper1.jpg" alt="Paper thumbnail">
       <div class="pub-content">
-        <div class="pub-title">Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design</div> <!-- 论文标题，可改 -->
-        <div>Zhucheng Yang, Yifan Wang, Ruixuan Zhang, Tiankai Chen*, Jianping Xie*</div> <!-- 作者，可改 -->
-        <div>Advanced Materials, 2025, e08578.</div> <!-- 期刊/年份，可改 -->
+        <div class="pub-title">Paper Title Example</div> <!-- 论文标题，可改 -->
+        <div>Author1, Author2, You*</div> <!-- 作者，可改 -->
+        <div>Journal / Conference, 202X</div> <!-- 期刊/年份，可改 -->
         <div class="pub-links">
-          <a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adma.202508578" target="_blank">Article Link</a>
+          <a href="#" target="_blank">PDF</a>
+          <a href="#" target="_blank">Code</a>
+          <a href="#" target="_blank">Project</a>
+        </div>
+      </div>
+    </div>
+    <!-- 可复制 pub-item 增加更多文章 -->
+
+    <!-- ===== Gallery / 影廊 ===== -->
+    <h2 id="gallery" class="section-title">影廊 / Gallery</h2>
+    <div class="card">
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/gallery/photo1.jpg" alt="Photo 1"></div>
+        <div class="gallery-item"><img src="images/gallery/photo2.jpg" alt="Photo 2"></div>
+        <div class="gallery-item"><img src="images/gallery/photo3.jpg" alt="Photo 3"></div>
+        <!-- 可复制 gallery-item 增加更多图片 -->
+      </div>
+    </div>
+
+    <!-- ===== News / 最新消息 ===== -->
+    <h2 id="news" class="section-title">News / 最新消息</h2>
+    <div class="card">
+      <div class="news-item">
+        <div class="news-item-date">2025-11-01</div>
+        <div>Joined a new collaborative project on smart synthesis of nanoclusters.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-item-date">2025-10-15</div>
+        <div>Published a new article in ACS Nano on ligand programming in gold clusters.</div>
+      </div>
+      <!-- 可复制 news-item 增加更多消息 -->
+    </div>
+
+    <!-- ===== Contact ===== -->
+    <h2 id="contact" class="section-title">Contact</h2>
+    <div class="card">
+      <p>Email: <strong>zc_yang@nus.edu.sg</strong></p> <!-- 邮箱，可改 -->
+      <p>You may also include WeChat / Twitter / Institutional Page.</p> <!-- 其他联系方式，可改 -->
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 Yang Zhucheng — Built on GitHub Pages <!-- Footer，可改 -->
+  </footer>
+</body>
+</html>
