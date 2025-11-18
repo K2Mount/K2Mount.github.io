@@ -18,42 +18,54 @@
       background: var(--page-bg);
       color: #222;
     }
-    .container { max-width: 1000px; margin: 36px auto; padding: 0 20px; }
+    .container { max-width: 1100px; margin: 36px auto; padding: 0 20px; }
     header { display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
     header a { color:var(--accent); text-decoration:none; font-weight:700; }
-    .section-title { font-size:26px; margin:14px 0 18px; border-left:6px solid var(--accent); padding-left:12px; }
-    /* Metrics card */
+    .section-title { font-size:32px; margin:14px 0 18px; border-left:8px solid var(--accent); padding-left:14px; }
+
+    /* Metrics card - centered and prominent */
+    .metrics-wrap { display:flex; justify-content:center; margin-bottom:18px; }
     .metrics {
       display:flex;
-      gap:18px;
+      gap:28px;
       align-items:center;
+      justify-content:center;
       background: var(--card-bg);
-      padding: 16px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
+      padding: 22px 28px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin: 0 10px;
+      width:100%;
+      max-width:820px;
     }
     .metric {
-      min-width:120px;
-      padding: 8px 12px;
-      border-radius:8px;
+      min-width:160px;
+      padding: 12px 16px;
+      border-radius:10px;
       background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
       text-align:center;
     }
-    .metric .label { color: var(--muted); font-size:13px; margin-bottom:6px; }
-    .metric .value { font-size:20px; font-weight:800; color:var(--accent); }
-    .metric .sub { font-size:12px; color:var(--muted); margin-top:6px; }
-    .pub-item { display:flex; gap:18px; background:var(--card-bg); padding:18px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.04); margin-bottom:16px; align-items:flex-start; }
-    .pub-item img { width:120px; height:160px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
-    .pub-title { font-size:16px; font-weight:700; margin-bottom:6px; color:#222; }
-    .pub-links a { color:var(--accent); text-decoration:none; }
-    .status { color:var(--muted); font-size:13px; margin-left:auto; }
+    .metric .label { color: var(--muted); font-size:14px; margin-bottom:8px; }
+    .metric .value { font-size:28px; font-weight:900; color:var(--accent); }
+    .metric .sub { font-size:13px; color:var(--muted); margin-top:8px; }
+
+    .metrics-actions { display:flex; gap:8px; align-items:center; margin-left:18px; }
+    .btn { padding:8px 12px; border-radius:8px; background:#fff; border:1px solid #eee; cursor:pointer; font-weight:600; }
+
+    .pub-item { display:flex; gap:18px; background:var(--card-bg); padding:20px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-bottom:18px; align-items:flex-start; }
+    .pub-item img { width:140px; height:180px; object-fit:cover; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+    .pub-title { font-size:18px; font-weight:800; margin-bottom:8px; color:#111; }
+    .pub-meta { color:var(--muted); margin-bottom:8px; }
+    .pub-links a { color:var(--accent); text-decoration:none; font-weight:700; }
+
+    .note { font-size:13px; color:var(--muted); margin-top:10px; }
+
     footer { text-align:center; margin:36px 0; color:#666; }
-    @media(max-width:720px){
-      .metrics { flex-direction:column; align-items:stretch; }
-      .metric { width:100%; }
+    @media(max-width:920px){
       .pub-item { flex-direction:column; align-items:center; }
       .pub-item img{ width:100%; height:auto; }
+      .metrics { flex-direction:column; gap:12px; padding:16px; }
+      .metric { min-width:unset; width:100%; }
     }
   </style>
 </head>
@@ -61,44 +73,161 @@
   <div class="container">
     <header>
       <a href="index.html">&larr; Back to Home</a>
-      <div style="font-weight:700; color:var(--accent)">Selected Publications</div>
+      <div style="font-weight:800; color:var(--accent); font-size:18px;">Selected Publications</div>
       <div></div>
     </header>
 
     <h1 class="section-title">Selected Publications</h1>
 
-    <!-- Metrics (Citation & H-index) -->
-    <div id="gs-metrics" class="metrics" aria-live="polite">
-      <div class="metric">
-        <div class="label">Citations (All)</div>
-        <div id="gs-citations" class="value">—</div>
-        <div class="sub" id="gs-citations-note">Loading...</div>
-      </div>
-      <div class="metric">
-        <div class="label">H‑index (All)</div>
-        <div id="gs-hindex" class="value">—</div>
-        <div class="sub" id="gs-hindex-note">Loading...</div>
-      </div>
-      <div style="margin-left:auto; text-align:right;">
-        <div class="label" style="font-weight:700;color:var(--muted);">Updated</div>
-        <div id="gs-updated" class="sub">—</div>
-        <div id="gs-source" class="sub" style="margin-top:6px;color:var(--muted);font-size:12px;"></div>
+    <!-- Metrics (Citation & H-index) - manual load only -->
+    <div class="metrics-wrap">
+      <div id="gs-metrics" class="metrics" aria-live="polite">
+        <div class="metric">
+          <div class="label">Citations (All)</div>
+          <div id="gs-citations" class="value">—</div>
+          <div class="sub" id="gs-citations-note">Manual update</div>
+        </div>
+        <div class="metric">
+          <div class="label">H‑index (All)</div>
+          <div id="gs-hindex" class="value">—</div>
+          <div class="sub" id="gs-hindex-note">Manual update</div>
+        </div>
+        <div style="text-align:center; margin-left:12px;">
+          <div class="label" style="font-weight:700;color:var(--muted);">Updated</div>
+          <div id="gs-updated" class="sub">—</div>
+          <div id="gs-source" class="sub" style="margin-top:6px;color:var(--muted);font-size:12px;"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Publications list (keep same items as before) -->
-    <!-- Replace following blocks with your persisted list of pub items -->
+    <div style="display:flex; gap:8px; justify-content:center; margin-bottom:12px;">
+      <button id="load-metrics" class="btn">Load metrics (from data/citation.json)</button>
+      <button id="edit-local" class="btn">Edit metrics (local)</button>
+      <button id="reset-local" class="btn">Reset local</button>
+    </div>
+    <div class="note">Note: automated Google Scholar scraping is disabled. Update <code>data/citation.json</code> in the repository to change numbers, or use the local edit button for temporary preview.</div>
+
+    <!-- Publications list: all 12 items in original order -->
+
     <div class="pub-item">
       <img src="Paper Pic/Paper12.jpg" alt="Paper thumbnail">
       <div class="pub-content">
         <div class="pub-title">Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design</div>
-        <div><strong><em><u>Zhucheng Yang</u></em></strong>, Yifan Wang, Ruixuan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div>
-        <div><em>Advanced Materials</em>, <strong>2025</strong></div>
+        <div class="pub-meta"><strong><em><u>Zhucheng Yang</u></em></strong>, Yifan Wang, Ruixuan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>Advanced Materials</em>, <strong>2025</strong></div>
         <div class="pub-links"><a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adma.202508578" target="_blank" rel="noopener noreferrer">View Article</a></div>
       </div>
     </div>
 
-    <!-- ...（其余条目同此前 publications.html 内容）... -->
+    <div class="pub-item">
+      <img src="Paper Pic/Paper11.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Photoluminescence Modulation of Cation-Induced Gold(I)-Thiolate Aggregates</div>
+        <div class="pub-meta">Ruixuan Zhang, <strong><em><u>Zhucheng Yang</u></em></strong>, Bihan Zhang, Tiankai Chen,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>Chemistry of Materials</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.5c01639" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper10.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Topology-Driven Search for Molecular Links in Nanoclusters: Structure Prediction for Au<sub>16</sub>(SR)<sub>14</sub></div>
+        <div class="pub-meta">Jing Qian, Jingkuan Lyu, <strong><em><u>Zhucheng Yang</u></em></strong>, Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>The Journal of Physical Chemistry Letters</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.5c01668" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper9.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Integrating Sulfido Ligands into Thiolate-Gold (I) Clusters via Competing Bonding</div>
+        <div class="pub-meta"><strong><em><u>Zhucheng Yang</u></em></strong>, Ziyi Chen, Bo Li, Ruixuan Zhang, Yitao Cao, De-en Jiang, Qiaofeng Yao, Huiting Shan, Tiankai Chen,<sup>*</sup> Peng Zhang,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>CCS Chemistry</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://www.chinesechemsoc.org/doi/full/10.31635/ccschem.024.202404942" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper8.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Molecule-like Synthesis of Ligand-protected Metal Nanoclusters</div>
+        <div class="pub-meta">Qiaofeng Yao, Moshuqi Zhu, <strong><em><u>Zhucheng Yang</u></em></strong>, Xiaorong Song, Xun Yuan, Zhipu Zhang, Wenping Hu,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>Nature Reviews Materials</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://www.nature.com/articles/s41578-024-00741-7" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper7.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Unraveling a Ligand-initiated Oxidative Etching Pathway in Gold Nanoclusters</div>
+        <div class="pub-meta">Guanyu Ma, Ao Yang, Ruixuan Zhang, <strong><em><u>Zhucheng Yang</u></em></strong>, Yuhan Yi, Tiankai Chen<sup>*</sup></div>
+        <div class="pub-meta"><em>Nanoscale</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://pubs.rsc.org/en/content/articlelanding/2025/nr/d5nr02268a/unauth" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper6.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Synthesis Planning for Atomically Precise Metal Nanoclusters</div>
+        <div class="pub-meta">Jingkuan Lyu, Jing Qian, <strong><em><u>Zhucheng Yang</u></em></strong>, Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>Nanoscale Horizons</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://pubs.rsc.org/en/content/articlehtml/2025/nh/d5nh00353a" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper5.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Glutathione: a Naturally Occurring Tripeptide for Functional Metal Nanomaterials</div>
+        <div class="pub-meta"><strong><em><u>Zhucheng Yang</u></em></strong>, Jingkuan Lyu, Jing Qian, Yifan Wang, Zhenghan Liu, Qiaofeng Yao, Tiankai Chen,<sup>*</sup> Yitao Cao,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>Chemical Science</em>, <strong>2025</strong></div>
+        <div class="pub-links"><a href="https://pubs.rsc.org/en/content/articlehtml/2025/sc/d4sc08599j" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper4.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">When Metal Nanoclusters Meet Smart Synthesis</div>
+        <div class="pub-meta"><strong><em><u>Zhucheng Yang</u></em></strong>, Anye Shi, Ruixuan Zhang, Zuowei Ji, Jiali Li, Jingkuan Lyu, Jing Qian, Tiankai Chen,<sup>*</sup> Xiaonan Wang,<sup>*</sup> Fengqi You,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>ACS Nano</em>, <strong>2024</strong></div>
+        <div class="pub-links"><a href="https://pubs.acs.org/doi/abs/10.1021/acsnano.4c09597" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper3.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Molecular Interactions in Atomically Precise Metal Nanoclusters</div>
+        <div class="pub-meta">Jing Qian, <strong><em><u>Zhucheng Yang</u></em></strong>, Jingkuan Lyu, Qiaofeng Yao,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>Precision Chemistry</em>, <strong>2024</strong></div>
+        <div class="pub-links"><a href="https://pubs.acs.org/doi/full/10.1021/prechem.4c00044" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper2.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Golden Insights from a Silver Superatom</div>
+        <div class="pub-meta"><strong><em><u>Zhucheng Yang</u></em></strong>, Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>National Science Review</em>, <strong>2024</strong></div>
+        <div class="pub-links"><a href="https://academic.oup.com/nsr/article/11/8/nwae267/7724395" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <img src="Paper Pic/Paper1.jpg" alt="Paper thumbnail">
+      <div class="pub-content">
+        <div class="pub-title">Modulating Catalytic Activity and Stability of Atomically Precise Gold Nanoclusters as Peroxidase Mimics via Ligand Engineering</div>
+        <div class="pub-meta">Huiting Shan, Jiafu Shi,<sup>*</sup> Tiankai Chen, Yitao Cao, Qiaofeng Yao, Hua An, <strong><em><u>Zhucheng Yang</u></em></strong>, Zhenhua Wu, Zhongyi Jiang,<sup>*</sup> Jianping Xie<sup>*</sup></div>
+        <div class="pub-meta"><em>ACS Nano</em>, <strong>2023</strong></div>
+        <div class="pub-links"><a href="https://pubs.acs.org/doi/abs/10.1021/acsnano.2c09238" target="_blank" rel="noopener noreferrer">View Article</a></div>
+      </div>
+    </div>
 
     <footer>
       © 2025 Yang Zhucheng — Built on GitHub Pages
@@ -106,52 +235,74 @@
   </div>
 
   <script>
-    // 尝试从 repository 的 data/citation.json 拉取指标并展示
-    // 若你部署在 GitHub Pages，data/citation.json 可通过相对路径访问
-    (async function loadGSMetrics(){
-      const citationsEl = document.getElementById('gs-citations');
-      const hindexEl = document.getElementById('gs-hindex');
-      const updatedEl = document.getElementById('gs-updated');
-      const citationsNote = document.getElementById('gs-citations-note');
-      const hindexNote = document.getElementById('gs-hindex-note');
-      const sourceEl = document.getElementById('gs-source');
+    // Load metrics only when user clicks "Load metrics" (no automatic fetch)
+    const loadBtn = document.getElementById('load-metrics');
+    const editBtn = document.getElementById('edit-local');
+    const resetBtn = document.getElementById('reset-local');
 
-      // 默认路径：相对仓库的 data/citation.json
+    function renderMetrics(data){
+      const citEl = document.getElementById('gs-citations');
+      const hEl = document.getElementById('gs-hindex');
+      const updEl = document.getElementById('gs-updated');
+      const srcEl = document.getElementById('gs-source');
+      citEl.textContent = data.citation_all ?? '—';
+      hEl.textContent = data.h_index_all ?? '—';
+      updEl.textContent = data.fetched_at ? new Date(data.fetched_at).toLocaleString() : '—';
+      srcEl.textContent = data.source ? 'Source: Google Scholar' : '';
+    }
+
+    async function fetchMetricsOnce(){
       const localPath = '/data/citation.json';
       const rawFallback = 'https://raw.githubusercontent.com/K2Mount/K2Mount.github.io/main/data/citation.json';
-
       async function fetchJson(url){
         const resp = await fetch(url, { cache: 'no-cache' });
         if(!resp.ok) throw new Error('Fetch failed: ' + resp.status);
         return await resp.json();
       }
-
       try {
         let data;
-        try {
-          data = await fetchJson(localPath);
-        } catch(e) {
-          // fallback to raw.githubusercontent (useful when not served by GH Pages)
-          data = await fetchJson(rawFallback);
-        }
+        try { data = await fetchJson(localPath); } catch(e){ data = await fetchJson(rawFallback); }
+        renderMetrics(data);
+      } catch(e){
+        alert('Unable to load data/citation.json. You can manually edit metrics locally.');
+      }
+    }
 
-        // render
-        const cit = data.citation_all ?? '—';
-        const h = data.h_index_all ?? '—';
-        citationsEl.textContent = cit;
-        hindexEl.textContent = h;
-        updatedEl.textContent = data.fetched_at ? new Date(data.fetched_at).toLocaleString() : '—';
-        sourceEl.textContent = data.source ? 'Source: Google Scholar' : '';
-        citationsNote.textContent = '';
-        hindexNote.textContent = '';
-      } catch(err){
-        citationsEl.textContent = '—';
-        hindexEl.textContent = '—';
-        updatedEl.textContent = 'Unavailable';
-        citationsNote.textContent = 'Unable to load metrics';
-        hindexNote.textContent = 'Will update weekly';
-        sourceEl.textContent = '';
-        console.warn('Could not load citation metrics:', err);
+    loadBtn && loadBtn.addEventListener && loadBtn.addEventListener('click', fetchMetricsOnce);
+
+    // Local edit (temporary, saved in localStorage)
+    editBtn && editBtn.addEventListener && editBtn.addEventListener('click',()=>{
+      const currentCit = localStorage.getItem('gs_citation') || '';
+      const currentH = localStorage.getItem('gs_hindex') || '';
+      const cit = prompt('Enter total citations (All):', currentCit);
+      if(cit === null) return;
+      const h = prompt('Enter h-index (All):', currentH);
+      if(h === null) return;
+      const now = new Date().toISOString();
+      const data = { citation_all: (cit||'—'), h_index_all: (h||'—'), fetched_at: now, source: 'Manual (local)' };
+      localStorage.setItem('gs_citation', data.citation_all);
+      localStorage.setItem('gs_hindex', data.h_index_all);
+      localStorage.setItem('gs_fetched_at', data.fetched_at);
+      renderMetrics(data);
+    });
+
+    resetBtn && resetBtn.addEventListener && resetBtn.addEventListener('click',()=>{
+      localStorage.removeItem('gs_citation');
+      localStorage.removeItem('gs_hindex');
+      localStorage.removeItem('gs_fetched_at');
+      document.getElementById('gs-citations').textContent = '—';
+      document.getElementById('gs-hindex').textContent = '—';
+      document.getElementById('gs-updated').textContent = '—';
+      document.getElementById('gs-source').textContent = '';
+    });
+
+    // If local values exist, render on load
+    (function initLocal(){
+      const lc = localStorage.getItem('gs_citation');
+      const lh = localStorage.getItem('gs_hindex');
+      const lf = localStorage.getItem('gs_fetched_at');
+      if(lc || lh){
+        renderMetrics({ citation_all: lc, h_index_all: lh, fetched_at: lf, source: 'Manual (local)' });
       }
     })();
   </script>
