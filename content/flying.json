@@ -1,0 +1,186 @@
+{
+  "planespotting": [
+    {
+      "iata": "SIN",
+      "airport": "Singapore Changi Airport",
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    {
+      "iata": "LHR",
+      "airport": "London Heathrow Airport",
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    {
+      "iata": "LAX",
+      "airport": "Los Angeles International Airport",
+      "city": "Los Angeles",
+      "country": "United States"
+    },
+    {
+      "iata": "CAN",
+      "airport": "Guangzhou Baiyun International Airport",
+      "city": "Guangzhou",
+      "country": "China"
+    },
+    {
+      "iata": "MNL",
+      "airport": "Ninoy Aquino International Airport",
+      "city": "Manila",
+      "country": "Philippines"
+    },
+    {
+      "iata": "EWR",
+      "airport": "Newark Liberty International Airport",
+      "city": "Newark / New York",
+      "country": "United States"
+    },
+    {
+      "iata": "EDI",
+      "airport": "Edinburgh Airport",
+      "city": "Edinburgh",
+      "country": "United Kingdom"
+    },
+    {
+      "iata": "MAN",
+      "airport": "Manchester Airport",
+      "city": "Manchester",
+      "country": "United Kingdom"
+    },
+    {
+      "iata": "PEK",
+      "airport": "Beijing Capital International Airport",
+      "city": "Beijing",
+      "country": "China"
+    },
+    {
+      "iata": "SFO",
+      "airport": "San Francisco International Airport",
+      "city": "San Francisco",
+      "country": "United States"
+    },
+    {
+      "iata": "TPE",
+      "airport": "Taiwan Taoyuan International Airport",
+      "city": "Taoyuan / Taipei",
+      "country": "Taiwan"
+    },
+    {
+      "iata": "TSA",
+      "airport": "Taipei Songshan Airport",
+      "city": "Taipei",
+      "country": "Taiwan"
+    },
+    {
+      "iata": "DOH",
+      "airport": "Hamad International Airport",
+      "city": "Doha",
+      "country": "Qatar"
+    },
+    {
+      "iata": "SHA",
+      "airport": "Shanghai Hongqiao International Airport",
+      "city": "Shanghai",
+      "country": "China"
+    },
+    {
+      "iata": "XMN",
+      "airport": "Xiamen Gaoqi International Airport",
+      "city": "Xiamen",
+      "country": "China"
+    },
+    {
+      "iata": "SZX",
+      "airport": "Shenzhen Bao'an International Airport",
+      "city": "Shenzhen",
+      "country": "China"
+    }
+  ],
+  "aviationPhotography": {
+    "featured": "photo8.jpg",
+    "photos": [
+      "DSC00010.jpg",
+      "DSC00327.jpg",
+      "DSC00374.jpg",
+      "DSC00388.jpg",
+      "DSC00404.jpg",
+      "DSC01793.jpg",
+      "DSC01812.jpg",
+      "DSC01830.jpg",
+      "DSC01844.jpg",
+      "DSC01976.jpg",
+      "DSC01989.jpg",
+      "DSC02042.jpg",
+      "DSC02094.jpg",
+      "DSC02328.jpg",
+      "DSC02751.jpg",
+      "DSC02816.jpg",
+      "DSC02860.jpg",
+      "DSC02885.jpg",
+      "DSC02912.jpg",
+      "DSC02925.jpg",
+      "DSC02943.jpg",
+      "DSC02989.jpg",
+      "DSC03039.jpg",
+      "DSC03081.jpg",
+      "DSC03093.jpg",
+      "DSC03098.jpg",
+      "DSC03112.jpg",
+      "DSC03144.jpg",
+      "DSC03170.jpg",
+      "DSC03180.jpg",
+      "DSC03187.jpg",
+      "DSC03795.jpg",
+      "DSC03967.jpg",
+      "DSC04129-已增强-NR.jpg",
+      "DSC04186-已增强-NR.jpg",
+      "DSC04190.jpg",
+      "DSC04306.jpg",
+      "DSC04341-已增强-NR.jpg",
+      "DSC04384-已增强-NR.jpg",
+      "DSC04404.jpg",
+      "DSC04416.jpg",
+      "DSC04460.jpg",
+      "DSC04509.jpg",
+      "DSC04992.jpg",
+      "DSC05014.jpg",
+      "DSC05929.jpg",
+      "DSC06310-已增强-降噪.jpg",
+      "DSC06544.jpg",
+      "DSC06571.jpg",
+      "DSC06579.jpg",
+      "DSC06995.jpg",
+      "DSC07779.jpg",
+      "DSC07781.jpg",
+      "DSC07803.jpg",
+      "DSC07833.jpg",
+      "DSC07838.jpg",
+      "DSC07923.jpg",
+      "DSC07941.jpg",
+      "DSC07972.jpg",
+      "DSC07986.jpg",
+      "DSC08040.jpg",
+      "DSC08050.jpg",
+      "DSC08068.jpg",
+      "DSC08110.jpg",
+      "DSC08168-已增强-NR.jpg",
+      "DSC08175-已增强-NR.jpg",
+      "DSC08179-已增强-NR.jpg",
+      "DSC08193-已增强-NR.jpg",
+      "DSC08221.jpg",
+      "DSC08244.jpg",
+      "DSC08267.jpg",
+      "DSC08323.jpg",
+      "DSC08404-已增强-NR.jpg",
+      "DSC08431-已增强-NR.jpg",
+      "DSC08534-已增强-NR_1.jpg",
+      "DSC08976-已增强-NR.jpg",
+      "DSC09413-已增强-NR.jpg",
+      "DSC09439-已增强-NR.jpg",
+      "DSC09469-已增强-NR.jpg",
+      "photo8.jpg",
+      "photo9.jpg"
+    ]
+  }
+}

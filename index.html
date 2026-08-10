@@ -1,333 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>K2Mount | Home</title>
-
-  <style>
-    :root{
-      --accent: #7b1620; /* burgundy */
-      --muted: #6b6b6b;   /* muted gray */
-      --page-bg: #f2f3f4;  /* page background */
-      --card-bg: #ffffff;
-      --bg-image: none;
-      --bg-opacity: 0.06;
-
-      --base-font: 20px;         /* increased base font size for better readability */
-      --card-radius: 14px;
-      --card-padding: 28px;
-      --container-max: 1150px;
-      --shadow-1: 0 6px 18px rgba(0,0,0,0.06);
-      --shadow-2: 0 10px 30px rgba(0,0,0,0.10);
-    }
-
-    html::before{
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: var(--bg-image);
-      background-size: cover;
-      background-position: center;
-      opacity: var(--bg-opacity);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* Base typography and smoothing */
-    body {
-      font-family: 'Khmer MN', Inter, Arial, "Helvetica Neue", Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--page-bg);
-      color: #222;
-      line-height: 1.65;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      font-size: var(--base-font);
-      letter-spacing: 0.01em;
-    }
-
-    a { color: var(--accent); text-decoration: none; transition: color .18s ease, transform .18s ease; }
-    a:hover { text-decoration: none; color: #a11f2b; transform: translateY(-1px); }
-
-    .container { max-width: var(--container-max); margin: 48px auto; padding: 0 26px; position: relative; z-index:1; }
-
-    /* Header */
-    header{
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(6px);
-      padding: 14px 26px;
-      border-radius: 12px;
-      display:flex; align-items:center; justify-content:space-between;
-      box-shadow: var(--shadow-1);
-      position: sticky; top: 12px; z-index: 200;
-      transition: box-shadow .25s ease, transform .18s ease;
-    }
-    header:hover{ box-shadow: var(--shadow-2); }
-
-    .logo { display:flex; align-items:center; gap:14px; }
-    /* Logo size adjusted and slightly rounded */
-    #site-logo { width:60px; height:auto; display:block; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform .18s ease; }
-    #site-logo:hover { transform: translateY(-3px) scale(1.02); }
-    .site-title { font-weight:900; color:var(--accent); font-size:1.05rem; letter-spacing:0.02em; }
-
-    nav { display:flex; align-items:center; gap:10px; }
-    nav a {
-      margin-left:0;
-      font-weight:700;
-      color:var(--accent);
-      padding:8px 12px;
-      border-radius:8px;
-      font-size:0.98rem;
-      transition: background .16s ease, color .16s ease;
-    }
-    nav a:hover{ background: rgba(123,22,32,0.06); color: #6b0f15; }
-
-    .card{
-      background:var(--card-bg);
-      padding:var(--card-padding);
-      border-radius:var(--card-radius);
-      box-shadow:var(--shadow-2);
-      margin-bottom:36px;
-      overflow:visible;
-    }
-
-    .intro{ display:flex; flex-wrap:wrap; gap:28px; align-items:center; }
-    .intro-text{ flex:1; min-width:260px; }
-    .intro-text h1{ font-size:2.4rem; margin:0 0 10px; line-height:1.05; }
-    .intro-text p{ color:var(--muted); margin:8px 0; font-size:1.02rem; }
-
-    .profile-photo{
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      overflow:hidden;
-      box-shadow:0 12px 34px rgba(0,0,0,0.12);
-      flex-shrink:0;
-      border: 4px solid rgba(255,255,255,0.7);
-      background: linear-gradient(180deg, #fff, #fafafa);
-    }
-    .profile-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-    .section-title{
-      font-size:1.4rem;
-      margin:48px 0 16px;
-      padding-left:14px;
-      border-left:8px solid var(--accent);
-      display:inline-block;
-      background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.0));
-      padding-right:10px;
-      border-radius:6px;
-    }
-
-    /* gallery (masonry) */
-    .gallery-masonry{
-      display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
-      gap:14px;
-      grid-auto-rows:10px;
-      grid-auto-flow:dense;
-    }
-    .gallery-item{
-      border-radius:12px; overflow:hidden;
-      background:#f6f6f6;
-      transition:transform .35s, box-shadow .35s;
-      cursor:pointer;
-      display:block;
-    }
-    .gallery-item img{
-      width:100%; height:auto; display:block; object-fit:cover;
-      vertical-align:middle;
-    }
-    .gallery-item:hover{ transform:translateY(-8px); box-shadow:0 26px 50px rgba(0,0,0,0.16); }
-
-    /* milestones */
-    .news-item{ border-left:6px solid var(--accent); padding-left:14px; margin-bottom:18px; border-radius:6px; padding-top:8px; padding-bottom:8px; background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.0)); }
-    .news-item-date{ font-weight:800; color:var(--muted); font-size:0.95rem; margin-bottom:6px; display:inline-block; }
-    .news-translation{ color:var(--muted); font-style:italic; margin-top:6px; font-size:0.98rem; }
-
-    /* contact */
-    .contact strong.office{ font-weight:900; }
-
-    /* footer */
-    footer{ font-size:0.98rem; color:#666; }
-
-    /* responsive */
-    @media(max-width:980px){
-      .container { padding: 0 18px; }
-      header{ padding:12px 16px; }
-      .intro{ flex-direction:column; text-align:center; align-items:center; }
-      .profile-photo{ margin:0 auto; width:160px; height:160px; }
-      .gallery-masonry { grid-auto-rows:8px; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); }
-      .intro-text h1{ font-size:1.85rem; }
-    }
-
-    @media(max-width:520px){
-      #site-logo { width:88px; }
-      .intro-text h1{ font-size:1.6rem; }
-      :root { --base-font:16px; }
-    }
-
-    /* Chinese in KaiTi */
-    .zh{ font-family:'KaiTi','楷体',serif; }
-
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zhucheng Yang - chemist, materials scientist, photographer, and aviation enthusiast.">
+  <title>Zhucheng Yang</title>
+  <link rel="icon" href="assets/images/general/lake2%20copy.png">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
-  <header>
-    <div class="logo">
-      <a href="index.html" aria-label="Home"><img id="site-logo" src="lake2 copy.png" alt="K2Mount logo (replace)"></a>
-      <div class="site-title">YANG, Zhucheng's HOMEPAGE</div>
-    </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="publications.html">Publications</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#milestones">Milestones</a>
-      <a href="#contact">Contact</a>
+<body data-page="home" data-news-limit="3">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" aria-label="Site header">
+    <div class="site-mark site-mark--empty" aria-hidden="true"></div>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="main-nav" id="site-nav" data-nav aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="news.html">News</a>
+      <a href="academic.html">Academic</a>
+      <a href="photography.html">Photography</a>
+      <a href="flying.html">Flying</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="container">
-    <section id="about" class="card intro">
-      <div class="intro-text">
-        <h1>YANG, Zhucheng <span class="zh">(杨翥成)</span></h1>
-        <p>Hi, I’m Zhucheng, born in Changzhou, Jiangsu <span class="zh">(江苏常州)</span>, and spent my university years in Beijing <span class="zh">(北京)</span>. I work on smart synthesis for atomically-precise nanochemistry.
-        <p>Beyond the lab, I’m a photography and travel enthusiast, always chasing new sights and capturing moments.</p> 
-        <p>I love basketball and am a devoted aviation fan—planes are my favorite subjects to shoot!</p>
-        <p>I am a dog person and at home, I’m accompanied by my “cool” corgi, <span class="zh">Lucky (杨来福儿)</span>, whose attitude is as sharp as it is adorable.</p>
-        <p>Feel free to connect — I'd love to hear from you.</p>
-        <p><a href="https://scholar.google.com/citations?user=mU3KsEEAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Google Scholar</a> · <a href="https://blog.nus.edu.sg/xiegroupnus/" target="_blank" rel="noopener noreferrer">LAB Link</a></p>
+  <main id="main">
+    <section class="hero" aria-label="Homepage hero">
+      <div class="hero-media">
+        <img src="assets/images/covers/主封面.jpg" alt="Editorial cover photograph for Zhucheng Yang">
       </div>
-      <div class="profile-photo"><img src="DSC02566.jpg" alt="Profile"></div>
+      <div class="hero-inner">
+        <p class="eyebrow" data-home-eyebrow>Chemistry / Materials / Exploration</p>
+        <h1 class="hero-title" data-home-title><span>Zhucheng</span><span>YANG</span></h1>
+        <p class="hero-chinese-name" lang="zh-Hant" data-home-chinese>楊翥成</p>
+        <p class="hero-subtitle" data-home-subtitle>Chemist. Materials Scientist. Explorer.</p>
+        <p class="hero-copy" data-home-intro>I work at the intersection of atomic precision, intelligent synthesis, and functional nanomaterials, while exploring the world through photography and aviation.</p>
+      </div>
     </section>
 
-    <h2 id="newsletters" class="section-title">Newsletters</h2>
-    <div class="card">
-      <div class="news-item">
-        <div class="news-item-date">12-FEB-2026</div>
-        <div>Our design was featured as the Front Cover of J. Am. Chem. Soc. for our article “Assembly of Tetrahedral Units in the Atomic-Resolved Structural Evolution of Gold Nanostructures”—a cover highlight of our atomic-level view into how gold nanostructures assemble.</div>
-        <div class="news-translation zh">2026年2月12日：我们在《美国化学会刊》发表的研究论文《金纳米结构中的原子分辨级四面体组装机制》获选为当期正封面（Front Cover）！</div>
+    <section class="home-cards" aria-label="Primary website sections">
+      <div class="card-grid" data-home-cards>
+        <a class="entry-card" href="news.html">
+          <span class="number">01</span>
+          <div>
+            <h2>News</h2>
+            <p>Research milestones, publications, awards, talks, and travel.</p>
+          </div>
+        </a>
+        <a class="entry-card" href="academic.html">
+          <span class="number">02</span>
+          <div>
+            <h2>Academic</h2>
+            <p>Research, publications, and the logic of atomically precise materials.</p>
+          </div>
+        </a>
+        <a class="entry-card" href="photography.html">
+          <span class="number">03</span>
+          <div>
+            <h2>Photography</h2>
+            <p>A visual travel journal built from field notes and passing light.</p>
+          </div>
+        </a>
+        <a class="entry-card" href="flying.html">
+          <span class="number">04</span>
+          <div>
+            <h2>Flying</h2>
+            <p>Aviation photographs, routes, aircraft, windows, and motion.</p>
+          </div>
+        </a>
+        <a class="entry-card" href="contact.html">
+          <span class="number">05</span>
+          <div>
+            <h2>Contact</h2>
+            <p>Email, Scholar, GitHub, and lab links.</p>
+          </div>
+        </a>
       </div>
-      <div class="news-item">
-        <div class="news-item-date">1-FEB-2026 to 7-FEB-2026</div>
-        <div>Presented a poster at the Gordon Research Conference (GRC) on Atomically Precise Nanochemistry 2026 (Pomona, Los Angeles, USA).</div>
-        <div class="news-translation zh">2026年2月1日–7日：参加在美国洛杉矶举行的GRC Atomically Precise Nanochemistry 2026，并展示海报。这周密集地与领域内的老朋友、新同行交流想法，还和多年未见的老朋友聚了聚！</div>
-      </div>
-      <div class="news-item">
-        <div class="news-item-date">13-JAN-2026</div>
-        <div>Published our research article “Assembly of Tetrahedral Units in the Atomic-Resolved Structural Evolution of Gold Nanostructures” in J. Am. Chem. Soc., uncovering a tetrahedral unit–guided assembly pathway that connects fleeting intermediates to the final Au nanostructure.</div>
-        <div class="news-translation zh">2026年1月13日：我们在《美国化学会刊》发表研究论文《金纳米结构中的原子分辨级四面体组装机制》。工作揭示了金纳米结构演化中由四面体单元牵引的组装路径，把“转瞬即逝的中间体”与最终结构串联起来，让生长过程第一次变得更可视、更可解释。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-item-date">20-NOV-2025</div>
-        <div>Our Design for ”Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design“ was selected as the Inside Front Cover of Advanced Materials, showcasing our work as a visual highlight in the issue.</div>
-        <div class="news-translation zh">2025年11月20日：我们在《先进材料》发表的观点性文章《金属团簇的精准表面工程：从配体编程到功能设计》获选为内封面（Inside Front Cover）展示，成为该期的视觉亮点之一。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-item-date">31-OCT-2025</div>
-        <div>Conferred the degree of Doctor of Philosophy by the National University of Singapore.</div>
-        <div class="news-translation zh">2025年10月31日：获新加坡国立大学授予哲学博士（Ph.D.）学位。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-item-date">13-OCT-2025</div>
-        <div>Received the Best Poster Award at the 6th Academic Symposium on Cluster Science and Atomic Manufacturing (Ningbo, China).</div>
-        <div class="news-translation zh">2025年10月13日：在第六届簇科学与原子制造学术研讨会（中国·宁波）荣获“最佳海报奖”。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-item-date">12-SEP-2025</div>
-        <div>Successfully defended my doctoral thesis.</div>
-        <div class="news-translation zh">2025年9月12日：顺利完成博士论文答辩，答辩通过。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-item-date">13-AUG-2025</div>
-        <div>Our Perspective article titled "Precise Surface Engineering of Metal Nanoclusters: Ligand Programming for Functionality Design" has been accepted for publication in Advanced Materials.</div>
-        <div class="news-translation zh">2025年8月13日：我们撰写的观点性文章《金属团簇的精准表面工程：从配体编程到功能设计》已被《先进材料》接收发表。</div>
-      </div>
-    </div>
+    </section>
 
-    <h2 id="education" class="section-title">Educational Background</h2>
-    <div class="card">
-      <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
-        <div style="width:64px; height:64px; background:#fff; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; border:1px solid #eee;"><img src="NUS logo.jpg" alt="NUS logo" style="max-width:56px; max-height:56px;"></div>
+    <section class="section">
+      <div class="lede profile-lede reveal">
         <div>
-          <strong>National University of Singapore</strong><br>
-          <em>Ph.D. in Chemical Engineering, 2021–2025</em>
+          <p class="page-kicker">Profile</p>
+          <h2 class="page-title"><span>Matter,</span><span>motion,</span><span>memory.</span></h2>
+        </div>
+        <figure class="profile-portrait" data-profile-portrait>
+          <img src="assets/images/Myself/DSC08674.jpg" alt="Portrait of Zhucheng Yang" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="latest-news">
+      <div class="lede is-compact">
+        <div>
+          <p class="page-kicker">Recent</p>
+          <h2 class="page-title" id="latest-news">News</h2>
         </div>
       </div>
-      <div style="height:12px;"></div>
-      <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
-        <div style="width:64px; height:64px; background:#fff; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; border:1px solid #eee;"><img src="UCAS logo.png" alt="UCAS logo" style="max-width:56px; max-height:56px;"></div>
-        <div>
-          <strong>University of Chinese Academy of Sciences</strong><br>
-          <em>B.S. in Chemistry, 2016–2020</em>
-        </div>
-      </div>
-    </div>
-
-    <h2 id="gallery" class="section-title">Photography Gallery</h2>
-    <div class="card">
-      <div id="gallery-masonry" class="gallery-masonry">
-        <div class="gallery-item"><img src="gallery/photo2.jpg" alt="Photo 2"></div>
-        <div class="gallery-item"><img src="gallery/photo3.jpg" alt="Photo 3"></div>
-        <div class="gallery-item"><img src="gallery/photo4.jpg" alt="Photo 4"></div>
-        <div class="gallery-item"><img src="gallery/photo5.jpg" alt="Photo 5"></div>
-        <div class="gallery-item"><img src="gallery/photo6.jpg" alt="Photo 6"></div>
-        <div class="gallery-item"><img src="gallery/photo7.jpg" alt="Photo 7"></div>
-        <div class="gallery-item"><img src="gallery/photo8.jpg" alt="Photo 8"></div>
-        <div class="gallery-item"><img src="gallery/photo9.jpg" alt="Photo 9"></div>
-        <div class="gallery-item"><img src="gallery/photo10.jpg" alt="Photo 10"></div>
-        <div class="gallery-item"><img src="gallery/photo11.jpg" alt="Photo 11"></div>
-        <div class="gallery-item"><img src="gallery/photo12.jpg" alt="Photo 12"></div>
-        <div class="gallery-item"><img src="gallery/photo13.jpg" alt="Photo 13"></div>
-        <div class="gallery-item"><img src="gallery/photo14.jpg" alt="Photo 14"></div>
-        <div class="gallery-item"><img src="gallery/photo15.jpg" alt="Photo 15"></div>
-        <div class="gallery-item"><img src="gallery/photo16.jpg" alt="Photo 16"></div>
-        <div class="gallery-item"><img src="gallery/photo17.jpg" alt="Photo 17"></div>
-        <div class="gallery-item"><img src="gallery/photo18.jpg" alt="Photo 18"></div>
-        <div class="gallery-item"><img src="gallery/photo19.jpg" alt="Photo 19"></div>
-        <div class="gallery-item"><img src="gallery/photo20.jpg" alt="Photo 20"></div>
-      </div>
-    </div>
-
-    <h2 id="contact" class="section-title">Contact</h2>
-    <div class="card contact">
-      <p>Email: <strong>zc_yang@nus.edu.sg</strong></p>
-      <p>Office Location: <strong class="office">E5-L4, NUS</strong></p>
-    </div>
-
+      <div class="news-list" data-news></div>
+      <a class="text-link" href="news.html">All updates</a>
+    </section>
   </main>
 
-  <footer style="text-align:center; padding:24px 0; color:#666;">© 2025 Yang Zhucheng — Built on GitHub Pages</footer>
-
-  <script>
-    // Masonry layout using CSS Grid + JS
-    (function(){
-      const grid = document.getElementById('gallery-masonry');
-      if(!grid) return;
-      const GAP = parseInt(getComputedStyle(grid).getPropertyValue('gap')) || 14;
-      function resizeAll(){
-        const rowHeight = parseFloat(getComputedStyle(grid).getPropertyValue('grid-auto-rows')) || 10;
-        grid.querySelectorAll('.gallery-item').forEach(item=>{
-          const img = item.querySelector('img');
-          if(!img) return;
-          const h = img.getBoundingClientRect().height;
-          const span = Math.ceil((h + GAP) / (rowHeight + GAP));
-          item.style.gridRowEnd = 'span '+span;
-        });
-      }
-      const imgs = grid.querySelectorAll('img');
-      let loaded = 0;
-      imgs.forEach(img=>{
-        if(img.complete){ loaded++; }
-        img.addEventListener('load', ()=>{ loaded++; resizeAll(); });
-        img.addEventListener('error', ()=>{ loaded++; resizeAll(); });
-      });
-      setTimeout(resizeAll,160);
-      window.addEventListener('resize', ()=>{ setTimeout(resizeAll,160); });
-    })();
-  </script>
+  <footer class="footer">
+    <span>&copy; 2026 Zhucheng Yang</span>
+    <span>Built for GitHub Pages</span>
+  </footer>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

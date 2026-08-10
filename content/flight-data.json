@@ -1,0 +1,2835 @@
+{
+  "generated_at": "2026-08-10T03:02:56+00:00",
+  "source": "Flight log 2/data/flightlog.sqlite",
+  "stats": {
+    "total_flights": 194,
+    "total_distance_km": 660632,
+    "total_duration_minutes": 47165,
+    "total_airports": 77,
+    "total_countries": 23,
+    "total_airlines": 33,
+    "total_aircraft_families": 13
+  },
+  "highlights": {
+    "most_flown_route": {
+      "origin": "SIN",
+      "destination": "PVG",
+      "count": 7,
+      "distance_km": 26663
+    },
+    "longest_flight": {
+      "origin": "SIN",
+      "destination": "LAX",
+      "origin_name": "新加坡樟宜",
+      "destination_name": "洛杉矶国际",
+      "airline": "Singapore Airlines",
+      "aircraft": "Airbus 350-941",
+      "aircraft_family": "A350",
+      "duration_minutes": 848,
+      "distance_km": 14102
+    },
+    "top_airline": {
+      "name": "Singapore Airlines",
+      "count": 31
+    },
+    "top_aircraft": {
+      "name": "B737",
+      "count": 41
+    }
+  },
+  "airports": {
+    "AUH": {
+      "iata": "AUH",
+      "name": "Zayed International Airport",
+      "city": "Abu Dhabi",
+      "country": "AE",
+      "latitude": 24.440966,
+      "longitude": 54.649237,
+      "departures": 2,
+      "arrivals": 2,
+      "visits": 4
+    },
+    "BAH": {
+      "iata": "BAH",
+      "name": "Bahrain International Airport",
+      "city": "Manama",
+      "country": "BH",
+      "latitude": 26.267295,
+      "longitude": 50.63764,
+      "departures": 2,
+      "arrivals": 2,
+      "visits": 4
+    },
+    "BCN": {
+      "iata": "BCN",
+      "name": "Josep Tarradellas Barcelona-El Prat Airport",
+      "city": "Barcelona",
+      "country": "ES",
+      "latitude": 41.2971,
+      "longitude": 2.07846,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "BHD": {
+      "iata": "BHD",
+      "name": "George Best Belfast City Airport",
+      "city": "Belfast",
+      "country": "GB",
+      "latitude": 54.618099,
+      "longitude": -5.8725,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "BKK": {
+      "iata": "BKK",
+      "name": "Suvarnabhumi Airport",
+      "city": "Bangkok",
+      "country": "TH",
+      "latitude": 13.6811,
+      "longitude": 100.747002,
+      "departures": 2,
+      "arrivals": 1,
+      "visits": 3
+    },
+    "BNE": {
+      "iata": "BNE",
+      "name": "Brisbane International Airport",
+      "city": "Brisbane",
+      "country": "AU",
+      "latitude": -27.384199142456055,
+      "longitude": 153.11700439453125,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "BOS": {
+      "iata": "BOS",
+      "name": "Boston Logan International Airport",
+      "city": "Boston",
+      "country": "US",
+      "latitude": 42.36197,
+      "longitude": -71.0079,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "CAN": {
+      "iata": "CAN",
+      "name": "Guangzhou Baiyun International Airport",
+      "city": "Guangzhou (Huadu)",
+      "country": "CN",
+      "latitude": 23.392401,
+      "longitude": 113.299004,
+      "departures": 5,
+      "arrivals": 7,
+      "visits": 12
+    },
+    "CDG": {
+      "iata": "CDG",
+      "name": "Charles de Gaulle International Airport",
+      "city": "Paris (Roissy-en-France, Val-d'Oise)",
+      "country": "FR",
+      "latitude": 49.00896,
+      "longitude": 2.554117,
+      "departures": 1,
+      "arrivals": 2,
+      "visits": 3
+    },
+    "CGK": {
+      "iata": "CGK",
+      "name": "Soekarno-Hatta International Airport",
+      "city": "Jakarta",
+      "country": "ID",
+      "latitude": -6.12557,
+      "longitude": 106.655998,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "CKG": {
+      "iata": "CKG",
+      "name": "Chongqing Jiangbei International Airport",
+      "city": "Chongqing",
+      "country": "CN",
+      "latitude": 29.712254,
+      "longitude": 106.651895,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "CMB": {
+      "iata": "CMB",
+      "name": "Bandaranaike International Colombo Airport",
+      "city": "Colombo",
+      "country": "LK",
+      "latitude": 7.180759906768799,
+      "longitude": 79.88410186767578,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "CNX": {
+      "iata": "CNX",
+      "name": "Chiang Mai International Airport",
+      "city": "Chiang Mai",
+      "country": "TH",
+      "latitude": 18.766799926799997,
+      "longitude": 98.962600708,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "CSX": {
+      "iata": "CSX",
+      "name": "Changsha Huanghua International Airport",
+      "city": "Changsha (Changsha)",
+      "country": "CN",
+      "latitude": 28.189199,
+      "longitude": 113.220001,
+      "departures": 2,
+      "arrivals": 3,
+      "visits": 5
+    },
+    "CTU": {
+      "iata": "CTU",
+      "name": "Chengdu Shuangliu International Airport",
+      "city": "Chengdu (Shuangliu)",
+      "country": "CN",
+      "latitude": 30.558257,
+      "longitude": 103.945966,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "CZX": {
+      "iata": "CZX",
+      "name": "Changzhou Benniu International Airport",
+      "city": "Changzhou",
+      "country": "CN",
+      "latitude": 31.920485,
+      "longitude": 119.77546,
+      "departures": 2,
+      "arrivals": 2,
+      "visits": 4
+    },
+    "DCA": {
+      "iata": "DCA",
+      "name": "Ronald Reagan Washington National Airport",
+      "city": "Washington",
+      "country": "US",
+      "latitude": 38.8521,
+      "longitude": -77.037697,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "DLC": {
+      "iata": "DLC",
+      "name": "Dalian Zhoushuizi International Airport",
+      "city": "Dalian (Ganjingzi)",
+      "country": "CN",
+      "latitude": 38.965719,
+      "longitude": 121.538477,
+      "departures": 2,
+      "arrivals": 1,
+      "visits": 3
+    },
+    "DMK": {
+      "iata": "DMK",
+      "name": "Don Mueang International Airport",
+      "city": "Bangkok",
+      "country": "TH",
+      "latitude": 13.9126,
+      "longitude": 100.607002,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "DNH": {
+      "iata": "DNH",
+      "name": "Dunhuang Mogao International Airport",
+      "city": "Dunhuang",
+      "country": "CN",
+      "latitude": 40.161953,
+      "longitude": 94.812827,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "DOH": {
+      "iata": "DOH",
+      "name": "Hamad International Airport",
+      "city": "Doha",
+      "country": "QA",
+      "latitude": 25.273056,
+      "longitude": 51.608056,
+      "departures": 3,
+      "arrivals": 3,
+      "visits": 6
+    },
+    "DTW": {
+      "iata": "DTW",
+      "name": "Detroit Metropolitan Wayne County Airport",
+      "city": "Detroit",
+      "country": "US",
+      "latitude": 42.21377,
+      "longitude": -83.353786,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "DXB": {
+      "iata": "DXB",
+      "name": "Dubai International Airport",
+      "city": "Dubai",
+      "country": "AE",
+      "latitude": 25.24979,
+      "longitude": 55.370992,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "EDI": {
+      "iata": "EDI",
+      "name": "Edinburgh Airport",
+      "city": "Edinburgh",
+      "country": "GB",
+      "latitude": 55.95,
+      "longitude": -3.3725,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "EWR": {
+      "iata": "EWR",
+      "name": "Newark Liberty International Airport",
+      "city": "Newark",
+      "country": "US",
+      "latitude": 40.6894,
+      "longitude": -74.170545,
+      "departures": 3,
+      "arrivals": 2,
+      "visits": 5
+    },
+    "FCO": {
+      "iata": "FCO",
+      "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
+      "city": "Rome",
+      "country": "IT",
+      "latitude": 41.804532,
+      "longitude": 12.251998,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "FOC": {
+      "iata": "FOC",
+      "name": "Fuzhou Changle International Airport",
+      "city": "Fuzhou (Changle)",
+      "country": "CN",
+      "latitude": 25.929254,
+      "longitude": 119.672524,
+      "departures": 3,
+      "arrivals": 2,
+      "visits": 5
+    },
+    "FRA": {
+      "iata": "FRA",
+      "name": "Frankfurt Main Airport",
+      "city": "Frankfurt am Main",
+      "country": "DE",
+      "latitude": 50.026706,
+      "longitude": 8.55835,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "GLA": {
+      "iata": "GLA",
+      "name": "Glasgow Airport",
+      "city": "Glasgow",
+      "country": "GB",
+      "latitude": 55.871899,
+      "longitude": -4.43306,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "GRX": {
+      "iata": "GRX",
+      "name": "F.G.L. Airport Granada-Jaén Airport",
+      "city": "Granada",
+      "country": "ES",
+      "latitude": 37.188702,
+      "longitude": -3.77736,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "HAN": {
+      "iata": "HAN",
+      "name": "Noi Bai International Airport",
+      "city": "Hanoi (Soc Son)",
+      "country": "VN",
+      "latitude": 21.221201,
+      "longitude": 105.806999,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "HFE": {
+      "iata": "HFE",
+      "name": "Hefei Xinqiao International Airport",
+      "city": "Hefei",
+      "country": "CN",
+      "latitude": 31.98779,
+      "longitude": 116.9769,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "HGH": {
+      "iata": "HGH",
+      "name": "Hangzhou Xiaoshan International Airport",
+      "city": "Hangzhou",
+      "country": "CN",
+      "latitude": 30.23609,
+      "longitude": 120.428865,
+      "departures": 3,
+      "arrivals": 2,
+      "visits": 5
+    },
+    "HKG": {
+      "iata": "HKG",
+      "name": "Hong Kong International Airport",
+      "city": "Hong Kong",
+      "country": "HK",
+      "latitude": 22.31184,
+      "longitude": 113.914862,
+      "departures": 5,
+      "arrivals": 6,
+      "visits": 11
+    },
+    "HRB": {
+      "iata": "HRB",
+      "name": "Harbin Taiping International Airport",
+      "city": "Harbin",
+      "country": "CN",
+      "latitude": 45.623402,
+      "longitude": 126.25,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "JFK": {
+      "iata": "JFK",
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "country": "US",
+      "latitude": 40.639447,
+      "longitude": -73.779317,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "JJN": {
+      "iata": "JJN",
+      "name": "Quanzhou Jinjiang International Airport",
+      "city": "Quanzhou",
+      "country": "CN",
+      "latitude": 24.795855,
+      "longitude": 118.588599,
+      "departures": 2,
+      "arrivals": 1,
+      "visits": 3
+    },
+    "KHH": {
+      "iata": "KHH",
+      "name": "Kaohsiung International Airport",
+      "city": "Kaohsiung (Xiaogang)",
+      "country": "TW",
+      "latitude": 22.577101,
+      "longitude": 120.349998,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "KMG": {
+      "iata": "KMG",
+      "name": "Kunming Changshui International Airport",
+      "city": "Kunming",
+      "country": "CN",
+      "latitude": 25.110313,
+      "longitude": 102.936743,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "KUL": {
+      "iata": "KUL",
+      "name": "Kuala Lumpur International Airport",
+      "city": "Sepang",
+      "country": "MY",
+      "latitude": 2.74558,
+      "longitude": 101.709999,
+      "departures": 3,
+      "arrivals": 2,
+      "visits": 5
+    },
+    "KWE": {
+      "iata": "KWE",
+      "name": "Guiyang Longdongbao International Airport",
+      "city": "Guiyang (Nanming)",
+      "country": "CN",
+      "latitude": 26.541805,
+      "longitude": 106.80402,
+      "departures": 2,
+      "arrivals": 1,
+      "visits": 3
+    },
+    "KWL": {
+      "iata": "KWL",
+      "name": "Guilin Liangjiang International Airport",
+      "city": "Guilin (Lingui)",
+      "country": "CN",
+      "latitude": 25.219828,
+      "longitude": 110.039553,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "LAX": {
+      "iata": "LAX",
+      "name": "Los Angeles International Airport",
+      "city": "Los Angeles",
+      "country": "US",
+      "latitude": 33.942501,
+      "longitude": -118.407997,
+      "departures": 2,
+      "arrivals": 2,
+      "visits": 4
+    },
+    "LGW": {
+      "iata": "LGW",
+      "name": "London Gatwick Airport",
+      "city": "London",
+      "country": "GB",
+      "latitude": 51.148744,
+      "longitude": -0.185739,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "LHR": {
+      "iata": "LHR",
+      "name": "London Heathrow Airport",
+      "city": "London",
+      "country": "GB",
+      "latitude": 51.470748,
+      "longitude": -0.459909,
+      "departures": 5,
+      "arrivals": 4,
+      "visits": 9
+    },
+    "LHW": {
+      "iata": "LHW",
+      "name": "Lanzhou Zhongchuan International Airport",
+      "city": "Lanzhou (Yongdeng)",
+      "country": "CN",
+      "latitude": 36.515202,
+      "longitude": 103.620003,
+      "departures": 1,
+      "arrivals": 2,
+      "visits": 3
+    },
+    "MAD": {
+      "iata": "MAD",
+      "name": "Adolfo Suárez Madrid–Barajas Airport",
+      "city": "Madrid",
+      "country": "ES",
+      "latitude": 40.493407,
+      "longitude": -3.572249,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "MAN": {
+      "iata": "MAN",
+      "name": "Manchester Airport",
+      "city": "Manchester, Greater Manchester",
+      "country": "GB",
+      "latitude": 53.349375,
+      "longitude": -2.279521,
+      "departures": 3,
+      "arrivals": 4,
+      "visits": 7
+    },
+    "MKZ": {
+      "iata": "MKZ",
+      "name": "Malacca International Airport",
+      "city": "Malacca",
+      "country": "MY",
+      "latitude": 2.265613,
+      "longitude": 102.252778,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "MNL": {
+      "iata": "MNL",
+      "name": "Ninoy Aquino International Airport",
+      "city": "Manila (Pasay)",
+      "country": "PH",
+      "latitude": 14.5086,
+      "longitude": 121.019997,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "NGB": {
+      "iata": "NGB",
+      "name": "Ningbo Lishe International Airport",
+      "city": "Ningbo",
+      "country": "CN",
+      "latitude": 29.82670021057129,
+      "longitude": 121.46199798583984,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "NKG": {
+      "iata": "NKG",
+      "name": "Nanjing Lukou International Airport",
+      "city": "Nanjing",
+      "country": "CN",
+      "latitude": 31.735032,
+      "longitude": 118.865949,
+      "departures": 15,
+      "arrivals": 17,
+      "visits": 32
+    },
+    "NLT": {
+      "iata": "NLT",
+      "name": "Xinyuan Nalati Airport",
+      "city": "Xinyuan",
+      "country": "CN",
+      "latitude": 43.4318,
+      "longitude": 83.3786,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "ORD": {
+      "iata": "ORD",
+      "name": "Chicago O'Hare International Airport",
+      "city": "Chicago",
+      "country": "US",
+      "latitude": 41.9786,
+      "longitude": -87.9048,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "PEK": {
+      "iata": "PEK",
+      "name": "Beijing Capital International Airport",
+      "city": "Beijing",
+      "country": "CN",
+      "latitude": 40.077349,
+      "longitude": 116.596702,
+      "departures": 5,
+      "arrivals": 5,
+      "visits": 10
+    },
+    "PEN": {
+      "iata": "PEN",
+      "name": "Penang International Airport",
+      "city": "Penang",
+      "country": "MY",
+      "latitude": 5.296303,
+      "longitude": 100.276185,
+      "departures": 3,
+      "arrivals": 3,
+      "visits": 6
+    },
+    "PKX": {
+      "iata": "PKX",
+      "name": "Beijing Daxing International Airport",
+      "city": "Beijing",
+      "country": "CN",
+      "latitude": 39.501289,
+      "longitude": 116.413967,
+      "departures": 3,
+      "arrivals": 1,
+      "visits": 4
+    },
+    "PMI": {
+      "iata": "PMI",
+      "name": "Palma de Mallorca Airport",
+      "city": "Palma de Mallorca",
+      "country": "ES",
+      "latitude": 39.551701,
+      "longitude": 2.73881,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "PVG": {
+      "iata": "PVG",
+      "name": "Shanghai Pudong International Airport",
+      "city": "Shanghai (Pudong)",
+      "country": "CN",
+      "latitude": 31.1434,
+      "longitude": 121.805,
+      "departures": 13,
+      "arrivals": 14,
+      "visits": 27
+    },
+    "REP": {
+      "iata": "REP",
+      "name": "Siem Reap International Airport",
+      "city": "Siem Reap",
+      "country": "KH",
+      "latitude": 13.4107,
+      "longitude": 103.813,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "SEA": {
+      "iata": "SEA",
+      "name": "Seattle–Tacoma International Airport",
+      "city": "Seattle",
+      "country": "US",
+      "latitude": 47.447943,
+      "longitude": -122.310276,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "SFO": {
+      "iata": "SFO",
+      "name": "San Francisco International Airport",
+      "city": "San Francisco",
+      "country": "US",
+      "latitude": 37.619806,
+      "longitude": -122.374821,
+      "departures": 5,
+      "arrivals": 5,
+      "visits": 10
+    },
+    "SGN": {
+      "iata": "SGN",
+      "name": "Tan Son Nhat International Airport",
+      "city": "Ho Chi Minh City",
+      "country": "VN",
+      "latitude": 10.8188,
+      "longitude": 106.652,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "SHA": {
+      "iata": "SHA",
+      "name": "Shanghai Hongqiao International Airport",
+      "city": "Shanghai (Minhang)",
+      "country": "CN",
+      "latitude": 31.198104,
+      "longitude": 121.33426,
+      "departures": 4,
+      "arrivals": 3,
+      "visits": 7
+    },
+    "SIN": {
+      "iata": "SIN",
+      "name": "Singapore Changi Airport",
+      "city": "Singapore",
+      "country": "SG",
+      "latitude": 1.35019,
+      "longitude": 103.994003,
+      "departures": 38,
+      "arrivals": 41,
+      "visits": 79
+    },
+    "SJJ": {
+      "iata": "SJJ",
+      "name": "Sarajevo International Airport",
+      "city": "Sarajevo",
+      "country": "BA",
+      "latitude": 43.8246,
+      "longitude": 18.331499,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "SYD": {
+      "iata": "SYD",
+      "name": "Sydney Kingsford Smith International Airport",
+      "city": "Sydney (Mascot)",
+      "country": "AU",
+      "latitude": -33.946098,
+      "longitude": 151.177002,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "SZX": {
+      "iata": "SZX",
+      "name": "Shenzhen Bao'an International Airport",
+      "city": "Shenzhen",
+      "country": "CN",
+      "latitude": 22.639474,
+      "longitude": 113.803262,
+      "departures": 11,
+      "arrivals": 6,
+      "visits": 17
+    },
+    "TAO": {
+      "iata": "TAO",
+      "name": "Qingdao Jiaodong International Airport",
+      "city": "Qingdao (Jiaozhou)",
+      "country": "CN",
+      "latitude": 36.361953,
+      "longitude": 120.088171,
+      "departures": 1,
+      "arrivals": 2,
+      "visits": 3
+    },
+    "TPE": {
+      "iata": "TPE",
+      "name": "Taiwan Taoyuan International Airport",
+      "city": "Taoyuan",
+      "country": "TW",
+      "latitude": 25.0777,
+      "longitude": 121.233002,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "UOY": {
+      "iata": "UOY",
+      "name": "Luoyang Beijiao Airport",
+      "city": "Luoyang",
+      "country": "CN",
+      "latitude": 34.7411,
+      "longitude": 112.388,
+      "departures": 0,
+      "arrivals": 1,
+      "visits": 1
+    },
+    "URC": {
+      "iata": "URC",
+      "name": "Ürümqi Tianshan International Airport",
+      "city": "Ürümqi",
+      "country": "CN",
+      "latitude": 43.913584,
+      "longitude": 87.479372,
+      "departures": 1,
+      "arrivals": 2,
+      "visits": 3
+    },
+    "WUX": {
+      "iata": "WUX",
+      "name": "Sunan Shuofang International Airport",
+      "city": "Wuxi",
+      "country": "CN",
+      "latitude": 31.496952,
+      "longitude": 120.43038,
+      "departures": 1,
+      "arrivals": 2,
+      "visits": 3
+    },
+    "XIY": {
+      "iata": "XIY",
+      "name": "Xi'an Xianyang International Airport",
+      "city": "Xi'an",
+      "country": "CN",
+      "latitude": 34.442207,
+      "longitude": 108.762385,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    },
+    "XMN": {
+      "iata": "XMN",
+      "name": "Xiamen Gaoqi International Airport",
+      "city": "Xiamen",
+      "country": "CN",
+      "latitude": 24.543889,
+      "longitude": 118.127454,
+      "departures": 7,
+      "arrivals": 9,
+      "visits": 16
+    },
+    "YTY": {
+      "iata": "YTY",
+      "name": "Yangzhou Taizhou Airport",
+      "city": "Yangzhou",
+      "country": "CN",
+      "latitude": 32.5634,
+      "longitude": 119.7198,
+      "departures": 1,
+      "arrivals": 0,
+      "visits": 1
+    },
+    "ZRH": {
+      "iata": "ZRH",
+      "name": "Zürich Airport",
+      "city": "Zurich",
+      "country": "CH",
+      "latitude": 47.458056,
+      "longitude": 8.548056,
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
+    }
+  },
+  "routes": [
+    {
+      "origin": "SIN",
+      "destination": "PVG",
+      "count": 7,
+      "distance_km": 26663,
+      "duration_minutes": 1945,
+      "airlines": [
+        "China Eastern",
+        "Singapore Airlines"
+      ],
+      "first_year": 2011,
+      "last_year": 2025
+    },
+    {
+      "origin": "PVG",
+      "destination": "SIN",
+      "count": 6,
+      "distance_km": 22828,
+      "duration_minutes": 1816,
+      "airlines": [
+        "Air China",
+        "China Eastern",
+        "Singapore Airlines"
+      ],
+      "first_year": 2011,
+      "last_year": 2026
+    },
+    {
+      "origin": "XMN",
+      "destination": "SIN",
+      "count": 4,
+      "distance_km": 11940,
+      "duration_minutes": 1002,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "LHR",
+      "destination": "SIN",
+      "count": 3,
+      "distance_km": 32679,
+      "duration_minutes": 1478,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2022,
+      "last_year": 2026
+    },
+    {
+      "origin": "NKG",
+      "destination": "XMN",
+      "count": 3,
+      "distance_km": 2787,
+      "duration_minutes": 267,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "LHR",
+      "count": 3,
+      "distance_km": 32679,
+      "duration_minutes": 1627,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2021,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "XMN",
+      "count": 3,
+      "distance_km": 8955,
+      "duration_minutes": 683,
+      "airlines": [
+        "Singapore Airlines",
+        "Xiamen Airlines"
+      ],
+      "first_year": 2022,
+      "last_year": 2025
+    },
+    {
+      "origin": "SZX",
+      "destination": "NKG",
+      "count": 3,
+      "distance_km": 4578,
+      "duration_minutes": 318,
+      "airlines": [
+        "Hainan Airlines",
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2024
+    },
+    {
+      "origin": "XMN",
+      "destination": "NKG",
+      "count": 3,
+      "distance_km": 2787,
+      "duration_minutes": 244,
+      "airlines": [
+        "China Eastern",
+        "Xiamen Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2025
+    },
+    {
+      "origin": "CAN",
+      "destination": "SIN",
+      "count": 2,
+      "distance_km": 5248,
+      "duration_minutes": 453,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "DOH",
+      "destination": "SIN",
+      "count": 2,
+      "distance_km": 12420,
+      "duration_minutes": 907,
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "HGH",
+      "destination": "SIN",
+      "count": 2,
+      "distance_km": 7308,
+      "duration_minutes": 583,
+      "airlines": [
+        "Hebei Airlines",
+        "Scoot"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "HKG",
+      "destination": "SIN",
+      "count": 2,
+      "distance_km": 5130,
+      "duration_minutes": 192,
+      "airlines": [
+        "Cathay Pacific",
+        "Singapore Airlines"
+      ],
+      "first_year": 2019,
+      "last_year": 2026
+    },
+    {
+      "origin": "NKG",
+      "destination": "SZX",
+      "count": 2,
+      "distance_km": 3052,
+      "duration_minutes": 258,
+      "airlines": [
+        "Hainan Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2023
+    },
+    {
+      "origin": "SFO",
+      "destination": "SIN",
+      "count": 2,
+      "distance_km": 27172,
+      "duration_minutes": 1970,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "SHA",
+      "destination": "CAN",
+      "count": 2,
+      "distance_km": 2616,
+      "duration_minutes": 225,
+      "airlines": [
+        "China Eastern",
+        "Juneyao Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2024
+    },
+    {
+      "origin": "SIN",
+      "destination": "CAN",
+      "count": 2,
+      "distance_km": 5248,
+      "duration_minutes": 419,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "HKG",
+      "count": 2,
+      "distance_km": 5130,
+      "duration_minutes": 221,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "PEK",
+      "count": 2,
+      "distance_km": 8982,
+      "duration_minutes": 682,
+      "airlines": [
+        "Air China",
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "PEN",
+      "count": 2,
+      "distance_km": 1202,
+      "duration_minutes": 120,
+      "airlines": [
+        "Scoot",
+        "Singapore Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "SFO",
+      "count": 2,
+      "distance_km": 27172,
+      "duration_minutes": 1714,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "SZX",
+      "destination": "SHA",
+      "count": 2,
+      "distance_km": 2686,
+      "duration_minutes": 202,
+      "airlines": [
+        "Shenzhen Airlines",
+        "Spring Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "AUH",
+      "destination": "MAN",
+      "count": 1,
+      "distance_km": 5668,
+      "duration_minutes": 450,
+      "airlines": [
+        "Etihad Airways"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "AUH",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 6558,
+      "duration_minutes": 456,
+      "airlines": [
+        "Etihad Airways"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "BAH",
+      "destination": "MAN",
+      "count": 1,
+      "distance_km": 5267,
+      "duration_minutes": 411,
+      "airlines": [
+        "Gulf Air"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "BAH",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 6338,
+      "duration_minutes": 443,
+      "airlines": [
+        "Gulf Air"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "BCN",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 9875,
+      "airlines": [
+        "Air China"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "BHD",
+      "destination": "MAN",
+      "count": 1,
+      "distance_km": 273,
+      "duration_minutes": 37,
+      "airlines": [
+        "Easyjet"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "BKK",
+      "destination": "CNX",
+      "count": 1,
+      "distance_km": 587,
+      "duration_minutes": 56,
+      "airlines": [
+        "Thai Airways"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "BKK",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 1430,
+      "duration_minutes": 120,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "BNE",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 6141,
+      "duration_minutes": 483,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2011,
+      "last_year": 2011
+    },
+    {
+      "origin": "BOS",
+      "destination": "SFO",
+      "count": 1,
+      "distance_km": 4352,
+      "duration_minutes": 413,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2013,
+      "last_year": 2013
+    },
+    {
+      "origin": "CAN",
+      "destination": "HGH",
+      "count": 1,
+      "distance_km": 1099,
+      "duration_minutes": 93,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "CAN",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 1255,
+      "duration_minutes": 107,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "CAN",
+      "destination": "SHA",
+      "count": 1,
+      "distance_km": 1308,
+      "duration_minutes": 89,
+      "airlines": [
+        "Juneyao Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "CDG",
+      "destination": "DOH",
+      "count": 1,
+      "distance_km": 4959,
+      "duration_minutes": 401,
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "CGK",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 896,
+      "duration_minutes": 76,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "CKG",
+      "destination": "WUX",
+      "count": 1,
+      "distance_km": 1375,
+      "duration_minutes": 143,
+      "airlines": [
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "CMB",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 2750,
+      "duration_minutes": 211,
+      "airlines": [
+        "Sri Lanka Airlines"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "CNX",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 2016,
+      "duration_minutes": 158,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "CSX",
+      "destination": "CZX",
+      "count": 1,
+      "distance_km": 874,
+      "duration_minutes": 82,
+      "airlines": [
+        "Kunming Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "CSX",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 799,
+      "duration_minutes": 72,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "CZX",
+      "destination": "CTU",
+      "count": 1,
+      "distance_km": 1583,
+      "duration_minutes": 131,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "CZX",
+      "destination": "SZX",
+      "count": 1,
+      "distance_km": 1520,
+      "duration_minutes": 130,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "DLC",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 838,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2007,
+      "last_year": 2007
+    },
+    {
+      "origin": "DLC",
+      "destination": "TAO",
+      "count": 1,
+      "distance_km": 358,
+      "duration_minutes": 44,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2017,
+      "last_year": 2017
+    },
+    {
+      "origin": "DNH",
+      "destination": "LHW",
+      "count": 1,
+      "distance_km": 1048,
+      "duration_minutes": 75,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "DOH",
+      "destination": "CDG",
+      "count": 1,
+      "distance_km": 4959,
+      "duration_minutes": 386,
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "DTW",
+      "destination": "DCA",
+      "count": 1,
+      "distance_km": 615,
+      "duration_minutes": 90,
+      "airlines": [
+        "Delta Airlines"
+      ],
+      "first_year": 2013,
+      "last_year": 2013
+    },
+    {
+      "origin": "DXB",
+      "destination": "CDG",
+      "count": 1,
+      "distance_km": 5236,
+      "duration_minutes": 395,
+      "airlines": [
+        "Emirates"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "EWR",
+      "destination": "EDI",
+      "count": 1,
+      "distance_km": 5252,
+      "duration_minutes": 364,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "EWR",
+      "destination": "HKG",
+      "count": 1,
+      "distance_km": 12973,
+      "duration_minutes": 939,
+      "airlines": [
+        "Cathay Pacific"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "EWR",
+      "destination": "SFO",
+      "count": 1,
+      "distance_km": 4123,
+      "duration_minutes": 352,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "FCO",
+      "destination": "DOH",
+      "count": 1,
+      "distance_km": 4021,
+      "duration_minutes": 289,
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "FOC",
+      "destination": "CAN",
+      "count": 1,
+      "distance_km": 763,
+      "duration_minutes": 81,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "FOC",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 678,
+      "duration_minutes": 68,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "FOC",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 3196,
+      "duration_minutes": 280,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "FRA",
+      "destination": "SJJ",
+      "count": 1,
+      "distance_km": 1012,
+      "airlines": [
+        "Lufthansa"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "GLA",
+      "destination": "BHD",
+      "count": 1,
+      "distance_km": 166,
+      "duration_minutes": 25,
+      "airlines": [
+        "Easyjet"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "GRX",
+      "destination": "PMI",
+      "count": 1,
+      "distance_km": 616,
+      "duration_minutes": 54,
+      "airlines": [
+        "Vueling"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "HAN",
+      "destination": "REP",
+      "count": 1,
+      "distance_km": 875,
+      "duration_minutes": 81,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2018
+    },
+    {
+      "origin": "HGH",
+      "destination": "CAN",
+      "count": 1,
+      "distance_km": 1099,
+      "duration_minutes": 108,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "HKG",
+      "destination": "JFK",
+      "count": 1,
+      "distance_km": 12963,
+      "duration_minutes": 893,
+      "airlines": [
+        "Cathay Pacific"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "HKG",
+      "destination": "PEK",
+      "count": 1,
+      "distance_km": 1993,
+      "duration_minutes": 162,
+      "airlines": [
+        "Air China"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "HKG",
+      "destination": "TPE",
+      "count": 1,
+      "distance_km": 822,
+      "duration_minutes": 88,
+      "airlines": [
+        "China Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "HRB",
+      "destination": "PEK",
+      "count": 1,
+      "distance_km": 1095,
+      "duration_minutes": 101,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2017,
+      "last_year": 2017
+    },
+    {
+      "origin": "JJN",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 863,
+      "duration_minutes": 86,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "JJN",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 3041,
+      "duration_minutes": 248,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "KHH",
+      "destination": "WUX",
+      "count": 1,
+      "distance_km": 992,
+      "duration_minutes": 119,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "KUL",
+      "destination": "PEN",
+      "count": 1,
+      "distance_km": 304,
+      "duration_minutes": 33,
+      "airlines": [
+        "AirAsia Malaysia"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "KUL",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 315,
+      "airlines": [
+        "AirAsia Malaysia"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "KUL",
+      "destination": "SZX",
+      "count": 1,
+      "distance_km": 2552,
+      "duration_minutes": 220,
+      "airlines": [
+        "AirAsia Malaysia"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "KWE",
+      "destination": "CSX",
+      "count": 1,
+      "distance_km": 677,
+      "duration_minutes": 64,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "KWE",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 1550,
+      "duration_minutes": 120,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "origin": "KWL",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 1125,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2003,
+      "last_year": 2003
+    },
+    {
+      "origin": "LAX",
+      "destination": "SEA",
+      "count": 1,
+      "distance_km": 1535,
+      "duration_minutes": 153,
+      "airlines": [
+        "Delta Airlines"
+      ],
+      "first_year": 2013,
+      "last_year": 2013
+    },
+    {
+      "origin": "LAX",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 14102,
+      "duration_minutes": 1055,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "LGW",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 9203,
+      "duration_minutes": 664,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "LHR",
+      "destination": "EWR",
+      "count": 1,
+      "distance_km": 5569,
+      "duration_minutes": 451,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "LHR",
+      "destination": "FRA",
+      "count": 1,
+      "distance_km": 654,
+      "airlines": [
+        "Lufthansa"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "LHW",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 1654,
+      "duration_minutes": 129,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "MAN",
+      "destination": "AUH",
+      "count": 1,
+      "distance_km": 5668,
+      "duration_minutes": 402,
+      "airlines": [
+        "Etihad Airways"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "MAN",
+      "destination": "BAH",
+      "count": 1,
+      "distance_km": 5267,
+      "duration_minutes": 366,
+      "airlines": [
+        "Gulf Air"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "MAN",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 10961,
+      "duration_minutes": 785,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "MKZ",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 217,
+      "duration_minutes": 36,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "MNL",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 2375,
+      "duration_minutes": 185,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "NGB",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 3670,
+      "duration_minutes": 282,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "NKG",
+      "destination": "CAN",
+      "count": 1,
+      "distance_km": 1255,
+      "duration_minutes": 110,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "NKG",
+      "destination": "CSX",
+      "count": 1,
+      "distance_km": 799,
+      "duration_minutes": 76,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "NKG",
+      "destination": "DLC",
+      "count": 1,
+      "distance_km": 838,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2007,
+      "last_year": 2007
+    },
+    {
+      "origin": "NKG",
+      "destination": "FOC",
+      "count": 1,
+      "distance_km": 747,
+      "duration_minutes": 69,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "NKG",
+      "destination": "JJN",
+      "count": 1,
+      "distance_km": 863,
+      "duration_minutes": 83,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "NKG",
+      "destination": "KMG",
+      "count": 1,
+      "distance_km": 1870,
+      "duration_minutes": 153,
+      "airlines": [
+        "Shandong Airlines"
+      ],
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "origin": "NKG",
+      "destination": "KWL",
+      "count": 1,
+      "distance_km": 1125,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2003,
+      "last_year": 2003
+    },
+    {
+      "origin": "NKG",
+      "destination": "LHW",
+      "count": 1,
+      "distance_km": 1654,
+      "duration_minutes": 176,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "NKG",
+      "destination": "URC",
+      "count": 1,
+      "distance_km": 3051,
+      "duration_minutes": 259,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2012,
+      "last_year": 2012
+    },
+    {
+      "origin": "NKG",
+      "destination": "XIY",
+      "count": 1,
+      "distance_km": 1104,
+      "duration_minutes": 106,
+      "airlines": [
+        "Juneyao Airlines"
+      ],
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "origin": "NLT",
+      "destination": "URC",
+      "count": 1,
+      "distance_km": 334,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2012,
+      "last_year": 2012
+    },
+    {
+      "origin": "ORD",
+      "destination": "SFO",
+      "count": 1,
+      "distance_km": 2968,
+      "duration_minutes": 247,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "PEK",
+      "destination": "HKG",
+      "count": 1,
+      "distance_km": 1993,
+      "duration_minutes": 197,
+      "airlines": [
+        "Cathay Dragon"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "PEK",
+      "destination": "MAD",
+      "count": 1,
+      "distance_km": 9207,
+      "duration_minutes": 669,
+      "airlines": [
+        "Air China"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "PEK",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 981,
+      "duration_minutes": 96,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "PEK",
+      "destination": "SZX",
+      "count": 1,
+      "distance_km": 2077,
+      "duration_minutes": 172,
+      "airlines": [
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "PEK",
+      "destination": "XMN",
+      "count": 1,
+      "distance_km": 1774,
+      "duration_minutes": 144,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2014,
+      "last_year": 2014
+    },
+    {
+      "origin": "PEN",
+      "destination": "KUL",
+      "count": 1,
+      "distance_km": 304,
+      "duration_minutes": 39,
+      "airlines": [
+        "AirAsia Malaysia"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "PEN",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 3651,
+      "duration_minutes": 289,
+      "airlines": [
+        "Shanghai Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "PEN",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 601,
+      "duration_minutes": 67,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "PKX",
+      "destination": "CSX",
+      "count": 1,
+      "distance_km": 1446,
+      "duration_minutes": 113,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2021,
+      "last_year": 2021
+    },
+    {
+      "origin": "PKX",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 4430,
+      "duration_minutes": 330,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "PKX",
+      "destination": "UOY",
+      "count": 1,
+      "distance_km": 735,
+      "duration_minutes": 84,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "PMI",
+      "destination": "BCN",
+      "count": 1,
+      "distance_km": 204,
+      "duration_minutes": 40,
+      "airlines": [
+        "RyanAir"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "PVG",
+      "destination": "AUH",
+      "count": 1,
+      "distance_km": 6555,
+      "duration_minutes": 534,
+      "airlines": [
+        "Etihad Airways"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "PVG",
+      "destination": "DTW",
+      "count": 1,
+      "distance_km": 11485,
+      "duration_minutes": 839,
+      "airlines": [
+        "Delta Airlines"
+      ],
+      "first_year": 2013,
+      "last_year": 2013
+    },
+    {
+      "origin": "PVG",
+      "destination": "HAN",
+      "count": 1,
+      "distance_km": 1939,
+      "duration_minutes": 168,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2018
+    },
+    {
+      "origin": "PVG",
+      "destination": "HKG",
+      "count": 1,
+      "distance_km": 1254,
+      "duration_minutes": 120,
+      "airlines": [
+        "Cathay Dragon"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "PVG",
+      "destination": "KWE",
+      "count": 1,
+      "distance_km": 1702,
+      "duration_minutes": 180,
+      "airlines": [
+        "Shanghai Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "PVG",
+      "destination": "LGW",
+      "count": 1,
+      "distance_km": 9262,
+      "duration_minutes": 673,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "PVG",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 273,
+      "duration_minutes": 41,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "REP",
+      "destination": "SGN",
+      "count": 1,
+      "distance_km": 423,
+      "duration_minutes": 47,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2018
+    },
+    {
+      "origin": "SEA",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 9208,
+      "duration_minutes": 703,
+      "airlines": [
+        "Delta Airlines"
+      ],
+      "first_year": 2013,
+      "last_year": 2013
+    },
+    {
+      "origin": "SFO",
+      "destination": "EWR",
+      "count": 1,
+      "distance_km": 4123,
+      "duration_minutes": 293,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "SFO",
+      "destination": "LAX",
+      "count": 1,
+      "distance_km": 543,
+      "duration_minutes": 95,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2013,
+      "last_year": 2013
+    },
+    {
+      "origin": "SFO",
+      "destination": "ORD",
+      "count": 1,
+      "distance_km": 2968,
+      "duration_minutes": 203,
+      "airlines": [
+        "United Airlines"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "SGN",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 2735,
+      "duration_minutes": 217,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2018
+    },
+    {
+      "origin": "SHA",
+      "destination": "SZX",
+      "count": 1,
+      "distance_km": 1343,
+      "duration_minutes": 123,
+      "airlines": [
+        "Juneyao Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "SHA",
+      "destination": "XMN",
+      "count": 1,
+      "distance_km": 878,
+      "duration_minutes": 87,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "BAH",
+      "count": 1,
+      "distance_km": 6338,
+      "duration_minutes": 460,
+      "airlines": [
+        "Gulf Air"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "BKK",
+      "count": 1,
+      "distance_km": 1430,
+      "duration_minutes": 119,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "CGK",
+      "count": 1,
+      "distance_km": 896,
+      "duration_minutes": 82,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "SIN",
+      "destination": "CMB",
+      "count": 1,
+      "distance_km": 2750,
+      "duration_minutes": 191,
+      "airlines": [
+        "Sri Lanka Airlines"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "SIN",
+      "destination": "DMK",
+      "count": 1,
+      "distance_km": 1446,
+      "duration_minutes": 142,
+      "airlines": [
+        "AirAsia Thailand"
+      ],
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "origin": "SIN",
+      "destination": "DOH",
+      "count": 1,
+      "distance_km": 6210,
+      "duration_minutes": 425,
+      "airlines": [
+        "Qatar Airways"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "SIN",
+      "destination": "DXB",
+      "count": 1,
+      "distance_km": 5849,
+      "duration_minutes": 396,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "origin": "SIN",
+      "destination": "FOC",
+      "count": 1,
+      "distance_km": 3196,
+      "duration_minutes": 256,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "HGH",
+      "count": 1,
+      "distance_km": 3649,
+      "duration_minutes": 276,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "SIN",
+      "destination": "LAX",
+      "count": 1,
+      "distance_km": 14102,
+      "duration_minutes": 848,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "MAN",
+      "count": 1,
+      "distance_km": 10961,
+      "duration_minutes": 805,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "MNL",
+      "count": 1,
+      "distance_km": 2375,
+      "duration_minutes": 194,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
+      "destination": "NGB",
+      "count": 1,
+      "distance_km": 3670,
+      "duration_minutes": 282,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "origin": "SIN",
+      "destination": "SYD",
+      "count": 1,
+      "distance_km": 6288,
+      "duration_minutes": 422,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2011,
+      "last_year": 2011
+    },
+    {
+      "origin": "SIN",
+      "destination": "TAO",
+      "count": 1,
+      "distance_km": 4214,
+      "duration_minutes": 325,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "SJJ",
+      "destination": "ZRH",
+      "count": 1,
+      "distance_km": 862,
+      "airlines": [
+        "Swiss"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SZX",
+      "destination": "CZX",
+      "count": 1,
+      "distance_km": 1520,
+      "duration_minutes": 103,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "SZX",
+      "destination": "HFE",
+      "count": 1,
+      "distance_km": 1191,
+      "duration_minutes": 102,
+      "airlines": [
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "SZX",
+      "destination": "KUL",
+      "count": 1,
+      "distance_km": 2552,
+      "duration_minutes": 205,
+      "airlines": [
+        "AirAsia Malaysia"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "SZX",
+      "destination": "PEK",
+      "count": 1,
+      "distance_km": 2077,
+      "duration_minutes": 167,
+      "airlines": [
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SZX",
+      "destination": "PKX",
+      "count": 1,
+      "distance_km": 2077,
+      "duration_minutes": 165,
+      "airlines": [
+        "China Southern"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "SZX",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 2589,
+      "duration_minutes": 185,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2021,
+      "last_year": 2021
+    },
+    {
+      "origin": "TAO",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 4214,
+      "duration_minutes": 325,
+      "airlines": [
+        "Scoot"
+      ],
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "origin": "TPE",
+      "destination": "HKG",
+      "count": 1,
+      "distance_km": 822,
+      "duration_minutes": 89,
+      "airlines": [
+        "China Airlines"
+      ],
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "origin": "URC",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 3571,
+      "duration_minutes": 255,
+      "airlines": [
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2012,
+      "last_year": 2012
+    },
+    {
+      "origin": "WUX",
+      "destination": "KHH",
+      "count": 1,
+      "distance_km": 992,
+      "duration_minutes": 145,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2016,
+      "last_year": 2016
+    },
+    {
+      "origin": "XIY",
+      "destination": "NKG",
+      "count": 1,
+      "distance_km": 1104,
+      "duration_minutes": 100,
+      "airlines": [
+        "Shenzhen Airlines"
+      ],
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "origin": "YTY",
+      "destination": "XMN",
+      "count": 1,
+      "distance_km": 1017,
+      "duration_minutes": 98,
+      "airlines": [
+        "Spring Airlines"
+      ],
+      "first_year": 2018,
+      "last_year": 2018
+    },
+    {
+      "origin": "ZRH",
+      "destination": "LHR",
+      "count": 1,
+      "distance_km": 788,
+      "airlines": [
+        "Swiss"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    }
+  ],
+  "specialLiveries": [
+    {
+      "registration": "B-5912",
+      "aircraft": "Airbus 330-300",
+      "airline": "Air China",
+      "livery": "Star Alliance Livery"
+    },
+    {
+      "registration": "G-EZTK",
+      "aircraft": "Airbus 320-214",
+      "airline": "Easyjet",
+      "livery": "Female Pilot Initiate Livery"
+    },
+    {
+      "registration": "G-UZHS",
+      "aircraft": "Airbus 320-251N",
+      "airline": "Easyjet",
+      "livery": "Eurovision Song Contest Livery"
+    },
+    {
+      "registration": "A6-BMI",
+      "aircraft": "Boeing 787-10",
+      "airline": "Etihad Airways",
+      "livery": "Eco-demonstrator Livery"
+    },
+    {
+      "registration": "A6-BND",
+      "aircraft": "Boeing 787-9",
+      "airline": "Etihad Airways",
+      "livery": "Manchester City Livery"
+    },
+    {
+      "registration": "A9C-FG",
+      "aircraft": "Boeing 787-9",
+      "airline": "Gulf Air",
+      "livery": "Gulf Air 75th Retro Livery"
+    },
+    {
+      "registration": "A9C-FH",
+      "aircraft": "Boeing 787-9",
+      "airline": "Gulf Air",
+      "livery": "Bahrain Formula 1 livery"
+    },
+    {
+      "registration": "B-20DT",
+      "aircraft": "Boeing 787-9",
+      "airline": "Juneyao Airlines",
+      "livery": "100th 787 for China livery"
+    },
+    {
+      "registration": "N653UA",
+      "aircraft": "Boeing 767-322(ER)",
+      "airline": "United Airlines",
+      "livery": "Star Alliance Livery"
+    },
+    {
+      "registration": "VN-A327",
+      "aircraft": "Airbus 321-231",
+      "airline": "Vietnam Airlines",
+      "livery": "SkyTeam Livery"
+    },
+    {
+      "registration": "B-1356",
+      "aircraft": "Boeing 787-9",
+      "airline": "Xiamen Airlines",
+      "livery": "United Dreams Livery"
+    },
+    {
+      "registration": "B-5633",
+      "aircraft": "Boeing 737-85C",
+      "airline": "Xiamen Airlines",
+      "livery": "SkyTeam Livery"
+    },
+    {
+      "registration": "B-5688",
+      "aircraft": "Boeing 737-85C",
+      "airline": "Xiamen Airlines",
+      "livery": "100th Boeing Aircraft for Xiamen Air Livery"
+    }
+  ],
+  "limitations": {
+    "missing_airport_coordinates": []
+  }
+}
