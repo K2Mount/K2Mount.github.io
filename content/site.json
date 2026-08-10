@@ -6,8 +6,8 @@
       "YANG"
     ],
     "chineseName": "楊翥成",
-    "subtitle": "Chemist. Materials Scientist. Explorer.",
-    "eyebrow": "Chemistry / Materials / Exploration",
+    "subtitle": "Chemist. Explorer.",
+    "eyebrow": "Atomic-Precise Materials / AI for Chemistry / Exploration",
     "intro": "I work at the intersection of atomic precision, intelligent synthesis, and functional nanomaterials, while exploring the world through photography and aviation.",
     "portrait": {
       "src": "assets/images/Myself/DSC08674.jpg",
@@ -33,12 +33,12 @@
     {
       "title": "Flying",
       "href": "flying.html",
-      "text": "Aviation photographs, routes, aircraft, windows, and motion."
+      "text": "Aviation photographs, routes, special aircraft, windows, and motion."
     },
     {
       "title": "Contact",
       "href": "contact.html",
-      "text": "Email, Scholar, GitHub, and lab links."
+      "text": "Let's connect and create big! My Email, Scholar, and lab links."
     }
   ],
   "academic": {
