@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aviation photography and flight map by Zhucheng Yang.">
+  <title>Flying | Zhucheng Yang</title>
+  <link rel="icon" href="assets/images/general/lake2%20copy.png">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="flying">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" aria-label="Site header">
+    <div class="site-mark site-mark--empty" aria-hidden="true"></div>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="main-nav" id="site-nav" data-nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="academic.html">Academic</a>
+      <a href="photography.html">Photography</a>
+      <a href="flying.html" aria-current="page">Flying</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="flying-title">
+      <div class="page-hero-media">
+        <img src="assets/images/covers/飞行封面.jpg" alt="Aviation cover photograph">
+      </div>
+      <div class="page-hero-inner">
+        <p class="eyebrow">Aviation</p>
+        <h1 class="page-title" id="flying-title">Flying</h1>
+        <p class="page-subtitle">Aircraft, airports, window views, and historical routes exported from the personal Flight Log.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="lede is-compact">
+        <div>
+          <p class="page-kicker">Where I've flown</p>
+          <h2 class="pub-title">World flight map</h2>
+        </div>
+      </div>
+      <div class="flight-map-wrap" id="flight-map" aria-label="World flight map visualization"></div>
+    </section>
+
+    <section class="section">
+      <div class="lede is-compact">
+        <div>
+          <p class="page-kicker">Flight history</p>
+          <h2 class="pub-title">General statistics</h2>
+        </div>
+      </div>
+      <div class="subgrid" data-flight-summary aria-label="Flight statistics"></div>
+    </section>
+
+    <section class="section" data-special-liveries-section>
+      <div class="lede is-compact">
+        <div>
+          <p class="page-kicker">Aircraft history</p>
+          <h2 class="pub-title">Special liveries flown</h2>
+        </div>
+      </div>
+      <div class="flight-log special-livery-list" data-special-liveries aria-label="Special livery aircraft flown"></div>
+    </section>
+
+    <section class="section">
+      <div class="lede is-compact">
+        <div>
+          <p class="page-kicker">Planespotting</p>
+          <h2 class="pub-title">Airport index</h2>
+        </div>
+      </div>
+      <div class="spotting-list" data-planespotting></div>
+    </section>
+
+    <section class="section">
+      <div class="lede is-compact">
+        <div>
+          <p class="page-kicker">Aviation photography</p>
+          <h2 class="pub-title">Aviation photography</h2>
+        </div>
+      </div>
+      <div class="aviation-gallery" data-aviation-gallery></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2026 Zhucheng Yang</span>
+    <span><a href="photography.html">Travel journal</a></span>
+  </footer>
+  <script src="assets/js/gallery-layout.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>

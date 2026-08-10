@@ -1,0 +1,126 @@
+[
+  {
+    "date": "2026-08-11",
+    "displayDate": "AUG 11",
+    "category": "AWARD",
+    "title": "Outstanding Young Researcher Award 2025 — Honorable Mention",
+    "organization": "AIChE Singapore Local Section",
+    "text": "Received an Honorable Mention in the 2025 Outstanding Young Researcher Award from the AIChE Singapore Local Section.",
+    "textZh": "获 AIChE 新加坡分会 2025 Outstanding Young Researcher Award 荣誉提名。"
+  },
+  {
+    "date": "2026-07-14",
+    "displayDate": "JUL 14",
+    "category": "MILESTONE",
+    "title": "NUS Commencement 2026",
+    "text": "Celebrated my PhD commencement at the National University of Singapore.",
+    "textZh": "参加新加坡国立大学 2026 年毕业典礼，纪念博士阶段的重要里程碑。"
+  },
+  {
+    "date": "2026-07-06",
+    "displayDate": "JUL 06",
+    "category": "CONFERENCE",
+    "format": "Talk",
+    "event": "NUS–Tsinghua Joint Research Symposium",
+    "title": "NUS–Tsinghua Joint Research Symposium",
+    "text": "Presented our NUS–Tsinghua collaborative project, “Biomimetic Metal Cluster Catalysts for Carbon Neutrality,” on integrating atomically precise metal clusters with protein nanocages as programmable biomimetic catalytic systems.",
+    "textZh": "在 NUS–Tsinghua 联合科研研讨会上报告“面向碳中和的仿生金属团簇催化剂”合作研究，介绍原子精确团簇与蛋白纳米笼的协同构筑。"
+  },
+  {
+    "date": "2026-04",
+    "datePrecision": "month",
+    "displayDate": "APR 2026",
+    "category": "CONFERENCE",
+    "format": "Invited Talk",
+    "event": "Runyuan Young Scholars Forum",
+    "host": "Shenzhen Technology University",
+    "location": "Shenzhen, China",
+    "title": "Runyuan Young Scholars Forum",
+    "text": "Invited to present at the Runyuan Young Scholars Forum hosted by Shenzhen Technology University in Shenzhen.",
+    "textZh": "受邀参加深圳技术大学润园青年学者论坛并作学术报告。"
+  },
+  {
+    "date": "2026-03",
+    "datePrecision": "month",
+    "displayDate": "MAR 2026",
+    "category": "CONFERENCE",
+    "format": "Invited Talk",
+    "event": "11th National Symposium on Polyoxometalate Chemistry of the Chinese Chemical Society",
+    "location": "Guangzhou, China",
+    "title": "Polyoxometalate Chemistry Symposium",
+    "text": "Invited speaker at the 11th National Symposium on Polyoxometalate Chemistry of the Chinese Chemical Society in Guangzhou.",
+    "textZh": "受邀参加在广州举行的中国化学会第十一届全国多酸化学学术研讨会并作邀请报告。"
+  },
+  {
+    "date": "2026-02-12",
+    "displayDate": "FEB 12",
+    "category": "PUBLICATION",
+    "title": "JACS Cover Article",
+    "journal": "Journal of the American Chemical Society",
+    "text": "Our work on atomic-resolved structural evolution of gold nanostructures was featured as a JACS Front Cover article.",
+    "textZh": "我们关于金纳米结构原子分辨演化的研究获选为 JACS 正封面文章。"
+  },
+  {
+    "date": "2026-02-01",
+    "endDate": "2026-02-07",
+    "displayDate": "FEB 01-07",
+    "category": "CONFERENCE",
+    "format": "Poster",
+    "event": "Gordon Research Conference on Atomically Precise Nanochemistry",
+    "location": "Pomona, California, USA",
+    "title": "Gordon Research Conference",
+    "text": "Presented a poster at the Gordon Research Conference on Atomically Precise Nanochemistry in Pomona, California.",
+    "textZh": "在美国加州举行的 Atomically Precise Nanochemistry Gordon Research Conference 上进行了研究海报展示。"
+  },
+  {
+    "date": "2026-01-13",
+    "displayDate": "JAN 13",
+    "category": "PUBLICATION",
+    "title": "JACS Accepted: Atomic-Resolved Gold Nanostructure Evolution!",
+    "journal": "Journal of the American Chemical Society",
+    "text": "Our work on tetrahedral-unit assembly in atomic-resolved gold nanostructure evolution was published in JACS.",
+    "textZh": "我们在 JACS 发表金纳米结构原子分辨演化研究，揭示由四面体结构单元主导的组装路径。"
+  },
+  {
+    "date": "2025-11-20",
+    "displayDate": "NOV 20",
+    "category": "PUBLICATION",
+    "title": "Advanced Materials Inside Front Cover",
+    "journal": "Advanced Materials",
+    "text": "Our Perspective on ligand programming for precise surface engineering of metal nanoclusters was selected as an Advanced Materials Inside Front Cover.",
+    "textZh": "我们关于金属纳米团簇表面精确工程的观点文章获选为《Advanced Materials》内封面。"
+  },
+  {
+    "date": "2025-10-31",
+    "displayDate": "OCT 31",
+    "category": "MILESTONE",
+    "title": "PhD Degree Conferred",
+    "text": "Conferred the degree of Doctor of Philosophy by the National University of Singapore.",
+    "textZh": "获新加坡国立大学授予哲学博士学位。"
+  },
+  {
+    "date": "2025-10-13",
+    "displayDate": "OCT 13",
+    "category": "AWARD",
+    "title": "Best Poster Award",
+    "text": "Received the Best Poster Award at the 6th Academic Symposium on Cluster Science and Atomic Manufacturing in Ningbo, China.",
+    "textZh": "在宁波举行的第六届簇科学与原子制造学术研讨会上获最佳海报奖。"
+  },
+  {
+    "date": "2025-09-12",
+    "displayDate": "SEP 12",
+    "category": "MILESTONE",
+    "title": "Doctoral Thesis Defense",
+    "text": "Successfully defended my doctoral thesis at the National University of Singapore.",
+    "textZh": "在新加坡国立大学完成博士论文答辩。"
+  },
+  {
+    "date": "2025-08-13",
+    "displayDate": "AUG 13",
+    "category": "PUBLICATION",
+    "title": "Advanced Materials Perspective Accepted",
+    "journal": "Advanced Materials",
+    "text": "Our Perspective on ligand programming for functional design of metal nanoclusters was accepted by Advanced Materials.",
+    "textZh": "我们关于金属纳米团簇配体编程与功能设计的观点文章被《Advanced Materials》接收。"
+  }
+]
