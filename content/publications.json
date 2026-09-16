@@ -1,5 +1,18 @@
 [
   {
+    "image": "assets/images/publications/Paper20.png",
+    "title": "Degradation Mechanisms and Stabilization Strategies of Ag Nanoparticles and Atomically Precise Ag Nanoclusters for Electrochemical CO2 Reduction",
+    "authors": [
+      "Chenyu Fan",
+      "Jia-Hong Huang",
+      "Zhucheng Yang",
+      "Jianping Xie"
+    ],
+    "journal": "Small",
+    "year": "2026",
+    "link": "https://doi.org/10.1002/smll.75753"
+  },
+  {
     "image": "assets/images/publications/Paper18.png",
     "title": "Lighting up Metal Nanoclusters as Promising Molecular Emitters",
     "authors": [
