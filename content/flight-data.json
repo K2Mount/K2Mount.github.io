@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-10T03:02:56+00:00",
+  "generated_at": "2026-09-15T05:11:29+00:00",
   "source": "Flight log 2/data/flightlog.sqlite",
   "stats": {
-    "total_flights": 194,
-    "total_distance_km": 660632,
-    "total_duration_minutes": 47165,
-    "total_airports": 77,
+    "total_flights": 200,
+    "total_distance_km": 669032,
+    "total_duration_minutes": 47611,
+    "total_airports": 78,
     "total_countries": 23,
     "total_airlines": 33,
     "total_aircraft_families": 13
@@ -89,9 +89,9 @@
       "country": "TH",
       "latitude": 13.6811,
       "longitude": 100.747002,
-      "departures": 2,
-      "arrivals": 1,
-      "visits": 3
+      "departures": 3,
+      "arrivals": 2,
+      "visits": 5
     },
     "BNE": {
       "iata": "BNE",
@@ -213,6 +213,12 @@
       "departures": 2,
       "arrivals": 2,
       "visits": 4
+    },
+    "DAD": {
+      "iata": "DAD",
+      "departures": 1,
+      "arrivals": 1,
+      "visits": 2
     },
     "DCA": {
       "iata": "DCA",
@@ -727,9 +733,9 @@
       "country": "VN",
       "latitude": 10.8188,
       "longitude": 106.652,
-      "departures": 1,
-      "arrivals": 1,
-      "visits": 2
+      "departures": 3,
+      "arrivals": 3,
+      "visits": 6
     },
     "SHA": {
       "iata": "SHA",
@@ -749,9 +755,9 @@
       "country": "SG",
       "latitude": 1.35019,
       "longitude": 103.994003,
-      "departures": 38,
-      "arrivals": 41,
-      "visits": 79
+      "departures": 39,
+      "arrivals": 42,
+      "visits": 81
     },
     "SJJ": {
       "iata": "SJJ",
@@ -804,9 +810,9 @@
       "country": "TW",
       "latitude": 25.0777,
       "longitude": 121.233002,
-      "departures": 1,
-      "arrivals": 1,
-      "visits": 2
+      "departures": 2,
+      "arrivals": 2,
+      "visits": 4
     },
     "UOY": {
       "iata": "UOY",
@@ -1043,7 +1049,7 @@
       "destination": "SIN",
       "count": 2,
       "distance_km": 5130,
-      "duration_minutes": 192,
+      "duration_minutes": 375,
       "airlines": [
         "Cathay Pacific",
         "Singapore Airlines"
@@ -1105,7 +1111,7 @@
       "destination": "HKG",
       "count": 2,
       "distance_km": 5130,
-      "duration_minutes": 221,
+      "duration_minutes": 431,
       "airlines": [
         "Singapore Airlines"
       ],
@@ -1257,6 +1263,17 @@
       ],
       "first_year": 2019,
       "last_year": 2019
+    },
+    {
+      "origin": "BKK",
+      "destination": "TPE",
+      "count": 1,
+      "distance_km": 2502,
+      "airlines": [
+        "Thai Airways"
+      ],
+      "first_year": 2027,
+      "last_year": 2027
     },
     {
       "origin": "BNE",
@@ -1425,6 +1442,17 @@
       ],
       "first_year": 2024,
       "last_year": 2024
+    },
+    {
+      "origin": "DAD",
+      "destination": "SGN",
+      "count": 1,
+      "distance_km": 606,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
     },
     {
       "origin": "DLC",
@@ -1741,6 +1769,7 @@
       "destination": "SIN",
       "count": 1,
       "distance_km": 315,
+      "duration_minutes": 53,
       "airlines": [
         "AirAsia Malaysia"
       ],
@@ -2368,6 +2397,17 @@
     },
     {
       "origin": "SGN",
+      "destination": "DAD",
+      "count": 1,
+      "distance_km": 606,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SGN",
       "destination": "PVG",
       "count": 1,
       "distance_km": 2735,
@@ -2377,6 +2417,17 @@
       ],
       "first_year": 2018,
       "last_year": 2018
+    },
+    {
+      "origin": "SGN",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 1092,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
     },
     {
       "origin": "SHA",
@@ -2560,6 +2611,17 @@
     },
     {
       "origin": "SIN",
+      "destination": "SGN",
+      "count": 1,
+      "distance_km": 1092,
+      "airlines": [
+        "Vietnam Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "SIN",
       "destination": "SYD",
       "count": 1,
       "distance_km": 6288,
@@ -2679,6 +2741,17 @@
     },
     {
       "origin": "TPE",
+      "destination": "BKK",
+      "count": 1,
+      "distance_km": 2502,
+      "airlines": [
+        "Thai Airways"
+      ],
+      "first_year": 2027,
+      "last_year": 2027
+    },
+    {
+      "origin": "TPE",
       "destination": "HKG",
       "count": 1,
       "distance_km": 822,
@@ -2757,6 +2830,12 @@
       "livery": "Star Alliance Livery"
     },
     {
+      "registration": "B-919A",
+      "aircraft": "COMAC 919-100",
+      "airline": "China Eastern",
+      "livery": "The World’s First C919 Livery"
+    },
+    {
       "registration": "G-EZTK",
       "aircraft": "Airbus 320-214",
       "airline": "Easyjet",
@@ -2830,6 +2909,8 @@
     }
   ],
   "limitations": {
-    "missing_airport_coordinates": []
+    "missing_airport_coordinates": [
+      "DAD"
+    ]
   }
 }
