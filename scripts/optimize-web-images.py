@@ -52,10 +52,6 @@ def sips_available() -> bool:
     return shutil.which("sips") is not None
 
 
-def jpegtran_path() -> str | None:
-    return shutil.which("jpegtran") or shutil.which("/opt/local/bin/jpegtran")
-
-
 def image_info(path: Path) -> ImageInfo | None:
     result = run_sips(["-g", "pixelWidth", "-g", "pixelHeight", "-g", "format", "-g", "hasAlpha", str(path)])
     if result.returncode != 0:
@@ -191,6 +187,51 @@ def all_rules() -> list[ImageRule]:
     return unique
 
 
+def icc_marker_segments(data: bytes) -> list[bytes]:
+    """Extract raw JPEG APP2 ICC marker segments without decoding pixels."""
+    if not data.startswith(b"\xff\xd8"):
+        return []
+    segments: list[bytes] = []
+    position = 2
+    while position + 4 <= len(data) and data[position] == 0xFF:
+        marker_start = position
+        while position < len(data) and data[position] == 0xFF:
+            position += 1
+        marker = data[position]
+        position += 1
+        if marker == 0xDA:
+            break
+        if marker in {0x01, *range(0xD0, 0xD9)}:
+            continue
+        if position + 2 > len(data):
+            break
+        segment_length = int.from_bytes(data[position:position + 2], "big")
+        segment_end = position + segment_length
+        if segment_length < 2 or segment_end > len(data):
+            break
+        raw_segment = data[marker_start:segment_end]
+        if marker == 0xE2 and data[position + 2:position + 14] == b"ICC_PROFILE\x00":
+            segments.append(raw_segment)
+        position = segment_end
+    return segments
+
+
+def restore_icc_markers(path: Path, segments: list[bytes]) -> None:
+    """Reinsert source ICC APP2 markers after sips resizing if it dropped them."""
+    if not segments:
+        return
+    data = path.read_bytes()
+    if icc_marker_segments(data):
+        return
+    insert_at = 2
+    if len(data) >= 6 and data[2:4] == b"\xff\xe0":
+        segment_length = int.from_bytes(data[4:6], "big")
+        candidate = 4 + segment_length
+        if candidate <= len(data):
+            insert_at = candidate
+    path.write_bytes(data[:insert_at] + b"".join(segments) + data[insert_at:])
+
+
 def should_process(rule: ImageRule, info: ImageInfo, current_size: int) -> bool:
     if info.image_format != "jpeg":
         return False
@@ -203,6 +244,8 @@ def optimize(rule: ImageRule, info: ImageInfo) -> tuple[bool, str]:
     current_size = rule.path.stat().st_size
     if not should_process(rule, info, current_size):
         return False, "skipped"
+
+    source_icc_segments = icc_marker_segments(rule.path.read_bytes())
 
     with tempfile.NamedTemporaryFile(prefix=f"{rule.path.stem}-", suffix=rule.path.suffix, dir=rule.path.parent, delete=False) as handle:
         temp_path = Path(handle.name)
@@ -218,6 +261,7 @@ def optimize(rule: ImageRule, info: ImageInfo) -> tuple[bool, str]:
         temp_path.unlink(missing_ok=True)
         return False, f"failed: {result.stderr.strip() or result.stdout.strip()}"
 
+    restore_icc_markers(temp_path, source_icc_segments)
     replacement = image_info(temp_path)
     if replacement is None:
         temp_path.unlink(missing_ok=True)
@@ -233,33 +277,55 @@ def optimize(rule: ImageRule, info: ImageInfo) -> tuple[bool, str]:
     return True, f"{current_size / 1024 / 1024:.2f} MB -> {new_size / 1024 / 1024:.2f} MB, saved {saved / 1024 / 1024:.2f} MB"
 
 
-def strip_public_metadata(path: Path, info: ImageInfo, tool: str | None) -> tuple[bool, str]:
+def strip_public_metadata(path: Path, info: ImageInfo) -> tuple[bool, str]:
+    """Remove private JPEG marker segments losslessly while preserving ICC data."""
     if info.image_format != "jpeg" or info.has_alpha:
         return False, "skipped"
 
-    before_size = path.stat().st_size
-    if tool:
-        with tempfile.NamedTemporaryFile(prefix=f"{path.stem}-metadata-", suffix=path.suffix, dir=path.parent, delete=False) as handle:
-            temp_path = Path(handle.name)
-        temp_path.unlink(missing_ok=True)
-        result = subprocess.run(
-            [tool, "-copy", "icc", "-optimize", "-progressive", "-outfile", str(temp_path), str(path)],
-            cwd=REPO_ROOT,
-            text=True,
-            capture_output=True,
-        )
-        if result.returncode != 0:
-            temp_path.unlink(missing_ok=True)
-            return False, f"failed: {result.stderr.strip() or result.stdout.strip()}"
-        temp_path.replace(path)
-        after_size = path.stat().st_size
-        return after_size != before_size, f"metadata stripped, {before_size / 1024 / 1024:.2f} MB -> {after_size / 1024 / 1024:.2f} MB"
+    data = path.read_bytes()
+    if not data.startswith(b"\xff\xd8"):
+        return False, "failed: invalid JPEG header"
 
-    changed = False
-    for prop in PRIVATE_TEXT_PROPERTIES:
-        result = run_sips(["-s", prop, "", str(path)])
-        changed = changed or result.returncode == 0
-    return changed, "limited metadata text fields cleared with sips"
+    output = bytearray(data[:2])
+    position = 2
+    removed = 0
+    while position < len(data):
+        if data[position] != 0xFF:
+            return False, "failed: invalid JPEG marker stream"
+        marker_start = position
+        while position < len(data) and data[position] == 0xFF:
+            position += 1
+        if position >= len(data):
+            return False, "failed: truncated JPEG marker"
+        marker = data[position]
+        position += 1
+
+        if marker == 0xDA:
+            output.extend(data[marker_start:])
+            break
+        if marker in {0x01, *range(0xD0, 0xD9)}:
+            output.extend(data[marker_start:position])
+            continue
+        if position + 2 > len(data):
+            return False, "failed: truncated JPEG segment"
+        segment_length = int.from_bytes(data[position:position + 2], "big")
+        segment_end = position + segment_length
+        if segment_length < 2 or segment_end > len(data):
+            return False, "failed: invalid JPEG segment length"
+
+        # APP1 carries EXIF/XMP, APP13 commonly carries IPTC, and COM is free text.
+        if marker in {0xE1, 0xED, 0xFE}:
+            removed += 1
+        else:
+            output.extend(data[marker_start:segment_end])
+        position = segment_end
+    else:
+        return False, "failed: JPEG scan marker not found"
+
+    if not removed:
+        return False, "already clean"
+    path.write_bytes(output)
+    return True, f"metadata stripped losslessly ({removed} marker segment{'s' if removed != 1 else ''}); ICC preserved"
 
 
 def main() -> None:
@@ -277,7 +343,6 @@ def main() -> None:
     metadata_stripped = 0
     total_saved = 0
     rules = all_rules()
-    metadata_tool = jpegtran_path()
 
     for rule in rules:
         before_size = rule.path.stat().st_size
@@ -302,7 +367,7 @@ def main() -> None:
             failed += 1
             print(f"FAILED  {rule.path.relative_to(REPO_ROOT)} unreadable after optimization")
             continue
-        stripped, strip_message = strip_public_metadata(rule.path, latest_info, metadata_tool)
+        stripped, strip_message = strip_public_metadata(rule.path, latest_info)
         if stripped:
             metadata_stripped += 1
             print(f"METADATA {rule.group:22} {rule.path.relative_to(REPO_ROOT)} {strip_message}")
@@ -319,10 +384,7 @@ def main() -> None:
     print(f"Metadata stripped: {metadata_stripped}")
     print(f"Failed: {failed}")
     print(f"Approximate saved size: {total_saved / 1024 / 1024:.1f} MB")
-    if metadata_tool:
-        print("Private EXIF/GPS/device metadata was stripped from public JPEGs with jpegtran while preserving ICC profiles.")
-    else:
-        print("WARNING: jpegtran was not available; only limited text metadata fields were cleared with sips.")
+    print("Private EXIF/XMP/IPTC metadata is stripped losslessly from public JPEGs while preserving ICC profiles.")
 
     raise SystemExit(1 if failed else 0)
 

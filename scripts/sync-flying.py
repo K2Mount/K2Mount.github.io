@@ -13,6 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 FLYING_ROOT = Path(os.environ.get("K2_FLYING_DIR", REPO_ROOT / "assets" / "images" / "flying")).expanduser()
 FLYING_JSON = REPO_ROOT / "content" / "flying.json"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+EXCLUDED_DIRS = {"special-liveries"}
 
 
 def is_valid_image(path: Path) -> bool:
@@ -32,7 +33,9 @@ def scan_photos() -> list[str]:
     photos = [
         path.relative_to(FLYING_ROOT).as_posix()
         for path in FLYING_ROOT.rglob("*")
-        if is_valid_image(path) and not any(part.startswith(".") for part in path.relative_to(FLYING_ROOT).parts)
+        if is_valid_image(path)
+        and not any(part.startswith(".") for part in path.relative_to(FLYING_ROOT).parts)
+        and path.relative_to(FLYING_ROOT).parts[0] not in EXCLUDED_DIRS
     ]
     return sorted(photos, key=str.casefold)
 

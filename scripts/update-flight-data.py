@@ -13,11 +13,12 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 FLIGHT_LOG_PROJECT = Path(
-    os.environ.get("FLIGHT_LOG_DIR") or os.environ.get("FLIGHT_LOG_PROJECT", "/Users/yangzhucheng/Documents/Flight log 2")
+    os.environ.get("FLIGHT_LOG_DIR") or os.environ.get("FLIGHT_LOG_PROJECT", "/Users/yangzhucheng/Documents/My Flight Log")
 ).expanduser()
 OUTPUT_PATH = Path(os.environ.get("FLIGHT_DATA_OUTPUT", REPO_ROOT / "content" / "flight-data.json")).expanduser()
 EXPORT_MODULE = "flightlog.export_web"
 SPECIAL_LIVERY_WEB_FIELDS = ("image", "lengthM")
+AIRPORT_METADATA_FIELDS = ("name", "city", "country", "latitude", "longitude")
 
 
 def load_json(path: Path) -> dict:
@@ -47,9 +48,41 @@ def stats_count(payload: dict, key: str) -> int:
     return int(value) if isinstance(value, (int, float, str)) and str(value).isdigit() else 0
 
 
+def richness(item: dict) -> int:
+    return sum(value not in (None, "", [], {}) for value in item.values())
+
+
+def merge_richer(existing: dict, candidate: dict) -> dict:
+    richer, fallback = (candidate, existing) if richness(candidate) > richness(existing) else (existing, candidate)
+    merged = dict(richer)
+    for key, value in fallback.items():
+        if merged.get(key) in (None, "", [], {}) and value not in (None, "", [], {}):
+            merged[key] = value
+    return merged
+
+
+def deduplicate_special_liveries(items: list) -> list:
+    """Deduplicate registrations in first-seen order while keeping richer data."""
+    result: list = []
+    positions: dict[str, int] = {}
+    for item in items:
+        if not isinstance(item, dict) or not item.get("registration"):
+            result.append(item)
+            continue
+        registration = str(item["registration"]).strip().upper()
+        normalized = {**item, "registration": registration}
+        if registration in positions:
+            index = positions[registration]
+            result[index] = merge_richer(result[index], normalized)
+        else:
+            positions[registration] = len(result)
+            result.append(normalized)
+    return result
+
+
 def preserve_special_livery_web_fields(payload: dict, previous_payload: dict | None) -> None:
     """Keep website-only artwork metadata when Flight Log data is regenerated."""
-    previous_items = (previous_payload or {}).get("specialLiveries", [])
+    previous_items = deduplicate_special_liveries((previous_payload or {}).get("specialLiveries", []))
     previous_by_registration = {
         item.get("registration"): item
         for item in previous_items
@@ -58,10 +91,42 @@ def preserve_special_livery_web_fields(payload: dict, previous_payload: dict | N
     for item in payload.get("specialLiveries", []):
         if not isinstance(item, dict):
             continue
-        previous = previous_by_registration.get(item.get("registration"), {})
+        previous = previous_by_registration.get(str(item.get("registration", "")).strip().upper(), {})
         for field in SPECIAL_LIVERY_WEB_FIELDS:
-            if field in previous:
+            if field in previous and item.get(field) in (None, ""):
                 item[field] = previous[field]
+
+
+def preserve_airport_metadata(payload: dict, previous_payload: dict | None) -> None:
+    """Fill incomplete exported airport metadata from the previous website payload."""
+    airports = payload.get("airports", {})
+    previous_airports = (previous_payload or {}).get("airports", {})
+    if not isinstance(airports, dict) or not isinstance(previous_airports, dict):
+        return
+    for code, airport in airports.items():
+        previous = previous_airports.get(code)
+        if not isinstance(airport, dict) or not isinstance(previous, dict):
+            continue
+        for field in AIRPORT_METADATA_FIELDS:
+            if airport.get(field) in (None, "") and previous.get(field) not in (None, ""):
+                airport[field] = previous[field]
+
+
+def refresh_missing_airport_coordinates(payload: dict) -> None:
+    limitations = payload.get("limitations")
+    airports = payload.get("airports", {})
+    if not isinstance(limitations, dict) or not isinstance(airports, dict):
+        return
+    missing = limitations.get("missing_airport_coordinates", [])
+    if not isinstance(missing, list):
+        return
+    limitations["missing_airport_coordinates"] = [
+        code
+        for code in missing
+        if not isinstance(airports.get(code), dict)
+        or not isinstance(airports[code].get("latitude"), (int, float))
+        or not isinstance(airports[code].get("longitude"), (int, float))
+    ]
 
 
 def main() -> None:
@@ -104,6 +169,10 @@ def main() -> None:
         payload = load_json(tmp_path)
         validate_payload(payload)
         preserve_special_livery_web_fields(payload, previous_payload)
+        payload["specialLiveries"] = deduplicate_special_liveries(payload["specialLiveries"])
+        preserve_airport_metadata(payload, previous_payload)
+        refresh_missing_airport_coordinates(payload)
+        tmp_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         os.replace(tmp_path, OUTPUT_PATH)
         tmp_path = None
     except (subprocess.CalledProcessError, OSError, json.JSONDecodeError, ValueError, RuntimeError) as error:

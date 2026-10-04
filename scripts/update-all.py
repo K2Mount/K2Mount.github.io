@@ -15,7 +15,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = REPO_ROOT / "scripts"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
-PLANESPOTTING_CODES = ["SIN", "LHR", "LAX", "CAN", "MNL", "EWR", "EDI", "MAN", "PEK", "SFO", "TPE", "TSA", "DOH", "SHA", "XMN", "SZX"]
+PLANESPOTTING_CODES = ["SIN", "LHR", "LAX", "CAN", "MNL", "EWR", "EDI", "MAN", "PEK", "SFO", "TPE", "TSA", "DOH", "SHA", "XMN", "SZX", "SGN", "DAD"]
 
 
 @dataclass
@@ -122,13 +122,16 @@ def validate_global() -> tuple[str, dict[str, int], list[str], list[str]]:
             path = REPO_ROOT / "assets" / "images" / "flying" / str(photo)
             if not path.exists():
                 errors.append(f"Missing aviation image: {photo}")
+            photo_parts = Path(str(photo)).parts
+            if photo_parts and photo_parts[0] == "special-liveries":
+                errors.append(f"Special-livery artwork referenced as aviation photography: {photo}")
         spotting = flying.get("planespotting", [])
         codes = [item.get("iata") for item in spotting if isinstance(item, dict)]
         duplicate_codes = sorted(code for code, count in Counter(codes).items() if count > 1)
         if duplicate_codes:
             errors.append(f"Duplicate planespotting IATA codes: {', '.join(duplicate_codes)}")
         if codes != PLANESPOTTING_CODES:
-            warnings.append("Planespotting list differs from the current expected 16-airport list")
+            warnings.append(f"Planespotting list differs from the current expected {len(PLANESPOTTING_CODES)}-airport list")
         counts["aviation_photos"] = len(aviation_photos)
         counts["planespotting_airports"] = len(codes)
 
@@ -176,6 +179,18 @@ def validate_global() -> tuple[str, dict[str, int], list[str], list[str]]:
             exposed = sorted(key for key in chronology_keys if key in item)
             if exposed:
                 errors.append(f"specialLiveries exposes chronology fields: {', '.join(exposed)}")
+        registrations = [
+            str(item.get("registration")).strip().upper()
+            for item in flight_data.get("specialLiveries", [])
+            if isinstance(item, dict) and item.get("registration")
+        ]
+        duplicate_registrations = sorted(
+            registration
+            for registration, count in Counter(registrations).items()
+            if count > 1
+        )
+        if duplicate_registrations:
+            errors.append(f"Duplicate special-livery registrations: {', '.join(duplicate_registrations)}")
         counts["flights"] = int(flight_data.get("stats", {}).get("total_flights", 0) or 0)
         counts["airports"] = int(flight_data.get("stats", {}).get("total_airports", 0) or 0)
         counts["routes"] = len(flight_data.get("routes", []))
@@ -196,9 +211,9 @@ def main() -> None:
     print("========================================\n")
 
     steps = [
-        ("IMAGE OPTIMIZATION", "optimize-web-images.py"),
         ("PHOTOGRAPHY", "sync-photography.py"),
         ("AVIATION PHOTOGRAPHY", "sync-flying.py"),
+        ("IMAGE OPTIMIZATION", "optimize-web-images.py"),
         ("PUBLICATIONS", "sync-publications.py"),
         ("FLIGHT LOG", "update-flight-data.py"),
     ]

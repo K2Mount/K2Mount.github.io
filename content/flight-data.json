@@ -216,6 +216,11 @@
     },
     "DAD": {
       "iata": "DAD",
+      "name": "Da Nang International Airport",
+      "city": "Da Nang",
+      "country": "VN",
+      "latitude": 16.04389,
+      "longitude": 108.19944,
       "departures": 1,
       "arrivals": 1,
       "visits": 2
@@ -2840,12 +2845,6 @@
       "lengthM": 38.90
     },
     {
-      "registration": "B-919A",
-      "aircraft": "COMAC 919-100",
-      "airline": "China Eastern",
-      "livery": "The World’s First C919 Livery"
-    },
-    {
       "registration": "G-EZTK",
       "aircraft": "Airbus 320-214",
       "airline": "Easyjet",
@@ -2943,8 +2942,6 @@
     }
   ],
   "limitations": {
-    "missing_airport_coordinates": [
-      "DAD"
-    ]
+    "missing_airport_coordinates": []
   }
 }

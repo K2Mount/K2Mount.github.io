@@ -95,6 +95,18 @@
       "airport": "Shenzhen Bao'an International Airport",
       "city": "Shenzhen",
       "country": "China"
+    },
+    {
+      "iata": "SGN",
+      "airport": "Tan Son Nhat International Airport",
+      "city": "Ho Chi Minh City",
+      "country": "Vietnam"
+    },
+    {
+      "iata": "DAD",
+      "airport": "Da Nang International Airport",
+      "city": "Da Nang",
+      "country": "Vietnam"
     }
   ],
   "aviationPhotography": {
@@ -180,7 +192,20 @@
       "DSC09439-已增强-NR.jpg",
       "DSC09469-已增强-NR.jpg",
       "photo8.jpg",
-      "photo9.jpg"
+      "photo9.jpg",
+      "DSC00005-已增强-NR.jpg",
+      "DSC09843.jpg",
+      "DSC09847.jpg",
+      "DSC09862.jpg",
+      "DSC09893.jpg",
+      "DSC09896.jpg",
+      "DSC09911.jpg",
+      "DSC09924.jpg",
+      "DSC09933.jpg",
+      "DSC09940 copy.jpg",
+      "DSC09956.jpg",
+      "DSC09968-已增强-NR copy.jpg",
+      "DSC09974-已增强-NR copy.jpg"
     ]
   }
 }
