@@ -17,6 +17,7 @@ FLIGHT_LOG_PROJECT = Path(
 ).expanduser()
 OUTPUT_PATH = Path(os.environ.get("FLIGHT_DATA_OUTPUT", REPO_ROOT / "content" / "flight-data.json")).expanduser()
 EXPORT_MODULE = "flightlog.export_web"
+SPECIAL_LIVERY_WEB_FIELDS = ("image", "lengthM")
 
 
 def load_json(path: Path) -> dict:
@@ -44,6 +45,23 @@ def validate_payload(payload: dict) -> None:
 def stats_count(payload: dict, key: str) -> int:
     value = payload.get("stats", {}).get(key)
     return int(value) if isinstance(value, (int, float, str)) and str(value).isdigit() else 0
+
+
+def preserve_special_livery_web_fields(payload: dict, previous_payload: dict | None) -> None:
+    """Keep website-only artwork metadata when Flight Log data is regenerated."""
+    previous_items = (previous_payload or {}).get("specialLiveries", [])
+    previous_by_registration = {
+        item.get("registration"): item
+        for item in previous_items
+        if isinstance(item, dict) and item.get("registration")
+    }
+    for item in payload.get("specialLiveries", []):
+        if not isinstance(item, dict):
+            continue
+        previous = previous_by_registration.get(item.get("registration"), {})
+        for field in SPECIAL_LIVERY_WEB_FIELDS:
+            if field in previous:
+                item[field] = previous[field]
 
 
 def main() -> None:
@@ -85,6 +103,7 @@ def main() -> None:
 
         payload = load_json(tmp_path)
         validate_payload(payload)
+        preserve_special_livery_web_fields(payload, previous_payload)
         os.replace(tmp_path, OUTPUT_PATH)
         tmp_path = None
     except (subprocess.CalledProcessError, OSError, json.JSONDecodeError, ValueError, RuntimeError) as error:

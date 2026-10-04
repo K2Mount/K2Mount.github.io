@@ -321,18 +321,33 @@ function renderSpecialLiveries(flightData) {
     section.hidden = true;
     return;
   }
+  const validLengths = liveries
+    .map((item) => Number(item.lengthM))
+    .filter(Number.isFinite);
+  const maxLength = validLengths.length ? Math.max(...validLengths) : 1;
+
   section.hidden = false;
   target.innerHTML = liveries
-    .map((item) => `
+    .map((item) => {
+      const length = Number(item.lengthM);
+      const scale = Number.isFinite(length) && maxLength > 0 ? length / maxLength : 1;
+      const widthPercent = `${(scale * 100).toFixed(2)}%`;
+      return `
       <article class="special-livery-row reveal">
-        <h3>${escapeHtml(item.registration || "")}</h3>
-        <div>
+        <h3 class="special-livery-registration">${escapeHtml(item.registration || "")}</h3>
+        <div class="special-livery-meta">
           ${item.aircraft ? `<p>${escapeHtml(item.aircraft)}</p>` : ""}
           ${item.airline ? `<p>${escapeHtml(item.airline)}</p>` : ""}
         </div>
-        <strong>${escapeHtml(item.livery || "")}</strong>
+        ${item.image ? `
+          <figure class="special-livery-aircraft" style="--aircraft-width: ${widthPercent};" aria-hidden="true">
+            <img src="${escapeHtml(item.image)}" alt="" loading="lazy" decoding="async">
+          </figure>
+        ` : ""}
+        <strong class="special-livery-name">${escapeHtml(item.livery || "")}</strong>
       </article>
-    `)
+    `;
+    })
     .join("");
 }
 

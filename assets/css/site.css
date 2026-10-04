@@ -530,24 +530,50 @@ a:hover {
 
 .special-livery-row {
   display: grid;
-  grid-template-columns: minmax(116px, 0.26fr) minmax(0, 0.54fr) minmax(180px, 0.4fr);
+  grid-template-columns: minmax(155px, 0.21fr) minmax(125px, 0.17fr) minmax(360px, 0.42fr) minmax(210px, 0.28fr);
   gap: clamp(18px, 3vw, 42px);
-  align-items: baseline;
+  align-items: center;
+  min-height: clamp(170px, 15vw, 210px);
 }
 
-.special-livery-row h3 {
+.special-livery-registration {
   font-size: clamp(1.8rem, 4vw, 4.3rem);
 }
 
-.special-livery-row p {
+.special-livery-meta p {
   margin: 0.25rem 0 0;
 }
 
-.special-livery-row strong {
+.special-livery-name {
   font-family: var(--serif);
   font-size: clamp(1.2rem, 2.1vw, 2.25rem);
   font-weight: 400;
   line-height: 1.08;
+}
+
+.special-livery-aircraft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+}
+
+.special-livery-aircraft img {
+  display: block;
+  width: var(--aircraft-width);
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.04));
+  transform-origin: left center;
+  transition: transform 400ms ease;
+}
+
+.special-livery-row:hover .special-livery-aircraft img {
+  transform: translateX(4px);
 }
 
 .publication-list {
@@ -1088,6 +1114,31 @@ a:hover {
   .sticky-panel {
     position: static;
   }
+
+  .special-livery-row {
+    grid-template-columns: minmax(155px, 0.3fr) minmax(0, 1fr);
+    grid-template-areas:
+      "registration name"
+      "meta aircraft";
+    min-height: 0;
+  }
+
+  .special-livery-registration {
+    grid-area: registration;
+  }
+
+  .special-livery-meta {
+    grid-area: meta;
+  }
+
+  .special-livery-aircraft {
+    grid-area: aircraft;
+    min-height: 120px;
+  }
+
+  .special-livery-name {
+    grid-area: name;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1171,6 +1222,19 @@ a:hover {
   .flight-row span,
   .special-livery-row strong {
     text-align: left;
+  }
+
+  .special-livery-row {
+    grid-template-areas:
+      "registration"
+      "name"
+      "meta"
+      "aircraft";
+    gap: 18px;
+  }
+
+  .special-livery-aircraft {
+    min-height: 90px;
   }
 
   .publication-year {
