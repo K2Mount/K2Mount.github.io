@@ -2827,7 +2827,17 @@
       "registration": "B-5912",
       "aircraft": "Airbus 330-300",
       "airline": "Air China",
-      "livery": "Star Alliance Livery"
+      "livery": "Star Alliance Livery",
+      "image": "assets/images/flying/special-liveries/B-5912.webp",
+      "lengthM": 63.66
+    },
+    {
+      "registration": "B-919A",
+      "aircraft": "COMAC 919-100",
+      "airline": "China Eastern",
+      "livery": "The World’s First C919 Livery",
+      "image": "assets/images/flying/special-liveries/B-919A.webp",
+      "lengthM": 38.90
     },
     {
       "registration": "B-919A",
@@ -2839,73 +2849,97 @@
       "registration": "G-EZTK",
       "aircraft": "Airbus 320-214",
       "airline": "Easyjet",
-      "livery": "Female Pilot Initiate Livery"
+      "livery": "Female Pilot Initiate Livery",
+      "image": "assets/images/flying/special-liveries/G-EZTK.webp",
+      "lengthM": 37.57
     },
     {
       "registration": "G-UZHS",
       "aircraft": "Airbus 320-251N",
       "airline": "Easyjet",
-      "livery": "Eurovision Song Contest Livery"
+      "livery": "Eurovision Song Contest Livery",
+      "image": "assets/images/flying/special-liveries/G-UZHS.webp",
+      "lengthM": 37.57
     },
     {
       "registration": "A6-BMI",
       "aircraft": "Boeing 787-10",
       "airline": "Etihad Airways",
-      "livery": "Eco-demonstrator Livery"
+      "livery": "Eco-demonstrator Livery",
+      "image": "assets/images/flying/special-liveries/A6-BMI.webp",
+      "lengthM": 68.28
     },
     {
       "registration": "A6-BND",
       "aircraft": "Boeing 787-9",
       "airline": "Etihad Airways",
-      "livery": "Manchester City Livery"
+      "livery": "Manchester City Livery",
+      "image": "assets/images/flying/special-liveries/A6-BND.webp",
+      "lengthM": 62.81
     },
     {
       "registration": "A9C-FG",
       "aircraft": "Boeing 787-9",
       "airline": "Gulf Air",
-      "livery": "Gulf Air 75th Retro Livery"
+      "livery": "Gulf Air 75th Retro Livery",
+      "image": "assets/images/flying/special-liveries/A9C-FG.webp",
+      "lengthM": 62.81
     },
     {
       "registration": "A9C-FH",
       "aircraft": "Boeing 787-9",
       "airline": "Gulf Air",
-      "livery": "Bahrain Formula 1 livery"
+      "livery": "Bahrain Formula 1 livery",
+      "image": "assets/images/flying/special-liveries/A9C-FH.webp",
+      "lengthM": 62.81
     },
     {
       "registration": "B-20DT",
       "aircraft": "Boeing 787-9",
       "airline": "Juneyao Airlines",
-      "livery": "100th 787 for China livery"
+      "livery": "100th 787 for China livery",
+      "image": "assets/images/flying/special-liveries/B-20DT.webp",
+      "lengthM": 62.81
     },
     {
       "registration": "N653UA",
       "aircraft": "Boeing 767-322(ER)",
       "airline": "United Airlines",
-      "livery": "Star Alliance Livery"
+      "livery": "Star Alliance Livery",
+      "image": "assets/images/flying/special-liveries/N653UA.webp",
+      "lengthM": 54.94
     },
     {
       "registration": "VN-A327",
       "aircraft": "Airbus 321-231",
       "airline": "Vietnam Airlines",
-      "livery": "SkyTeam Livery"
+      "livery": "SkyTeam Livery",
+      "image": "assets/images/flying/special-liveries/VN-A327.webp",
+      "lengthM": 44.51
     },
     {
       "registration": "B-1356",
       "aircraft": "Boeing 787-9",
       "airline": "Xiamen Airlines",
-      "livery": "United Dreams Livery"
+      "livery": "United Dreams Livery",
+      "image": "assets/images/flying/special-liveries/B-1356.webp",
+      "lengthM": 62.81
     },
     {
       "registration": "B-5633",
       "aircraft": "Boeing 737-85C",
       "airline": "Xiamen Airlines",
-      "livery": "SkyTeam Livery"
+      "livery": "SkyTeam Livery",
+      "image": "assets/images/flying/special-liveries/B-5633.webp",
+      "lengthM": 39.47
     },
     {
       "registration": "B-5688",
       "aircraft": "Boeing 737-85C",
       "airline": "Xiamen Airlines",
-      "livery": "100th Boeing Aircraft for Xiamen Air Livery"
+      "livery": "100th Boeing Aircraft for Xiamen Air Livery",
+      "image": "assets/images/flying/special-liveries/B-5688.webp",
+      "lengthM": 39.47
     }
   ],
   "limitations": {
