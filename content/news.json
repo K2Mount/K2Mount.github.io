@@ -35,7 +35,7 @@
     "textZh": "在 NUS–Tsinghua 联合科研研讨会上报告“面向碳中和的仿生金属团簇催化剂”合作研究，介绍原子精确团簇与蛋白纳米笼的协同构筑。"
   },
   {
-    "date": "2026-04",
+    "date": "2026-04-02",
     "datePrecision": "month",
     "displayDate": "APR 2026",
     "category": "CONFERENCE",
@@ -48,7 +48,7 @@
     "textZh": "受邀参加深圳技术大学润园青年学者论坛并作学术报告。"
   },
   {
-    "date": "2026-03",
+    "date": "2026-03-20",
     "datePrecision": "month",
     "displayDate": "MAR 2026",
     "category": "CONFERENCE",
@@ -127,8 +127,17 @@
     "displayDate": "AUG 13",
     "category": "PUBLICATION",
     "title": "Advanced Materials Accepted",
-    "journal": "Advanced Materials",
+    "journal": "Adv. Mater. Accepted: Precise Surface Engineering of Metal Nanoclusters",
     "text": "Our Perspective on ligand programming for functional design of metal nanoclusters was accepted by Advanced Materials.",
     "textZh": "我们关于金属纳米团簇配体编程与功能设计的观点文章被《Advanced Materials》接收。"
+  }
+  {
+    "date": "2025-05-10",
+    "displayDate": "May 10",
+    "category": "PUBLICATION",
+    "title": "CCS Chemistry Accepted",
+    "journal": "CCS Chem. Accepted: Competing Bonding to Build Novel Gold Sulfido Clusters",
+    "text": "Our research article on integrating sulfido ligands into gold clusters was accepted by Advanced Materials.",
+    "textZh": "我们关于将硫离子配体引入金纳米团簇的研究文章被《CCS Chemsitry》接收。"
   }
 ]
