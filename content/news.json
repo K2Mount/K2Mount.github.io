@@ -126,18 +126,18 @@
     "date": "2025-08-13",
     "displayDate": "AUG 13",
     "category": "PUBLICATION",
-    "title": "Advanced Materials Accepted",
-    "journal": "Adv. Mater. Accepted: Precise Surface Engineering of Metal Nanoclusters",
+    "title": "Adv. Mater. Accepted: Precise Surface Engineering of Metal Nanoclusters",
+    "journal": "Advanced Materials",
     "text": "Our Perspective on ligand programming for functional design of metal nanoclusters was accepted by Advanced Materials.",
     "textZh": "我们关于金属纳米团簇配体编程与功能设计的观点文章被《Advanced Materials》接收。"
-  }
+  },
   {
     "date": "2025-05-10",
     "displayDate": "May 10",
     "category": "PUBLICATION",
-    "title": "CCS Chemistry Accepted",
-    "journal": "CCS Chem. Accepted: Competing Bonding to Build Novel Gold Sulfido Clusters",
-    "text": "Our research article on integrating sulfido ligands into gold clusters was accepted by Advanced Materials.",
+    "title": "CCS Chem. Accepted: Competing Bonding to Build Novel Gold Sulfido Clusters",
+    "journal": "CCS Chemistry",
+    "text": "Our research article on integrating sulfido ligands into gold clusters was accepted by CCS Chemistry.",
     "textZh": "我们关于将硫离子配体引入金纳米团簇的研究文章被《CCS Chemsitry》接收。"
   }
 ]
