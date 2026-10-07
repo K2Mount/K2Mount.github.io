@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-15T05:11:29+00:00",
-  "source": "Flight log 2/data/flightlog.sqlite",
+  "generated_at": "2026-10-07T03:04:11+00:00",
+  "source": "My Flight Log/data/flightlog.sqlite",
   "stats": {
     "total_flights": 200,
     "total_distance_km": 669032,
-    "total_duration_minutes": 47611,
+    "total_duration_minutes": 47931,
     "total_airports": 78,
     "total_countries": 23,
     "total_airlines": 33,
@@ -219,8 +219,8 @@
       "name": "Da Nang International Airport",
       "city": "Da Nang",
       "country": "VN",
-      "latitude": 16.04389,
-      "longitude": 108.19944,
+      "latitude": 16.0439,
+      "longitude": 108.19937,
       "departures": 1,
       "arrivals": 1,
       "visits": 2
@@ -1453,6 +1453,7 @@
       "destination": "SGN",
       "count": 1,
       "distance_km": 606,
+      "duration_minutes": 69,
       "airlines": [
         "Vietnam Airlines"
       ],
@@ -2405,6 +2406,7 @@
       "destination": "DAD",
       "count": 1,
       "distance_km": 606,
+      "duration_minutes": 58,
       "airlines": [
         "Vietnam Airlines"
       ],
@@ -2428,6 +2430,7 @@
       "destination": "SIN",
       "count": 1,
       "distance_km": 1092,
+      "duration_minutes": 92,
       "airlines": [
         "Vietnam Airlines"
       ],
@@ -2619,6 +2622,7 @@
       "destination": "SGN",
       "count": 1,
       "distance_km": 1092,
+      "duration_minutes": 101,
       "airlines": [
         "Vietnam Airlines"
       ],
@@ -2837,12 +2841,20 @@
       "lengthM": 63.66
     },
     {
-      "registration": "B-919A",
-      "aircraft": "COMAC 919-100",
-      "airline": "China Eastern",
-      "livery": "The World’s First C919 Livery",
-      "image": "assets/images/flying/special-liveries/B-919A.webp",
-      "lengthM": 38.90
+      "registration": "A9C-FH",
+      "aircraft": "Boeing 787-9",
+      "airline": "Gulf Air",
+      "livery": "Bahrain Formula 1 livery",
+      "image": "assets/images/flying/special-liveries/A9C-FH.webp",
+      "lengthM": 62.81
+    },
+    {
+      "registration": "A9C-FG",
+      "aircraft": "Boeing 787-9",
+      "airline": "Gulf Air",
+      "livery": "Gulf Air 75th Retro Livery",
+      "image": "assets/images/flying/special-liveries/A9C-FG.webp",
+      "lengthM": 62.81
     },
     {
       "registration": "G-EZTK",
@@ -2861,6 +2873,30 @@
       "lengthM": 37.57
     },
     {
+      "registration": "B-1356",
+      "aircraft": "Boeing 787-9",
+      "airline": "Xiamen Airlines",
+      "livery": "United Dreams Livery",
+      "image": "assets/images/flying/special-liveries/B-1356.webp",
+      "lengthM": 62.81
+    },
+    {
+      "registration": "B-5688",
+      "aircraft": "Boeing 737-85C",
+      "airline": "Xiamen Airlines",
+      "livery": "100th Boeing Aircraft for Xiamen Air Livery",
+      "image": "assets/images/flying/special-liveries/B-5688.webp",
+      "lengthM": 39.47
+    },
+    {
+      "registration": "B-5633",
+      "aircraft": "Boeing 737-85C",
+      "airline": "Xiamen Airlines",
+      "livery": "SkyTeam Livery",
+      "image": "assets/images/flying/special-liveries/B-5633.webp",
+      "lengthM": 39.47
+    },
+    {
       "registration": "A6-BMI",
       "aircraft": "Boeing 787-10",
       "airline": "Etihad Airways",
@@ -2877,20 +2913,12 @@
       "lengthM": 62.81
     },
     {
-      "registration": "A9C-FG",
-      "aircraft": "Boeing 787-9",
-      "airline": "Gulf Air",
-      "livery": "Gulf Air 75th Retro Livery",
-      "image": "assets/images/flying/special-liveries/A9C-FG.webp",
-      "lengthM": 62.81
-    },
-    {
-      "registration": "A9C-FH",
-      "aircraft": "Boeing 787-9",
-      "airline": "Gulf Air",
-      "livery": "Bahrain Formula 1 livery",
-      "image": "assets/images/flying/special-liveries/A9C-FH.webp",
-      "lengthM": 62.81
+      "registration": "B-919A",
+      "aircraft": "COMAC 919-100",
+      "airline": "China Eastern",
+      "livery": "The World’s First C919 Livery",
+      "image": "assets/images/flying/special-liveries/B-919A.webp",
+      "lengthM": 38.9
     },
     {
       "registration": "B-20DT",
@@ -2915,30 +2943,6 @@
       "livery": "SkyTeam Livery",
       "image": "assets/images/flying/special-liveries/VN-A327.webp",
       "lengthM": 44.51
-    },
-    {
-      "registration": "B-1356",
-      "aircraft": "Boeing 787-9",
-      "airline": "Xiamen Airlines",
-      "livery": "United Dreams Livery",
-      "image": "assets/images/flying/special-liveries/B-1356.webp",
-      "lengthM": 62.81
-    },
-    {
-      "registration": "B-5633",
-      "aircraft": "Boeing 737-85C",
-      "airline": "Xiamen Airlines",
-      "livery": "SkyTeam Livery",
-      "image": "assets/images/flying/special-liveries/B-5633.webp",
-      "lengthM": 39.47
-    },
-    {
-      "registration": "B-5688",
-      "aircraft": "Boeing 737-85C",
-      "airline": "Xiamen Airlines",
-      "livery": "100th Boeing Aircraft for Xiamen Air Livery",
-      "image": "assets/images/flying/special-liveries/B-5688.webp",
-      "lengthM": 39.47
     }
   ],
   "limitations": {
