@@ -73,6 +73,12 @@
       "country": "Taiwan"
     },
     {
+      "iata": "ZRH",
+      "airport": "Zürich Airport",
+      "city": "Zürich",
+      "country": "Switzerland"
+    },
+    {
       "iata": "DOH",
       "airport": "Hamad International Airport",
       "city": "Doha",

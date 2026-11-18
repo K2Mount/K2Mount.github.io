@@ -5,18 +5,19 @@
     "category": "CONFERENCE",
     "format": "Participant",
     "event": "Advanced Summit",
-    "title": "Wiley Advanced Summit London",
+    "title": "The Advanced Summit 2026",
     "location": "London, UK",
-    "text": "Attended the Wiley Advanced Summit 2026 in London themed "Where Technology Meets Life"",
-    "textZh": "参加在英国伦敦举办的主题为“科技遇见生活”的Wiley Advanced Summit 2026。"
+    "text": "I attended Wiley’s Advanced Summit in London, where this year’s theme was “Where Technology Meets Life.”",
+    "textZh": "参加了 Wiley 在伦敦举办的 2026 年 Advanced Summit，本届峰会的主题是「科技遇见生活」。"
   },
   {
-    "date": "2026-09-11",
-    "displayDate": "Sep 11",
+    "date": "2026-11-12",
+    "displayDate": "NOV 12",
     "category": "PUBLICATION",
-    "title": "Nat. Commun. Accepted: Host–Guest Recognition on Nanocluster Surfaces",
-    "text": "Our work on emergent stoichiometric host–guest recognition enabled by dynamic ligand reorientation on nanocluster surfaces has been accepted by Nature Communications.",
-    "textZh": "我们关于纳米团簇表面动态配体重排诱导化学计量主–客体识别的工作被《Nature Communications》接收。"
+    "journal": "Nature Communications",
+    "title": "Host–Guest Recognition on Nanocluster Surfaces",
+    "text": "Our study is now available online in Nature Communications. We show how ligands on gold nanoclusters rearrange to form binding pockets for molecular guests.",
+    "textZh": "我们关于纳米团簇表面主–客体识别的研究已在《Nature Communications》在线发表。研究揭示了金纳米团簇表面的配体如何动态重排，形成可结合客体分子的口袋。"
   },
   {
     "date": "2026-08-27",

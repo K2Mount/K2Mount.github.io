@@ -19,6 +19,8 @@ OUTPUT_PATH = Path(os.environ.get("FLIGHT_DATA_OUTPUT", REPO_ROOT / "content" / 
 EXPORT_MODULE = "flightlog.export_web"
 SPECIAL_LIVERY_WEB_FIELDS = ("image", "lengthM")
 AIRPORT_METADATA_FIELDS = ("name", "city", "country", "latitude", "longitude")
+FLYING_PATH = REPO_ROOT / "content" / "flying.json"
+AIRPORT_COORDINATES_PATH = FLIGHT_LOG_PROJECT / "assets" / "airport_coordinates.json"
 
 
 def load_json(path: Path) -> dict:
@@ -112,6 +114,37 @@ def preserve_airport_metadata(payload: dict, previous_payload: dict | None) -> N
                 airport[field] = previous[field]
 
 
+def add_planespotting_airports(payload: dict) -> None:
+    """Add map-only spotting airports without changing Flight Log statistics."""
+    airports = payload.get("airports", {})
+    if not isinstance(airports, dict) or not FLYING_PATH.exists() or not AIRPORT_COORDINATES_PATH.exists():
+        return
+    flying = load_json(FLYING_PATH)
+    coordinates = load_json(AIRPORT_COORDINATES_PATH)
+    for item in flying.get("planespotting", []):
+        if not isinstance(item, dict) or not item.get("iata"):
+            continue
+        code = str(item["iata"]).strip().upper()
+        source = coordinates.get(code, {})
+        if code in airports or not isinstance(source, dict):
+            continue
+        latitude = source.get("lat")
+        longitude = source.get("lon")
+        if not isinstance(latitude, (int, float)) or not isinstance(longitude, (int, float)):
+            continue
+        airports[code] = {
+            "iata": code,
+            "name": item.get("airport") or source.get("name"),
+            "city": item.get("city") or source.get("municipality"),
+            "country": item.get("country") or source.get("country"),
+            "latitude": latitude,
+            "longitude": longitude,
+            "departures": 0,
+            "arrivals": 0,
+            "visits": 0,
+        }
+
+
 def refresh_missing_airport_coordinates(payload: dict) -> None:
     limitations = payload.get("limitations")
     airports = payload.get("airports", {})
@@ -171,6 +204,7 @@ def main() -> None:
         preserve_special_livery_web_fields(payload, previous_payload)
         payload["specialLiveries"] = deduplicate_special_liveries(payload["specialLiveries"])
         preserve_airport_metadata(payload, previous_payload)
+        add_planespotting_airports(payload)
         refresh_missing_airport_coordinates(payload)
         tmp_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         os.replace(tmp_path, OUTPUT_PATH)

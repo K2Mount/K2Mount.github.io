@@ -1,5 +1,30 @@
 [
   {
+    "image": "assets/images/publications/Paper21.png",
+    "title": "Emergent stoichiometric host-guest recognition on ligated colloidal surfaces via dynamic ligand reorientation",
+    "authors": [
+      "Wenya Li",
+      "Zhucheng Yang",
+      "Vikas Tiwari",
+      "Jia Liu",
+      "Yirong Wang",
+      "Yilin Xie",
+      "Huitao Huang",
+      "Ruoyang Chen",
+      "Junyu Ke",
+      "Shijin Lin",
+      "Tarak Karmakar",
+      "Shun-Li Li",
+      "Ya-Qian Lan",
+      "Jianping Xie*",
+      "Yitao Cao"
+    ],
+    "journal": "Nature Communications",
+    "year": "2026",
+    "note": "Article in Press",
+    "link": "https://doi.org/10.1038/s41467-026-79264-4"
+  },
+  {
     "image": "assets/images/publications/Paper20.png",
     "title": "Degradation Mechanisms and Stabilization Strategies of Ag Nanoparticles and Atomically Precise Ag Nanoclusters for Electrochemical CO2 Reduction",
     "authors": [

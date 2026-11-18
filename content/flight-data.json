@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-18T05:15:05+00:00",
+  "generated_at": "2026-11-18T05:35:38+00:00",
   "source": "My Flight Log/data/flightlog.sqlite",
   "stats": {
     "total_flights": 207,
     "total_distance_km": 699394,
     "total_duration_minutes": 49079,
     "total_airports": 79,
-    "total_countries": 23,
+    "total_countries": 24,
     "total_airlines": 34,
     "total_aircraft_families": 13
   },
@@ -436,6 +436,11 @@
     },
     "IST": {
       "iata": "IST",
+      "name": "Istanbul Airport",
+      "city": "Istanbul",
+      "country": "TR",
+      "latitude": 41.275278,
+      "longitude": 28.751944,
       "departures": 2,
       "arrivals": 2,
       "visits": 4
@@ -901,6 +906,17 @@
       "departures": 1,
       "arrivals": 1,
       "visits": 2
+    },
+    "TSA": {
+      "iata": "TSA",
+      "name": "Taipei Songshan Airport",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "latitude": 25.069722,
+      "longitude": 121.5525,
+      "departures": 0,
+      "arrivals": 0,
+      "visits": 0
     }
   },
   "routes": [
@@ -3022,8 +3038,6 @@
     }
   ],
   "limitations": {
-    "missing_airport_coordinates": [
-      "IST"
-    ]
+    "missing_airport_coordinates": []
   }
 }

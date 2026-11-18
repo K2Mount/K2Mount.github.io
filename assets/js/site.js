@@ -434,7 +434,7 @@ function drawFlightMap(flightData, flying) {
   const spotting = new Set((flying?.planespotting || []).map((item) => item.iata));
   const routes = (flightData.routes || [])
     .filter((route) => hasCoordinates(airports[route.origin]) && hasCoordinates(airports[route.destination]))
-    .slice(0, 90);
+    .slice(0, 200);
   const maxCount = routes.reduce((max, route) => Math.max(max, route.count || 1), 1);
   const airportCodes = [...new Set([
     ...routes.flatMap((route) => [route.origin, route.destination]),
