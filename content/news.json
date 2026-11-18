@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-02",
+    "displayDate": "Nov 02",
+    "category": "CONFERENCE",
+    "format": "Participant",
+    "event": "Advanced Summit",
+    "title": "Wiley Advanced Summit London",
+    "location": "London, UK",
+    "text": "Attended the Wiley Advanced Summit 2026 in London themed "Where Technology Meets Life"",
+    "textZh": "参加在英国伦敦举办的主题为“科技遇见生活”的Wiley Advanced Summit 2026。"
+  },
+  {
     "date": "2026-09-11",
     "displayDate": "Sep 11",
     "category": "PUBLICATION",

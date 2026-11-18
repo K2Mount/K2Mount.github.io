@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-07T03:04:11+00:00",
+  "generated_at": "2026-11-18T05:15:05+00:00",
   "source": "My Flight Log/data/flightlog.sqlite",
   "stats": {
-    "total_flights": 200,
-    "total_distance_km": 669032,
-    "total_duration_minutes": 47931,
-    "total_airports": 78,
+    "total_flights": 207,
+    "total_distance_km": 699394,
+    "total_duration_minutes": 49079,
+    "total_airports": 79,
     "total_countries": 23,
-    "total_airlines": 33,
+    "total_airlines": 34,
     "total_aircraft_families": 13
   },
   "highlights": {
@@ -30,11 +30,11 @@
     },
     "top_airline": {
       "name": "Singapore Airlines",
-      "count": 31
+      "count": 32
     },
     "top_aircraft": {
       "name": "B737",
-      "count": 41
+      "count": 42
     }
   },
   "airports": {
@@ -89,9 +89,9 @@
       "country": "TH",
       "latitude": 13.6811,
       "longitude": 100.747002,
-      "departures": 3,
-      "arrivals": 2,
-      "visits": 5
+      "departures": 4,
+      "arrivals": 3,
+      "visits": 7
     },
     "BNE": {
       "iata": "BNE",
@@ -434,6 +434,12 @@
       "arrivals": 0,
       "visits": 1
     },
+    "IST": {
+      "iata": "IST",
+      "departures": 2,
+      "arrivals": 2,
+      "visits": 4
+    },
     "JFK": {
       "iata": "JFK",
       "name": "John F. Kennedy International Airport",
@@ -529,9 +535,9 @@
       "country": "GB",
       "latitude": 51.148744,
       "longitude": -0.185739,
-      "departures": 1,
+      "departures": 2,
       "arrivals": 1,
-      "visits": 2
+      "visits": 3
     },
     "LHR": {
       "iata": "LHR",
@@ -541,8 +547,8 @@
       "latitude": 51.470748,
       "longitude": -0.459909,
       "departures": 5,
-      "arrivals": 4,
-      "visits": 9
+      "arrivals": 5,
+      "visits": 10
     },
     "LHW": {
       "iata": "LHW",
@@ -617,9 +623,9 @@
       "country": "CN",
       "latitude": 31.735032,
       "longitude": 118.865949,
-      "departures": 15,
+      "departures": 16,
       "arrivals": 17,
-      "visits": 32
+      "visits": 33
     },
     "NLT": {
       "iata": "NLT",
@@ -695,8 +701,8 @@
       "latitude": 31.1434,
       "longitude": 121.805,
       "departures": 13,
-      "arrivals": 14,
-      "visits": 27
+      "arrivals": 15,
+      "visits": 28
     },
     "REP": {
       "iata": "REP",
@@ -760,9 +766,9 @@
       "country": "SG",
       "latitude": 1.35019,
       "longitude": 103.994003,
-      "departures": 39,
-      "arrivals": 42,
-      "visits": 81
+      "departures": 41,
+      "arrivals": 44,
+      "visits": 85
     },
     "SJJ": {
       "iata": "SJJ",
@@ -966,7 +972,7 @@
       "destination": "LHR",
       "count": 3,
       "distance_km": 32679,
-      "duration_minutes": 1627,
+      "duration_minutes": 2420,
       "airlines": [
         "Singapore Airlines"
       ],
@@ -1098,6 +1104,18 @@
       ],
       "first_year": 2023,
       "last_year": 2024
+    },
+    {
+      "origin": "SIN",
+      "destination": "BKK",
+      "count": 2,
+      "distance_km": 2860,
+      "duration_minutes": 119,
+      "airlines": [
+        "Singapore Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2027
     },
     {
       "origin": "SIN",
@@ -1256,6 +1274,17 @@
       ],
       "first_year": 2026,
       "last_year": 2026
+    },
+    {
+      "origin": "BKK",
+      "destination": "PVG",
+      "count": 1,
+      "distance_km": 2875,
+      "airlines": [
+        "China Eastern"
+      ],
+      "first_year": 2027,
+      "last_year": 2027
     },
     {
       "origin": "BKK",
@@ -1620,6 +1649,7 @@
       "destination": "SJJ",
       "count": 1,
       "distance_km": 1012,
+      "duration_minutes": 91,
       "airlines": [
         "Lufthansa"
       ],
@@ -1721,6 +1751,28 @@
       ],
       "first_year": 2017,
       "last_year": 2017
+    },
+    {
+      "origin": "IST",
+      "destination": "LHR",
+      "count": 1,
+      "distance_km": 2515,
+      "airlines": [
+        "Turkish Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "IST",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 8648,
+      "airlines": [
+        "Turkish Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
     },
     {
       "origin": "JJN",
@@ -1855,6 +1907,17 @@
     },
     {
       "origin": "LGW",
+      "destination": "IST",
+      "count": 1,
+      "distance_km": 2505,
+      "airlines": [
+        "Turkish Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "origin": "LGW",
       "destination": "PVG",
       "count": 1,
       "distance_km": 9203,
@@ -1882,6 +1945,7 @@
       "destination": "FRA",
       "count": 1,
       "distance_km": 654,
+      "duration_minutes": 89,
       "airlines": [
         "Lufthansa"
       ],
@@ -2065,6 +2129,17 @@
       ],
       "first_year": 2016,
       "last_year": 2016
+    },
+    {
+      "origin": "NKG",
+      "destination": "SIN",
+      "count": 1,
+      "distance_km": 3741,
+      "airlines": [
+        "Xiamen Airlines"
+      ],
+      "first_year": 2027,
+      "last_year": 2027
     },
     {
       "origin": "NKG",
@@ -2475,18 +2550,6 @@
     },
     {
       "origin": "SIN",
-      "destination": "BKK",
-      "count": 1,
-      "distance_km": 1430,
-      "duration_minutes": 119,
-      "airlines": [
-        "Singapore Airlines"
-      ],
-      "first_year": 2026,
-      "last_year": 2026
-    },
-    {
-      "origin": "SIN",
       "destination": "CGK",
       "count": 1,
       "distance_km": 896,
@@ -2568,6 +2631,17 @@
       ],
       "first_year": 2023,
       "last_year": 2023
+    },
+    {
+      "origin": "SIN",
+      "destination": "IST",
+      "count": 1,
+      "distance_km": 8648,
+      "airlines": [
+        "Turkish Airlines"
+      ],
+      "first_year": 2026,
+      "last_year": 2026
     },
     {
       "origin": "SIN",
@@ -2658,6 +2732,7 @@
       "destination": "ZRH",
       "count": 1,
       "distance_km": 862,
+      "duration_minutes": 93,
       "airlines": [
         "Swiss"
       ],
@@ -2824,6 +2899,7 @@
       "destination": "LHR",
       "count": 1,
       "distance_km": 788,
+      "duration_minutes": 82,
       "airlines": [
         "Swiss"
       ],
@@ -2946,6 +3022,8 @@
     }
   ],
   "limitations": {
-    "missing_airport_coordinates": []
+    "missing_airport_coordinates": [
+      "IST"
+    ]
   }
 }

@@ -179,7 +179,12 @@
       "DSC03557-已增强-NR.jpg",
       "photo12.jpg",
       "photo11.jpg",
-      "photo14.jpg"
+      "photo14.jpg",
+      "DSC00427.jpg",
+      "DSC00431.jpg",
+      "DSC00453.jpg",
+      "DSC00459.jpg",
+      "DSC00473.jpg"
     ],
     "featured": "photo15.jpg"
   },
@@ -373,5 +378,35 @@
       "WechatIMG16982.jpeg"
     ],
     "featured": "DSC06990.jpg"
+  },
+  {
+    "folder": "Byzantium 2026",
+    "title": "Byzantium 2026",
+    "meta": "",
+    "introEn": "",
+    "introZh": "",
+    "order": 17,
+    "featured": "DSC00009.jpg",
+    "photos": [
+      "DSC00009.jpg",
+      "DSC00065.jpg",
+      "DSC00128-已增强-NR.jpg",
+      "DSC00134-已增强-NR.jpg",
+      "DSC00140-已增强-NR.jpg",
+      "DSC00165-已增强-NR.jpg",
+      "DSC00175-已增强-NR.jpg",
+      "DSC00182.jpg",
+      "DSC00187-已增强-NR.jpg",
+      "DSC00201-已增强-NR.jpg",
+      "DSC09827.jpg",
+      "DSC09873.jpg",
+      "DSC09884.jpg",
+      "DSC09898.jpg",
+      "DSC09914.jpg",
+      "DSC09972.jpg",
+      "DSC09983.jpg",
+      "DSC09985.jpg",
+      "DSC09987.jpg"
+    ]
   }
 ]
