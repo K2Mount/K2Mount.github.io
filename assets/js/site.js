@@ -80,8 +80,8 @@ function renderAcademic(site, publications) {
     const metricItems = [
       {
         label: "PUBLICATIONS",
-        value: publications.length,
-        note: "Entries currently listed in publications.json."
+        value: 21,
+        note: "Total publications"
       },
       {
         label: "RESEARCH THEMES",
