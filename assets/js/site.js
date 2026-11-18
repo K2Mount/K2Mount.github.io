@@ -9,12 +9,18 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
-function authorText(authors = "") {
-  return Array.isArray(authors) ? authors.join(", ") : String(authors || "");
-}
-
 function highlightName(authors = "") {
-  return escapeHtml(authorText(authors)).replaceAll("Zhucheng Yang", "<mark>Zhucheng Yang</mark>");
+  const values = Array.isArray(authors) ? authors : [String(authors || "")];
+  return values
+    .map((author) => {
+      const value = String(author).trim();
+      const marker = value.match(/[#*]$/)?.[0] || "";
+      const name = marker ? value.slice(0, -1) : value;
+      const escapedName = escapeHtml(name);
+      const renderedName = name === "Zhucheng Yang" ? `<mark>${escapedName}</mark>` : escapedName;
+      return `${renderedName}${marker ? `<sup>${escapeHtml(marker)}</sup>` : ""}`;
+    })
+    .join(", ");
 }
 
 async function loadContent(name) {

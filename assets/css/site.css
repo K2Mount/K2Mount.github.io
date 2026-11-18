@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Yang Name Kai";
+  src: url("../fonts/yang-name-kai.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+6210, U+694A, U+7FE5;
+}
+
 :root {
   --bg: #f7f6f2;
   --paper: #ffffff;
@@ -268,11 +277,17 @@ a:hover {
 
 .hero-chinese-name {
   margin: clamp(0.8rem, 1.6vw, 1.35rem) 0 0;
-  font-family: var(--kai);
+  font-family: "Yang Name Kai", var(--kai);
   font-size: clamp(1.55rem, 3vw, 3.25rem);
   line-height: 1.1;
   letter-spacing: 0.18em;
   color: rgba(245, 244, 239, 0.82);
+}
+
+.pub-meta sup {
+  font-size: 0.7em;
+  line-height: 0;
+  vertical-align: super;
 }
 
 .hero-copy {
