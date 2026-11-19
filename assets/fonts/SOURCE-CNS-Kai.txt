@@ -1,0 +1,16 @@
+Yang Standard Kai is a renamed WOFF2 subset of CNS11643 TW-Kai-98_1.ttf,
+containing only U+6210, U+694A and U+7FE5 for the homepage name.
+
+Source attribution: Ministry of Digital Affairs, CNS11643 Chinese Standard
+Interchange Code Master Ideographs, https://www.cns11643.gov.tw/.
+Dataset: https://data.gov.tw/dataset/5961
+Font source mirror: https://github.com/rypervenche/cns11643-fonts
+
+Used under the Government Data Open License, version 1.0 (Taiwan),
+one of the dataset's alternative licenses:
+https://data.gov.tw/license
+Licensing statement:
+https://www.cns11643.gov.tw/pageView.jsp?ID=59&la=0&lang=tw
+
+Modification: three-character subsetting, WOFF2 conversion and font renaming.
+The source does not endorse this website or its modified font subset.
